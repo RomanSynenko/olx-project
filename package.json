@@ -49,8 +49,12 @@
         "webpackbar": "^4.0.0"
     },
     "dependencies": {
+        "axios": "^0.21.1",
         "core-js": "^3.6.5",
         "handlebars": "^4.7.6",
-        "navigo": "^8.8.2"
+        "micromodal": "^0.4.6",
+        "navigo": "^8.8.2",
+        "notification": "0.0.6",
+        "sema": "^2.0.3"
     }
 }
