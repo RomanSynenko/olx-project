@@ -1,23 +1,36 @@
 <button class="button" data-action="open-modal">Open modal</button>
+
 <div class="backdrop js-backdrop">
+
   <div class="modal">
-    {{!-- <img src="" alt="" width="428" height="465"> --}}
-    <div class="file">
-      <span class="download">+</span>
+    {{#each imageUrls}}
+    <div class="imgWrapper">
+
+      <div class="image">
+
+        <img src="{{this}}" alt="" width="428" height="465">
+      </div>
     </div>
-    <div class="file"></div>
-    <div class="file"></div>
-    <div class="file"></div>
-    <div class="file"></div>
-    <h2>{{title}}</h2>
-    {{#each items}}
-    <p>{{this}}</p>
-    {{!-- <p>{{this}}</p>
-    <button class="info">Информация о продавце</button>
-    <p>{{this}}</p>
-    <p>{{this}}</p>
-    <p>{{this}}</p>
-    <p>{{this}}</p> --}}
-    {{/each}} <button type="button" class="button" data-action="close-modal">close</button>
+    {{/each}}
+
+    <div class="description_wrapper">
+      <h2 class="title">{{title}}</h2>
+      <p class="code_product">Код товара | {{_id}}</p>
+      <p class="price">{{price}}</p>
+      <button class="infoBtn">Информация о продавце</button>
+      <div class="add">
+        <p class="favorites">В избранное</p>
+
+        <p class="share">Поделиться</p>
+      </div>
+      <h3 class="title_text">Описание</h3>
+      <p class="description">{{description}}</p>
+
+
+      <button type="button" class="button" data-action="close-modal">close</button>
+
+    </div>
+
   </div>
+
 </div>

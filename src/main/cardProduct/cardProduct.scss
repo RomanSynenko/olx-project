@@ -23,12 +23,27 @@ body.show-modal .modal {
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
 .modal {
-  padding: 24px;
+  display: flex;
+
+  padding: 54px;
+  padding-left: 94px;
   border-radius: 4px;
   max-width: 1025px;
   width: 100%;
-  min-height: 240px;
+  min-height: 674px;
   background-color: #fff;
+  transform: scale(1.1);
+}
+.imgWrapper {
+}
+.image {
+  width: 428px;
+  height: 465px;
+  object-fit: cover;
+}
+.allFile {
+  display: flex;
+  padding-top: 16px;
 }
 .file {
   display: flex;
@@ -38,6 +53,39 @@ body.show-modal .modal {
   justify-content: center;
   width: 78px;
   height: 73px;
-  color: #f5f6fb;
+  background-color: #f5f6fb;
   margin-right: 10px;
+}
+.add {
+  display: flex;
+  padding-bottom: 30px;
+}
+.description_wrapper {
+  padding-left: 38px;
+}
+.title {
+  margin: 0;
+}
+
+.price {
+  padding-bottom: 40px;
+  margin: 0;
+}
+.infoBtn {
+  margin-bottom: 20px;
+}
+.favorites {
+  margin: 0;
+}
+.share {
+  margin: 0;
+  padding-left: 40px;
+}
+.title_text {
+  margin: 0;
+  padding-bottom: 10px;
+}
+.description {
+  margin: 0;
+  margin-bottom: 20px;
 }
