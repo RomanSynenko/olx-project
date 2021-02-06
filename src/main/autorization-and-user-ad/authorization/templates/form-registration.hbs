@@ -1,0 +1,30 @@
+<div class="backdrop-add">
+    <div class="modal-auth">
+        <form action="" class="form__call form-auth">
+            {{#if isAuth}}
+            <h2 class="modal-auth-title">Зарегистрироватсься на сайте</h2>
+            {{else}}
+            <h2 class="modal-auth-title">Войти в личный кабинет</h2>
+            {{/if}}
+            <label for="" class="label-auth">
+                <input type="email" name="email" placeholder="E-mail" class="input-auth">
+            </label>
+            <label for="" class="label-auth">
+                <input type="password" name="password" placeholder="Password" class="input-auth">
+            </label>
+            {{!-- {{#if isAuth}}
+            <label for="" class="label-auth">
+                <input type="text" class="input-auth" name="phone" placeholder="+38 (0--) --- -- --" />
+            </label>
+            {{/if}} --}}
+            {{#if isAuth}}
+            <button type="submit" class="submit-auth login" name="auth">Регистрация</button>
+            {{else}}
+            <button type=" submit" class="submit-auth login" name="login">Войти</button>
+            {{/if}}
+            <button type="button" class="submit-auth auth">Отмена</button>
+
+            <button type="button" class="modal-add-close">X</button>
+        </form>
+    </div>
+</div>

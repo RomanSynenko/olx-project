@@ -1,0 +1,48 @@
+<div class="backdrop-add">
+    <div class="modal-add">
+        <button type="button" class="modal-add-close">X</button>
+
+        <form class="form-add form__call" enctype="multipart/form-data" method="post">
+            <h2 class="title-form-add">Coздать объявление</h2>
+
+            <label class="label-add">
+                <span class="fields">Название товара</span>
+                <input type="text" name="title" class="input-form">
+            </label>
+
+            <label for="file" class="label-add">
+                <span class="fields photo">Фото</span>
+                <div class="file">
+                    <span class="download">+</span>
+                </div>
+                <div class="file"></div>
+                <div class="file"></div>
+                <div class="file"></div>
+                <div class="file"></div>
+                <input type="file" id="file" class="inputfile" size="5" name="file">
+            </label>
+
+            <label for="" class="label-add">
+                <span class="fields">Описание товара</span>
+                <input type="text" class="input-form" name="description">
+            </label>
+
+            <label for="" class="label-add">
+                <span class="fields">Категория товара</span>
+                <input type="text" class="input-form" name="category">
+            </label>
+
+            <label for="" class="label-add">
+                <span class="fields">Цена</span>
+                <input type="text" placeholder="0.00 €" class="input-form" name="price">
+            </label>
+
+            <label for="" class="label-add">
+                <span class="fields">Телефон</span>
+                <input type="tel" placeholder="+38 (0--) --- -- --" class="input-form" name="phone">
+            </label>
+
+            <button class="btn-form-add" type="submit">Добавить</button>
+        </form>
+    </div>
+</div>

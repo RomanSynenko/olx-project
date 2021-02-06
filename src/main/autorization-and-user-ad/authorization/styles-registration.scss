@@ -1,0 +1,67 @@
+.modal-auth {
+  @extend %centered-form;
+  width: 530px;
+
+  background: #ffffff;
+
+  box-shadow: 15px 15px 55px rgba(0, 0, 0, 0.3);
+
+  .form-auth {
+    padding: 50px;
+
+    .modal-auth-title {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .submit-auth {
+      @extend %button;
+      width: 200px;
+
+      &.login {
+        background: #ff6b09;
+        color: #ffffff;
+        margin-right: 20px;
+      }
+
+      &.auth {
+        background: transparent;
+        border: 1px solid #bbbbbb;
+      }
+
+      // &.auth :disabled {
+      // }
+    }
+
+    .input-auth {
+      padding-left: 20px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.modal-auth {
+  .label-auth {
+    .input-auth {
+      width: 426px;
+      height: 56px;
+
+      background: #ffffff;
+      border: 1px solid #bbbbbb;
+    }
+  }
+
+  .modal-add-close {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    margin: 0;
+
+    border: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+
+    background: transparent;
+  }
+}
