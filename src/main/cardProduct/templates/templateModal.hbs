@@ -1,33 +1,37 @@
-<button class="button" data-action="open-modal">Open modal</button>
-
 <div class="backdrop js-backdrop">
 
   <div class="modal">
+
     {{#each imageUrls}}
     <div class="imgWrapper">
 
       <div class="image">
 
-        <img src="{{this}}" alt="" width="428" height="465">
+        <img class="image_main" src="{{this}}" alt="" width="428" height="465">
       </div>
     </div>
     {{/each}}
 
     <div class="description_wrapper">
+      <img class="close" src="${close}" alt="">
       <h2 class="title">{{title}}</h2>
       <p class="code_product">Код товара | {{_id}}</p>
-      <p class="price">{{price}}</p>
+      <p class="price">{{price}} &#8364;</p>
+
       <button class="infoBtn">Информация о продавце</button>
+
+
       <div class="add">
         <p class="favorites">В избранное</p>
-
+        <img class="card_vector-notActiv" src="${Vector}">
         <p class="share">Поделиться</p>
+        <img class="card_vector-share" src="${Vector_share}">
       </div>
       <h3 class="title_text">Описание</h3>
       <p class="description">{{description}}</p>
 
 
-      <button type="button" class="button" data-action="close-modal">close</button>
+
 
     </div>
 

@@ -1,7 +1,7 @@
 body.show-modal .backdrop {
   pointer-events: initial;
   opacity: 1;
-  visibility: visible;
+  // visibility: visible;
 }
 body.show-modal .modal {
   transform: scale(1);
@@ -17,10 +17,10 @@ body.show-modal .modal {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 999;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  // pointer-events: none;
+  // opacity: 0;
+  // visibility: hidden;
+  // transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
 .modal {
   display: flex;
@@ -29,7 +29,7 @@ body.show-modal .modal {
   padding-left: 94px;
   border-radius: 4px;
   max-width: 1025px;
-  width: 100%;
+  // width: 100%;
   min-height: 674px;
   background-color: #fff;
   transform: scale(1.1);
@@ -37,25 +37,16 @@ body.show-modal .modal {
 .imgWrapper {
 }
 .image {
-  width: 428px;
-  height: 465px;
+  // width: 428px;
+  // height: 465px;
   object-fit: cover;
 }
-.allFile {
-  display: flex;
-  padding-top: 16px;
+.image_main {
+  object-fit: cover;
+  width: 428px;
+  height: 465px;
 }
-.file {
-  display: flex;
-  flex-direction: column;
 
-  align-items: center;
-  justify-content: center;
-  width: 78px;
-  height: 73px;
-  background-color: #f5f6fb;
-  margin-right: 10px;
-}
 .add {
   display: flex;
   padding-bottom: 30px;
@@ -63,29 +54,101 @@ body.show-modal .modal {
 .description_wrapper {
   padding-left: 38px;
 }
+.close {
+  width: 14px;
+  height: 14px;
+}
 .title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin: 0;
+  padding-bottom: 5px;
+}
+.code_product {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #878686;
+  padding-bottom: 30px;
   margin: 0;
 }
 
 .price {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ff6b09;
   padding-bottom: 40px;
   margin: 0;
 }
 .infoBtn {
+  @extend %button;
   margin-bottom: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  background-color: #ff6b09;
+  margin: 0;
+}
+.add {
+  padding-top: 20px;
 }
 .favorites {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #878686;
   margin: 0;
+  padding-right: 13px;
+}
+.card_vector-notActiv {
+  // width: 14px;
+  // height: 12px;
+
+  // background: #878686;
+  border: #878686;
 }
 .share {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #878686;
   margin: 0;
   padding-left: 40px;
+  padding-right: 13px;
 }
 .title_text {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #878686;
   margin: 0;
   padding-bottom: 10px;
 }
 .description {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
   margin: 0;
   margin-bottom: 20px;
 }
