@@ -1,5 +1,4 @@
 import buttonOpen from '../templates/button-open.hbs';
-import handlerAddUserForm from '../../user-ad/js/user-ad';
 import handlerOpenFormAuth from '../../forms-actions-js/open-form-auth';
 
 const rootRef = document.querySelector('#root');
@@ -8,13 +7,11 @@ function open() {
     rootRef.insertAdjacentHTML('beforeend', buttonOpen())
 
     const btnOpen = document.querySelector('.btn-open');
-
-    // btnOpen.addEventListener('click', handlerAddUserForm);
     
     btnOpen.addEventListener('click', handlerOpenFormAuth);
 }
 
-open()
+open();
 
 
 

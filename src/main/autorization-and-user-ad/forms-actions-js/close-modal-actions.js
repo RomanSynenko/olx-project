@@ -10,4 +10,11 @@ function handlerModalClose() {
     document.querySelector(".backdrop-add").remove();
 }
 
-export default handlerKeydown;
+function handlerBackdropClick(event) {
+    if (event.target.className !== 'backdrop-add') {
+       return
+    }
+    handlerModalClose();
+}
+
+export { handlerKeydown,  handlerModalClose, handlerBackdropClick};

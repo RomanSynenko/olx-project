@@ -1,6 +1,6 @@
 <div class="backdrop-add">
     <div class="modal-auth">
-        <form action="" class="form__call form-auth">
+        <form action="" class="js__form form-auth">
             {{#if isAuth}}
             <h2 class="modal-auth-title">Зарегистрироватсься на сайте</h2>
             {{else}}
@@ -22,7 +22,7 @@
             {{else}}
             <button type=" submit" class="submit-auth login" name="login">Войти</button>
             {{/if}}
-            <button type="button" class="submit-auth auth">Отмена</button>
+            <button type="button" class="submit-auth auth" id="cancelBtn">Отмена</button>
 
             <button type="button" class="modal-add-close">X</button>
         </form>

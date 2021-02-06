@@ -1,12 +1,24 @@
 import fetchUserLogin from '../authorization/js/login-input';
 import submitUserForms from './submit-user-forms';
-import handlerKeydown from '../root/js/keydown-listenter';
+import { handlerKeydown, handlerModalClose, handlerBackdropClick }from './close-modal-actions';
 import fetchUserAuth from '../authorization/js/authorization';
+import fetchUserAd from '../user-ad/js/fetch-user-ad';
 
 function submitForm() {
     window.addEventListener('keydown', handlerKeydown);
-    const submitRef = document.querySelector('.form__call');
-    submitRef.addEventListener('submit', handlerSubmitFormAuth);
+
+    const refs = {
+        submitBtn: document.querySelector('.js__form'),
+        cancelBtn: document.querySelector('#cancelBtn'),
+        closeBtn: document.querySelector('.modal-add-close'),
+        backdropCloseModal: document.querySelector('.backdrop-add')
+    };
+    const { submitBtn, cancelBtn, closeBtn, backdropCloseModal } = refs;
+    
+    submitBtn.addEventListener('submit', handlerSubmitFormAuth);
+    cancelBtn.addEventListener('click', handlerModalClose);
+    closeBtn.addEventListener('click', handlerModalClose);
+    backdropCloseModal.addEventListener('click', handlerBackdropClick);
 };
 
 async function handlerSubmitFormAuth(event) {
@@ -14,15 +26,8 @@ async function handlerSubmitFormAuth(event) {
     const formData = submitUserForms(event);
     
     const { currentTarget: { elements } } = event
-    const attribute = elements.login;
 
-    attribute ? fetchUserLogin(formData) : fetchUserAuth(formData);
-};
-
-async function fetchCall(data) {
-    console.log(data);
-    const res = await axios.post('/call', data, { headers });
-
+    elements.login ? fetchUserLogin(formData) : elements.userAd ? fetchUserAd(formData) : fetchUserAuth(formData);
 };
 
 export default submitForm;

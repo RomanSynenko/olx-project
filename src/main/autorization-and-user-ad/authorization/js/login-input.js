@@ -1,17 +1,27 @@
 import axios from 'axios';
+import pnotify from '../../pnotify/pnotify';
 axios.defaults.baseURL = 'https://callboard-backend.goit.global'
 
 const btnRef = document.querySelector('.second');
 btnRef.addEventListener('click', ac);
 
 async function fetchUserLogin(dataForm) {
-    const { data } = await axios.post('/auth/login', dataForm);
-    localStorage.setItem("accessToken", JSON.stringify(data.accessToken));
-    localStorage.setItem("refreshToken", JSON.stringify(data.refreshToken));
+    try {
+        const { data } = await axios.post('/auth/login', dataForm);
+        localStorage.setItem("accessToken", JSON.stringify(data.accessToken));
+        localStorage.setItem("refreshToken", JSON.stringify(data.refreshToken));
 
-    const AUTH_TOKEN = `Bearer ${data.accessToken}`
-    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-    
+        const AUTH_TOKEN = `Bearer ${data.accessToken}`
+        axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+
+        pnotify.infoMessage();
+    } catch (error) {
+        console.log(error);
+        if (error.message === 'Request failed with status code 403') throw pnotify.errorMessage();   
+    }
+
+
+    // ? ДЛЯ ОБНОВЛЕНИЯ ТОКЕНА 
     // const instance = axios.create({
     //     baseURL: 'https://callboard-backend.goit.global'
     // });
