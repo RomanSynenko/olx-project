@@ -1,6 +1,6 @@
 import fetchUserLogin from '../authorization/js/login-input';
 import submitUserForms from './submit-user-forms';
-import { handlerKeydown, handlerModalClose, handlerBackdropClick }from './close-modal-actions';
+import { handlerKeydown, handlerModalClose, handlerBackdropClick } from './close-modal-actions';
 import fetchUserAuth from '../authorization/js/authorization';
 import fetchUserAd from '../user-ad/js/fetch-user-ad';
 

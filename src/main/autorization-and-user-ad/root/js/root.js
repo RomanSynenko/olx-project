@@ -1,6 +1,11 @@
 import buttonOpen from '../templates/button-open.hbs';
+import checkUserLoginIn from '../../authorization/js/check-user-login';
 import handlerOpenFormAuth from '../../forms-actions-js/open-form-auth';
 
+// ! REQUIRED (Refresh Token)
+checkUserLoginIn();
+
+// ? Code for Vlad 
 const rootRef = document.querySelector('#root');
 
 function open() {
@@ -10,13 +15,22 @@ function open() {
     
     btnOpen.addEventListener('click', handlerOpenFormAuth);
 }
-
 open();
+// ? -------------
+
+// ! garbage
+import axios from 'axios';
+const btnRef = document.querySelector('.second');
+btnRef.addEventListener('click', ac);
+
+async function ac() {
+    await axios.get('/user')
+};
+// ! -------
 
 
+let inputs = document.querySelectorAll('.inputfile');
 
-
-    let inputs = document.querySelectorAll('.inputfile');
 Array.prototype.forEach.call(inputs, function (input) {
     let label = input.nextElementSibling,
         labelVal = label.querySelector('.download').innerText;
