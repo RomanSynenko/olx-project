@@ -1,28 +1,42 @@
 import axios from 'axios';
 
-async function checkUserLoginIn() {
+function checkUserLoginIn() {
     const refresh = localStorage.getItem("refreshToken");
-    const sid = localStorage.getItem("sid");
-
+    
     if (!refresh) {
-        return
+        return;
     };
     
-    let AUTH_TOKEN = `Bearer ${JSON.parse(refresh)}`
+    fetchCheckUserLoginIn(refresh);
+};
+
+async function fetchCheckUserLoginIn(refreshToken) {
+    const sid = localStorage.getItem("sid");
+
+    let AUTH_TOKEN = `Bearer ${JSON.parse(refreshToken)}`;
     axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
     const body = {
         "sid": JSON.parse(sid)
     };
+    
+    try {
+        const { data } = await axios.post('/auth/refresh', body);
 
-    const { data } = await axios.post('/auth/refresh', body);
+        localStorage.setItem("accessToken", JSON.stringify(data.newAccessToken));
+        localStorage.setItem("refreshToken", JSON.stringify(data.newRefreshToken));
+        localStorage.setItem("sid", JSON.stringify(data.newSid));
 
-    localStorage.setItem("accessToken", JSON.stringify(data.newAccessToken));
-    localStorage.setItem("refreshToken", JSON.stringify(data.newRefreshToken));
-    localStorage.setItem("sid", JSON.stringify(data.newSid));
+        AUTH_TOKEN = `Bearer ${data.newAccessToken}`;
+        axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+        
+    } catch (error) {
+        if (error.message === 'Request failed with status code 404') {
+            const userAdBtnRef = document.querySelector('button[name="user-ad"]');
+            userAdBtnRef.disabled = true;
+        };
+    };
 
-    AUTH_TOKEN = `Bearer ${data.newAccessToken}`
-    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 }
 
-export default checkUserLoginIn;
+export default checkUserLoginIn; 

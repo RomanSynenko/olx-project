@@ -12,6 +12,10 @@
   cursor: pointer;
 }
 
+%disabled {
+  background-color: #eca474;
+}
+
 %visually-hidden {
   position: absolute;
 

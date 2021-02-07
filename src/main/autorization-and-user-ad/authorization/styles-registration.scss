@@ -6,6 +6,9 @@
 
   box-shadow: 15px 15px 55px rgba(0, 0, 0, 0.3);
 
+  @media screen and (max-width: 480px) {
+    width: 290px;
+  }
   .form-auth {
     padding: 50px;
 
@@ -22,20 +25,46 @@
         background: #ff6b09;
         color: #ffffff;
         margin-right: 20px;
+        outline: none;
+        border: 2px solid transparent;
+
+        // &[disabled] {
+        //   @extend %disabled;
+        // }
+
+        &:hover,
+        &:focus {
+          color: #000000;
+          border: 2px solid #ff6b09;
+        }
       }
 
       &.auth {
         background: transparent;
-        border: 1px solid #bbbbbb;
-      }
+        border: 2px solid #bbbbbb;
+        outline: none;
+        // border: 1px solid transparent;
 
-      // &.auth :disabled {
-      // }
+        &:hover,
+        &:focus {
+          color: #ff6b09;
+          border: 2px solid #ff6b09;
+        }
+      }
     }
 
     .input-auth {
       padding-left: 20px;
       margin-bottom: 25px;
+      outline: none;
+
+      &:focus {
+        border: 2px solid #ff6b09;
+      }
+
+      &:not(:placeholder-shown) {
+        border: 2px solid #ff6b09;
+      }
     }
   }
 }
@@ -63,5 +92,15 @@
     font-size: 18px;
 
     background: transparent;
+    outline: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      color: #ff6b09;
+    }
+    &:focus {
+      border: 1px solid #ff6b09;
+    }
   }
 }

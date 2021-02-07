@@ -18,6 +18,8 @@ function open() {
 open();
 // ? -------------
 
+// ? code for Egor: class for button-login-out === outlogin__btn
+
 // ! garbage
 import axios from 'axios';
 const btnRef = document.querySelector('.second');
@@ -27,6 +29,16 @@ async function ac() {
     await axios.get('/user')
 };
 // ! -------
+
+
+// ! out login
+const outLoginRef = document.querySelector('.outlogin');
+outLoginRef.addEventListener('click', out)
+
+async function out() {
+    await axios.post('/auth/logout');
+}
+// ! ---------
 
 
 let inputs = document.querySelectorAll('.inputfile');

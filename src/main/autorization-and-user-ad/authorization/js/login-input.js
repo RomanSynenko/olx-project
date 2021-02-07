@@ -14,9 +14,8 @@ async function fetchUserLogin(dataForm) {
 
         pnotify.infoMessage();
     } catch (error) {
-        console.log(error);
-        if (error.message === 'Request failed with status code 403') throw pnotify.errorMessage();   
-    }
+        throw pnotify.errorMessage();
+    };
 
     document.querySelector('.backdrop-add').remove();
 };
