@@ -1,0 +1,64 @@
+.container-filter {
+  display: flex;
+}
+
+.header-list-flex {
+  display: flex;
+  margin-right: 66px;
+
+  .header-item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.btn-filter {
+  @extend %base-font;
+  padding: 8px 21px;
+
+  color: #5e6671;
+  background-color: inherit;
+
+  border: 1px solid #5e6671;
+  box-sizing: border-box;
+  border-radius: 20px;
+  outline: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: #ff6b09;
+    border: 1px solid #ff6b09;
+  }
+}
+
+// клас для активної кнопки
+.active {
+  color: #ff6b09;
+  border: 1px solid #ff6b09;
+}
+// стилі на кнопку очистити
+.clear {
+  @extend %base-font;
+  padding: 0;
+
+  color: #5e6671;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  transition: 800ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: #ff6b09;
+    // transform: rotate(-360deg);
+  }
+
+  .reset-icon {
+    font-size: 16px;
+    margin-right: 12px;
+    // transform: rotate(90deg);
+    font-weight: 700;
+  }
+}

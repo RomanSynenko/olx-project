@@ -1,2 +1,3 @@
-import './styles.css';
-import './header/js/header';
+import './main/header/scss/main.scss';
+
+import './main/header/js/header';

@@ -1,0 +1,33 @@
+<header class="page-header">
+    <div class="authorization">
+        <a class="logo" href="/">
+            {{!-- <img src="../src/main/header/svg/logo.png" alt="logo"> --}}
+            <svg width="71" height="44" aria-label="Logo">
+                <use href="" class="icon-menu"></use>
+            </svg>
+        </a>
+        <form id="search">
+            <input class="search" type="text" name="query">
+        </form>
+
+        <button class="registration" type="button">Регистрация</button>
+        <span class="line">|</span>
+        <button class="login" type="button">Войти</button>
+        <button class="create" type="button">Создать объявление</button>
+    </div>
+
+    <div class="container-filter">
+        <nav id="filter">
+            <ul class="header-list-flex">
+                {{#each this}}
+                <li class="header-item">
+                    <button class="btn-filter" data-filter="filter" type="button">{{this}}</button>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+        <button id="reset" class="clear" type="button"> <span class="reset-icon">&#x021BA</span> Очистить</button>
+    </div>
+
+
+</header>

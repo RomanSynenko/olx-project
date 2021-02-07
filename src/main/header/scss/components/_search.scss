@@ -1,0 +1,10 @@
+.search {
+  margin-right: 282px;
+  padding: 10px 15px;
+  width: 380px;
+  outline: none;
+  &:focus,
+  &:hover {
+    outline: 3px solid #ff6b09;
+  }
+}

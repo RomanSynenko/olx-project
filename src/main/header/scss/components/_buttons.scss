@@ -1,0 +1,43 @@
+// кнопка реєстрації
+.registration {
+  @extend %base-font;
+  @extend %btn-auth;
+  margin-right: 12px;
+  max-width: 84px;
+}
+// роздільна лінія
+.line {
+  margin-right: 12px;
+  background-color: #465363;
+  height: 20px;
+  width: 1px;
+}
+
+// кнопка входу
+.login {
+  @extend %base-font;
+  @extend %btn-auth;
+  margin-right: 24px;
+  max-width: 40px;
+}
+
+// кнопка створення оголошення
+.create {
+  @extend %font-create;
+  padding: 13px 0;
+  width: 238px;
+
+  color: #fff;
+  background-color: #ff6b09;
+  border: none;
+  outline: none;
+
+  letter-spacing: 0.02em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus,
+  &:hover {
+    color: #ff6b09;
+    background-color: #fff;
+  }
+}
