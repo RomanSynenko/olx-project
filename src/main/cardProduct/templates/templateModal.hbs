@@ -1,19 +1,44 @@
-<div class="backdrop js-backdrop">
-
+<div class="backdrop">
   <div class="modal">
+    <button class="close">X</button>
+    <div class="image-list">
+      {{#each imageUrls}}
+      <div class="imgWrapper">
 
-    {{#each imageUrls}}
-    <div class="imgWrapper">
+        <div class="image">
 
-      <div class="image">
+          <img class="image_main" src="{{this}}" alt="">
 
-        <img class="image_main" src="{{this}}" alt="" width="428" height="465">
+        </div>
       </div>
-    </div>
-    {{/each}}
+      <div class="imgWrapper">
 
+        <div class="image">
+
+          <img class="image_main" src="{{this}}" alt="">
+
+        </div>
+      </div>
+      <div class="imgWrapper">
+
+        <div class="image">
+
+          <img class="image_main" src="{{this}}" alt="">
+
+        </div>
+      </div>
+      <div class="imgWrapper">
+
+        <div class="image">
+
+          <img class="image_main" src="{{this}}" alt="">
+
+        </div>
+      </div>
+      {{/each}}
+    </div>
     <div class="description_wrapper">
-      <img class="close" src="${close}" alt="">
+
       <h2 class="title">{{title}}</h2>
       <p class="code_product">Код товара | {{_id}}</p>
       <p class="price">{{price}} &#8364;</p>
@@ -36,5 +61,4 @@
     </div>
 
   </div>
-
 </div>

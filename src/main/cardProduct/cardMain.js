@@ -2,53 +2,58 @@ import templateModal from '../cardProduct/templates/templateModal.hbs'
 // import '../cardProduct/cardProduct.scss'
 import axios from 'axios'
 import '../cardProduct/image/Vector.svg'
-
-
-
-
-// const markup  = templateModal();
-// const markupId = document.querySelector('#root')
-// markupId.insertAdjacentHTML('beforeend', markup)
-//  console.log(markup); 
-
-
+const markupId = document.querySelector('#root')
 const openModalBtn=document.querySelector('button[data-action="open-modal"]')
-const closeModalBtn=document.querySelector('button[data-action="close-modal"]')
+console.log(openModalBtn)
+
+// const closeModalBtn=document.querySelector('button[data-action="close-modal"]')
 
 // const backdropRef =document.querySelector('.js-backdrop')
+
 openModalBtn.addEventListener('click', onOpenModal)
- closeModalBtn.addEventListener('click', onCloseModal)
+//  closeModalBtn.addEventListener('click', onCloseModal)
  
 // backdropRef.addEventListener('click',onBackDropClick)
 async function onOpenModal(){
-  const testProduct= 'https://callboard-backend.goit.global/call/find?search=car'
-    
+  // const testProduct= 'https://callboard-backend.goit.global/call/find?search=car'
+  const testProduct='https://callboard-backend.goit.global/call/find?search=dog'
   const{data}=await axios.get(testProduct)
-  const markupId = document.querySelector('#root')
+  
   markupId.insertAdjacentHTML('beforeend', templateModal(data[0]))
   
   const infoBtn = document.querySelector('.infoBtn')
   infoBtn.addEventListener('click', onClickInfo)
   
-  const modal= document.querySelector('.modal')
+  // const modal= document.querySelector('.modal')
   const close=document.querySelector('.close')
-  window.onclick = function(event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
+  const backdropRef =document.querySelector('.backdrop')
+  
+  backdropRef.addEventListener('click',windowOnClick)
+  close.addEventListener('click', closeOnClick)
+  
+  
+  
+  // backdropRef.remove()
+  }
+  function windowOnClick(event){
+    console.dir(event.target)
+    if(event.target.className!=='backdrop'){
+      return 
     }
+    // if (event.target === modal) {
+    //   modal.style.display = "none";
+    // }
+    // backdropRef.remove()
+    event.target.remove()
   }
-  close.onclick = function() {
-    modal.style.display = "none";
+  function closeOnClick(event){
+    document.querySelector('.backdrop').remove()
+    // event.target.remove()
   }
-  
-  // openModalBtn.onclick = function() {
-  //   modal.style.display = "block";
+  // backdropRef.querySelector.remove()
+  // function onCloseModal (){
+  //   document.body.classList.remove('show-modal')
   // }
-  }
-  
-  function onCloseModal (){
-    document.body.classList.remove('show-modal')
-  }
   
 
 function onClickInfo (event){
