@@ -1,18 +1,15 @@
 <div class="backdrop-add">
     <div class="modal-add">
         <button type="button" class="modal-add-close" id="cancelBtn">X</button>
-
         <form class="form-add form__call js__form" enctype="multipart/form-data" method="post">
             <h2 class="title-form-add">Coздать объявление</h2>
-
             <label class="label-add">
                 <span class="fields">Название товара</span>
-                <input type="text" name="title" class="input-form" placeholder=" ">
+                <input type="text" name="title" class="input-form" placeholder=" " value="{{title}}">
             </label>
-
             <label for="file" class="label-add" placeholder=" ">
                 <span class="fields photo">Фото</span>
-                <div class="file">
+                <div class="file" name="file">
                     <span class="download">+</span>
                 </div>
                 <div class="file"></div>
@@ -24,25 +21,30 @@
 
             <label for="" class="label-add">
                 <span class="fields">Описание товара</span>
-                <input type="text" class="input-form" name="description" placeholder=" ">
+                <input type="text" class="input-form" name="description" placeholder=" " value="{{description}}">
             </label>
 
             <label for="" class="label-add">
                 <span class="fields">Категория товара</span>
-                <input type="text" class="input-form" name="category" placeholder=" ">
+                <input type="text" class="input-form" name="category" placeholder=" " value="{{category}}">
             </label>
 
             <label for="" class="label-add">
                 <span class="fields">Цена</span>
-                <input type="text" placeholder="0.00 €" class="input-form" name="price">
+                <input type="text" placeholder="0.00 €" class="input-form" name="price" value="{{price}}">
             </label>
 
             <label for="" class="label-add">
                 <span class="fields">Телефон</span>
-                <input type="tel" placeholder="+38 (0--) --- -- --" class="input-form" name="phone">
+                <input type="tel" placeholder="+38 (0--) --- -- --" class="input-form" name="phone" value="{{phone}}">
             </label>
 
             <button class="btn-form-add" type="submit" name="userAd">Добавить</button>
+            <div class="loader">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+            </div>
         </form>
     </div>
 </div>

@@ -1,22 +1,32 @@
 import buttonOpen from '../templates/button-open.hbs';
 import checkUserLoginIn from '../../authorization/js/check-user-login';
 import handlerOpenFormAuth from '../../forms-actions-js/open-form-auth';
+import handlerPatchUserAd from '../../user-ad/js/patch-user-ad';
 
-// ! REQUIRED (Refresh Token)
-checkUserLoginIn();
-
-// ? Code for Vlad 
 const rootRef = document.querySelector('#root');
 
-function open() {
+function authorizationRoot() {
+    // ! REQUIRED (Refresh Token)
+    checkUserLoginIn();
+
     rootRef.insertAdjacentHTML('beforeend', buttonOpen())
 
     const btnOpen = document.querySelector('.btn-open');
     
     btnOpen.addEventListener('click', handlerOpenFormAuth);
 }
-open();
-// ? -------------
+
+authorizationRoot();
+export default authorizationRoot;
+
+// ! -------------------------
+
+
+// * -----FetchPatch-------
+const patchRef = document.querySelector('.patch');
+patchRef.addEventListener('click', handlerPatchUserAd);
+//* ------------
+
 
 // ? code for Egor: class for button-login-out === outlogin__btn
 

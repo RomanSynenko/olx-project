@@ -12,18 +12,19 @@
             <label for="" class="label-auth">
                 <input type="password" name="password" placeholder="Password" class="input-auth">
             </label>
-            {{!-- {{#if isAuth}}
-            <label for="" class="label-auth">
-                <input type="text" class="input-auth" name="phone" placeholder="+38 (0--) --- -- --" />
-            </label>
-            {{/if}} --}}
             {{#if isAuth}}
             <button type="submit" class="submit-auth login" name="auth">Регистрация</button>
             {{else}}
             <button type=" submit" class="submit-auth login" name="login">Войти</button>
             {{/if}}
             <button type="button" class="submit-auth auth" id="cancelBtn">Отмена</button>
-
+            <div class="wrap-spinner">
+                <div class="loader">
+                    <div class="inner one"></div>
+                    <div class="inner two"></div>
+                    <div class="inner three"></div>
+                </div>
+            </div>
             <button type="button" class="modal-add-close">X</button>
         </form>
     </div>

@@ -1,20 +1,25 @@
 function handlerKeydown(event) {
     if (event.code === 'Escape') {
         handlerModalClose();
-    }
+    };
 }
 
 function handlerModalClose() {  
     window.removeEventListener('keydown', handlerKeydown);
 
-    document.querySelector(".backdrop-add").remove();
-}
+    removeBackdrop();
+};
 
 function handlerBackdropClick(event) {
     if (event.target.className !== 'backdrop-add') {
-       return
-    }
-    handlerModalClose();
-}
+        return;
+    };
 
-export { handlerKeydown,  handlerModalClose, handlerBackdropClick};
+    handlerModalClose();
+};
+
+function removeBackdrop() {
+    document.querySelector('.backdrop-add').remove();
+};
+
+export { handlerKeydown,  handlerModalClose, handlerBackdropClick, removeBackdrop };

@@ -1,25 +1,44 @@
 .modal-auth {
   @extend %centered-form;
   width: 530px;
-
   background: #ffffff;
-
   box-shadow: 15px 15px 55px rgba(0, 0, 0, 0.3);
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 767px) {
     width: 290px;
   }
+
   .form-auth {
     padding: 50px;
+
+    @media screen and (max-width: 767px) {
+      padding: 20px;
+    }
 
     .modal-auth-title {
       margin-bottom: 40px;
       text-align: center;
+
+      @media screen and (max-width: 767px) {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 1.2;
+      }
     }
 
     .submit-auth {
       @extend %button;
       width: 200px;
+
+      @media screen and (max-width: 767px) {
+        width: 120px;
+        font-size: 12px;
+        line-height: 15px;
+        padding-left: 15px;
+
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
 
       &.login {
         background: #ff6b09;
@@ -28,14 +47,18 @@
         outline: none;
         border: 2px solid transparent;
 
-        // &[disabled] {
-        //   @extend %disabled;
-        // }
+        &[disabled] {
+          @extend %disabled;
+        }
 
         &:hover,
         &:focus {
           color: #000000;
           border: 2px solid #ff6b09;
+        }
+
+        @media screen and (max-width: 767px) {
+          margin-right: 5px;
         }
       }
 
@@ -43,7 +66,6 @@
         background: transparent;
         border: 2px solid #bbbbbb;
         outline: none;
-        // border: 1px solid transparent;
 
         &:hover,
         &:focus {
@@ -54,32 +76,30 @@
     }
 
     .input-auth {
+      width: 100%;
+      height: 56px;
+
       padding-left: 20px;
       margin-bottom: 25px;
+
+      background: transparent;
+      border: 1px solid #bbbbbb;
       outline: none;
 
       &:focus {
         border: 2px solid #ff6b09;
+        background: transparent;
       }
 
       &:not(:placeholder-shown) {
         border: 2px solid #ff6b09;
+        background: transparent;
       }
     }
   }
 }
 
 .modal-auth {
-  .label-auth {
-    .input-auth {
-      width: 426px;
-      height: 56px;
-
-      background: #ffffff;
-      border: 1px solid #bbbbbb;
-    }
-  }
-
   .modal-add-close {
     position: absolute;
     top: 30px;
@@ -102,5 +122,92 @@
     &:focus {
       border: 1px solid #ff6b09;
     }
+
+    @media screen and (max-width: 767px) {
+      top: 15px;
+      right: 10px;
+    }
+  }
+}
+
+// ******** SPINNER **********
+.wrap-spinner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #ff6b09;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #ff6b09;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #ff6b09;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
 }

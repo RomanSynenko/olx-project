@@ -1,6 +1,8 @@
 import axios from 'axios';
 import pnotify from '../../pnotify/pnotify';
-axios.defaults.baseURL = 'https://callboard-backend.goit.global'
+import { spinnerClassRemove } from '../../forms-actions-js/spinner';
+import { removeBackdrop } from '../../forms-actions-js/close-modal-actions';
+axios.defaults.baseURL = 'https://callboard-backend.goit.global';
 
 async function fetchUserLogin(dataForm) {
     try {
@@ -14,10 +16,12 @@ async function fetchUserLogin(dataForm) {
 
         pnotify.infoMessage();
     } catch (error) {
+        spinnerClassRemove();
+
         throw pnotify.errorMessage();
     };
-
-    document.querySelector('.backdrop-add').remove();
+    
+    removeBackdrop();
 };
 
 export default fetchUserLogin;

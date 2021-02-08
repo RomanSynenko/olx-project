@@ -4,7 +4,7 @@ function submitUserForms(event) {
 
     formData.forEach((value, key) => submittedForm[key] = value);
 
-    return submittedForm
+    return submittedForm;
 };
 
 export default submitUserForms;
