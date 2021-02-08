@@ -3,17 +3,45 @@
 }
 .page-header {
   padding: 35px 38px;
-
   background-color: #122438;
 
   .authorization {
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-
-    .logo {
-      margin-right: 31px;
-      background-color: #fff;
+    @media screen and (min-width: 1280px) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
     }
+  }
+}
+
+.logo-circle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: #ff6b09;
+  border-radius: 50px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 242px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 62px;
+    margin-bottom: 0;
+  }
+
+  .text-logo {
+    position: absolute;
+    left: 14px;
+    top: -7px;
+
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+
+    color: #fff;
   }
 }

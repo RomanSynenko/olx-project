@@ -1,5 +1,5 @@
 import { receiveSearchValue } from './api';
-import removeActiveFilter from './removeActiveClass';
+import { removeActiveFilter } from './utils';
 
 function onGetInputValue(e) {
     e.preventDefault();

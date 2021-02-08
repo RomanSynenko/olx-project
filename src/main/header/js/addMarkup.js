@@ -1,4 +1,4 @@
-import resetList from './resetList';
+import { resetList} from './utils';
 
 const rootRef= document.querySelector('#root');
 
