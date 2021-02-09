@@ -12,15 +12,16 @@ async function handlerPatchUserAd() {
     const id = userAd[0]._id;
 
     fetchPatchUserAd(id);
-}
+};
 
 async function fetchPatchUserAd(id) {
     const { data } = await axios.patch(`/call/${id}`);
-    const markup = modalFormCall(data)
+    
+    const markup = modalFormCall(data);
 
     rootRef.insertAdjacentHTML('beforeend', markup);
 
     submitForm();
-}
+};
 
 export default handlerPatchUserAd;

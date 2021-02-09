@@ -16,7 +16,7 @@ function authorizationRoot() {
     btnOpen.addEventListener('click', handlerOpenFormAuth);
 }
 
-authorizationRoot();
+// authorizationRoot();
 export default authorizationRoot;
 
 // ! -------------------------
