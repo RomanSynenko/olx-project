@@ -42,7 +42,7 @@
   }
 
   .label-add {
-    position: relative;
+    // position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -174,36 +174,40 @@
     }
   }
 
-  #triangle-down:hover .wrap-category {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -85px;
-    padding: 12px;
+  .label-category {
+    position: relative;
+
+    & .wrap-category {
+      display: none;
+    }
   }
 
-  .wrap-category {
-    display: none;
+  .label-category:hover .wrap-category {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
     list-style: none;
-    width: 170px;
+    width: 610px;
+    height: 200px;
+    background-color: #ffffff;
 
     font-size: 16px;
+    // color: #000000;
 
-    z-index: 2;
     margin: 0;
     padding: 0;
     text-align: center;
 
-    background: rgba(255, 107, 9, 0.8);
-
     .category-link {
       display: inline-block;
       padding: 4px 0;
-      color: #ffffff;
+      font-size: 18px;
+      color: #000000;
       text-decoration: none;
 
       &:hover {
-        color: #000000;
+        color: #ff6b09;
       }
     }
   }

@@ -54,9 +54,10 @@ function handlerFormCategoryMenu(event) {
     event.preventDefault();
 
     const { target: { dataset } } = event;
-
+    
     const input = document.querySelector('input[name="category"]');
     input.value = dataset.category;
+    refs.categoryFormMenu.style.display = "none"
 };
 
 export default handlerOpenFormAuth;

@@ -7,7 +7,6 @@ async function fetchUserAd(data) {
         await axios.post('/call', data);
         
     } catch (error) {
-        console.log('fuck');
         spinnerClassRemove();
         return;
     }
