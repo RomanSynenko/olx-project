@@ -4,17 +4,23 @@
     <div class="image-list swiper-container">
       <div class="swiper-wrapper">
         {{#each imageUrls}}
-        <div class="imgWrapper swiper-slide">
+        <div class="swiper-slide">
+          <div class="imgWrapper">
 
-          <div class="image">
+            <div class="image">
 
-            <img class="image_main" src="{{this}}" alt="">
+              <img class="image_main" src="{{this}}" alt="">
 
+            </div>
           </div>
         </div>
 
+
         {{/each}}
       </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
 
     <div class="description_wrapper">
@@ -25,7 +31,7 @@
       <p class="code_product">Код товара | {{_id}}</p>
       <p class="price">{{price}} &#8364;</p>
 
-      <button class="infoBtn">Информация о продавце</button>
+      <button class="infoBtn" data-userId="{{userId}}">Информация о продавце</button>
 
 
       <div class="add">
@@ -38,8 +44,8 @@
       <p class="description">{{description}}</p>
 
     </div>
-    <div class="swiper-pagination"></div>
+    {{!-- <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-next"></div> --}}
   </div>
 </div>
