@@ -3,6 +3,7 @@ function submitUserForms(event) {
     const formData = new FormData(event.target);
 
     formData.forEach((value, key) => submittedForm[key] = value);
+    
 
     return submittedForm;
 };
