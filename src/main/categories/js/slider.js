@@ -4,6 +4,7 @@ import 'swiper/swiper-bundle.css';
 function initSlider({
   selector = '.swiper-container',
   slidesPerView = 1,
+  el = '.swiper-pagination'
 }) {
   return new Swiper(selector,
 {
@@ -12,9 +13,11 @@ function initSlider({
 
   // If we need pagination
   slidesPerView,
-  spaceBetween: 30,
+  
+  spaceBetween: 20,
+
   pagination: {
-    el: '.swiper-pagination',
+    el,
     clickable: true,
     dynamicBullets: true,
   },
@@ -26,6 +29,6 @@ function initSlider({
   }
 });
 }
-
+// .swiper-button-hidden
 
 export default initSlider;

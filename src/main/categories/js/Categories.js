@@ -37,19 +37,41 @@ async function getRusCategoriesWithProduct() {
 
 async function renderCategoriesWithProduct() {
     const data = await getRusCategoriesWithProduct();
+    
 
     const markap = productTpl(data);
     refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
-    initSlider({});
+        
+    initSlider(settingSlader());
 
     const seeAll = document.querySelectorAll('.title_categories_conteiner');
     seeAll.forEach(element => element.addEventListener('click', openAllProduct));
 
     const loadMoreBtn = document.querySelector('[data-action="load-more"]');
-    loadMoreBtn.addEventListener('click', loadNewCategories);
+    loadMoreBtn.addEventListener('click', loadMoreCategories);
 };
+    
+function settingSlader() {
+    const windowWidth = Math.max(document.documentElement.clientWidth);
+    const swiperPrev = document.querySelectorAll('[data-action="btn-swiper-prev"]');
+    const swiperNext = document.querySelectorAll('[data-action="btn-swiper-next"]');
 
-// window.clientWidth
+    let slidesPerView = 0;
+    let el = '.swiper-pagination';
+        
+    if (windowWidth >= 320 && windowWidth < 768) {
+        slidesPerView = 1;
+        swiperPrev.forEach(element => element.classList.replace('swiper-button-prev', 'swiper-button-hidden'));
+        swiperNext.forEach(element => element.classList.replace('swiper-button-next', 'swiper-button-hidden'))
+    } if (windowWidth >= 768) {
+        slidesPerView = 2;
+        el = ''        
+    } if (windowWidth >= 1280) {
+        slidesPerView = 4
+    }
+
+    return { slidesPerView, el };
+};
 
 renderCategoriesWithProduct();
 
@@ -62,6 +84,6 @@ async function openAllProduct(event) {
     console.log(allProduct);
 };
  
-async function loadNewCategories() {
+async function loadMoreCategories() {
     
 };

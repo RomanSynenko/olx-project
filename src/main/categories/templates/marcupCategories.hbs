@@ -4,7 +4,6 @@
         <div class="categories">
             <div class="title_categories_conteiner">
                 <h2 class="title_categories">{{title}}</h2>
-                <p class="linc_all_product"><a class="linc_product" href="" data-action={{title}}>Смотреть все</a></p>
             </div>
 
             <ul class="items_product swiper-container">
@@ -12,7 +11,7 @@
                     {{#each products}}
                     <div class="swiper-slide">
                         <li class="item_product">
-                            <a href="">
+                            <a data-serch={{title}} href="">
                                 <div class="thumb">
                                     <img class="img_product" src="{{imageUrls}}" alt="{{description}}" />
                                 </div>
@@ -29,8 +28,8 @@
 
                 <div class="swiper-pagination"></div>
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div data-action="btn-swiper-prev" class="swiper-button-prev"></div>
+                <div data-action="btn-swiper-next" class="swiper-button-next"></div>
             </ul>
         </div>
         {{/each}}

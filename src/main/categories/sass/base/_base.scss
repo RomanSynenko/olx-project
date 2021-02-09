@@ -77,3 +77,11 @@ p {
     margin-bottom: 0;
   }
 }
+
+.categories {
+  padding-top: 20px;
+
+  &:first-child {
+    padding-top: 40px;
+  }
+}
