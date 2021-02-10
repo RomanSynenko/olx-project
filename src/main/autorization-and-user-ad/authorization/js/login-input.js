@@ -17,7 +17,7 @@ async function fetchUserLogin(dataForm) {
         pnotify.infoMessage();
     } catch (error) {
         spinnerClassRemove();
-
+        
         throw pnotify.errorMessage();
     };
     

@@ -4,6 +4,7 @@ import { handlerKeydown, handlerModalClose, handlerBackdropClick } from './close
 import fetchUserAuth from '../authorization/js/authorization';
 import fetchUserAd from '../user-ad/js/fetch-user-ad';
 import { spinnerClassAdd } from './spinner';
+import { fetchPatchUserAd } from '../user-ad/js/patch-user-ad';
 
 const refs = {};
 
@@ -16,7 +17,7 @@ function initRefs() {
 
 function submitForm() {
     initRefs();
-   
+
     const { form, cancelBtn, closeBtn, backdropCloseModal } = refs;
 
     window.addEventListener('keydown', handlerKeydown);
@@ -32,6 +33,13 @@ function handlerSubmitFormAuth(event) {
     spinnerClassAdd();
 
     const { currentTarget: { elements } } = event;
+    
+    if (elements.userAd && elements.userAd.className === 'btn-form-add edit') {
+        const form = new FormData(event.target);
+        const id = elements.userAd.dataset.id
+        fetchPatchUserAd(form, id);
+        return;
+    };
 
     if (elements.userAd) {
         const form = new FormData(event.target);
@@ -45,5 +53,7 @@ function handlerSubmitFormAuth(event) {
     
     if (elements.auth) fetchUserAuth(formData); 
 };
+
+
 
 export default submitForm;

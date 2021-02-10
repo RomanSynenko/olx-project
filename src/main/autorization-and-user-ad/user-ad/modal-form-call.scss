@@ -10,10 +10,13 @@
     @extend %centered-form;
 
     width: 950px;
-    height: 698px;
-    padding: 54px 58px 60px;
+    padding: 50px 60px 50px;
 
     background: #ffffff;
+
+    .wrap-labels {
+      margin-bottom: 40px;
+    }
 
     .modal-add-close {
       position: absolute;
@@ -35,20 +38,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
 
   ::placeholder {
     color: #bbbbbb;
   }
 
   .label-add {
-    // position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 1.2px;
     letter-spacing: 0.02em;
 
     & #triangle-down {
@@ -61,18 +63,14 @@
       border-right: 8px solid transparent;
       border-top: 10px solid #000000;
       cursor: pointer;
+    }
 
-      &:hover {
-        border-top-color: #ff6b09;
-      }
+    &:hover #triangle-down {
+      border-top-color: #ff6b09;
     }
 
     &:not(:last-child) {
       margin-bottom: 20px;
-    }
-
-    &:last-child {
-      margin-bottom: 40px;
     }
 
     .fields {
@@ -138,6 +136,7 @@
     @extend %button;
 
     width: 286px;
+    margin-left: 220px;
     background: #ff6b09;
     color: #ffffff;
     outline: none;
@@ -151,6 +150,8 @@
 
 .backdrop-add {
   .title-form-add {
+    margin: 0;
+    padding: 0;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
@@ -183,21 +184,34 @@
   }
 
   .label-category:hover .wrap-category {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
     top: 100%;
     right: 0;
-    list-style: none;
+
     width: 610px;
     height: 200px;
+
+    list-style: none;
     background-color: #ffffff;
 
     font-size: 16px;
-    // color: #000000;
 
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
+    padding-left: 40px;
+    padding-right: 30px;
+    border: 1px solid #ff6b09;
+
     text-align: center;
+
+    & .category-items {
+      margin-right: 50px;
+    }
 
     .category-link {
       display: inline-block;
@@ -209,6 +223,33 @@
       &:hover {
         color: #ff6b09;
       }
+    }
+  }
+
+  .delete {
+    width: 175px;
+    margin: 0;
+    margin-left: 220px;
+    margin-bottom: 18px;
+    padding: 0;
+    border: 1px solid #ff6b09;
+    padding: 3px;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+
+    background: transparent;
+    cursor: pointer;
+
+    .delete-text {
+      padding-left: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+      border: 1px solid #ff6b09;
     }
   }
 }
