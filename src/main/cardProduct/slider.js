@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 function initSlider({
-  selector = '.swiper-container',
+  selector = '#swip',
   slidesPerView = 1,
 }) {
   return new Swiper(selector,

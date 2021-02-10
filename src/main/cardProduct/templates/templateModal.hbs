@@ -1,47 +1,48 @@
-<div class="backdrop">
-  <div class="modal">
+<div class="card-backdrop">
+  <div class="card-modal">
 
-    <div class="image-list swiper-container">
-      <div class="swiper-wrapper">
-        {{#each imageUrls}}
-        <div class="swiper-slide">
-          <div class="imgWrapper">
+    <div class="card-image-list">
 
-            <div class="image">
+      {{#each imageUrls}}
 
-              <img class="image_main" src="{{this}}" alt="">
-
-            </div>
-          </div>
-        </div>
-
-
-        {{/each}}
+      <div class="card-imgWrapper">
+        <img class="card-image_main" src="{{this}}" alt="">
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="card-imgWrapper">
+
+        <img class="card-image_main" src="{{this}}" alt="">
+
+      </div>
+
+      {{/each}}
+
     </div>
 
-    <div class="description_wrapper">
-      <div class="title-box">
-        <h2 class="title">{{title}}</h2>
-        <button class="close">X</button>
+    <div class="card-description_wrapper">
+      <div class="card-title-box">
+        <h2 class="card-title">{{title}}</h2>
+        <button class="card-close">X</button>
       </div>
-      <p class="code_product">Код товара | {{_id}}</p>
-      <p class="price">{{price}} &#8364;</p>
+      <p class="card-code_product">Код товара | {{_id}}</p>
+      <p class="card-price">{{price}} &#8364;</p>
 
-      <button class="infoBtn" data-userId="{{userId}}">Информация о продавце</button>
+      <button class="card-infoBtn" data-userId="{{userId}}">Информация о продавце</button>
 
 
-      <div class="add">
-        <p class="favorites">В избранное</p>
-        <img class="card_vector-notActiv" src="${Vector}">
-        <p class="share">Поделиться</p>
-        <img class="card_vector-share" src="${Vector_share}">
+      <div class="card-add">
+        <button class="card-favorites">
+          В избранное
+          <i class="fas fa-heart"></i>
+        </button>
+
+        <button class="card-share">
+          Поделиться
+          <i class="fas fa-share-alt"></i>
+        </button>
+
       </div>
-      <h3 class="title_text">Описание</h3>
-      <p class="description">{{description}}</p>
+      <h3 class="card-title_text">Описание</h3>
+      <p class="card-description">{{description}}</p>
 
     </div>
     {{!-- <div class="swiper-pagination"></div>
