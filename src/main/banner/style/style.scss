@@ -1,0 +1,51 @@
+.banner-siema {
+    background: radial-gradient(circle, rgba(29, 69, 111, 1) 0%, rgba(4, 25, 46, 1) 100%);
+}
+.banner-slide {
+    position: relative;
+    height: 360px;
+    display: flex;
+    @media screen and (max-width: 767px) {
+        width: 320px;
+    }
+}
+.banner-image {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: 0;
+    top: 60px;
+    object-fit: contain;
+}
+.banner-content {
+    width: 132px;
+    margin: 132px 0 0 17px;
+}
+.banner-title_text {
+    font-weight: bold;
+    line-height: 22px;
+    width: 132px;
+    color: #fff;
+    font-size: 18px;
+}
+.banner-price-block {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40px;
+    margin: 0 0 0 16px;
+}
+.banner-price {
+    color: #ff6b09;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 42px;
+}
+.banner-price_currency {
+    margin: 6px 6px 0 0;
+    line-height: 12px;
+    font-size: 14px;
+    color: #ff6b09;
+}
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+    background: #fff;
+}

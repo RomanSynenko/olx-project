@@ -1,0 +1,17 @@
+<div class="banner-siema  swiper-container">
+    <div class="swiper-wrapper">
+        {{#each this}}
+        <div class="banner-slide swiper-slide" data-swiper-autoplay="2000">
+            <div class="banner-content">
+                <span class="banner-title_text">{{title}}</span>
+                <div class="banner-price-block">
+                    <span class="banner-price_currency">€</span>
+                    <span class="banner-price">{{price}}</span>
+                </div>
+            </div>
+            <img class="banner-image" src="{{imageUrl}}" alt="{{title}}" />
+        </div>
+        {{/each}}
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
