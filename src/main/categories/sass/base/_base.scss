@@ -1,7 +1,9 @@
 /* Базові стилі */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
 * {
   &::before,
   &::after {
@@ -42,11 +44,11 @@ p {
   margin-right: auto;
 
   @media screen and (max-width: 767px) {
-    width: 290px;
+    max-width: 480px;
   }
 
   @media screen and (min-width: $tablet) {
-    width: 688px;
+    max-width: 1024px;
   }
 
   @media screen and (min-width: $desctop) {

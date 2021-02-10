@@ -14,12 +14,12 @@ function initSlider({
   // If we need pagination
   slidesPerView,
   
-  spaceBetween: 20,
+  // spaceBetween: 10,
 
   pagination: {
     el,
-    clickable: true,
-    dynamicBullets: true,
+    // clickable: true,
+    dynamicBullets: true
   },
 
   // Navigation arrows

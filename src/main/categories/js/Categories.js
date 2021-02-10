@@ -1,55 +1,32 @@
 import productTpl from '../templates/marcupCategories.hbs';
-import axios from 'axios';
+import getRusCategoriesWithProduct from '../js/fetchAPI';
 import initSlider from '../js/slider'
 
 const refs = {
     bodyContainer: document.querySelector('#root')
 };
 
-const productsUrl = 'https://callboard-backend.goit.global/call?page=1';
-const categorisUrl = 'https://callboard-backend.goit.global/call/categories';
-const rusCategoriesUrl = 'https://callboard-backend.goit.global/call/russian-categories';
-
-async function getRusCategoriesWithProduct() {
-    const { data: categoriesData } = await axios.get(categorisUrl);
-    const { data: rusCategoriesData } = await axios.get(rusCategoriesUrl);
-    // console.log(categoriesData);
-    // console.log(rusCategoriesData);
-    const categoriesMap = categoriesData.reduce((acc, item, index) => {
-        return {
-            ...acc,
-            [item]: rusCategoriesData[index]
-        }       
-    }, {});
-    
-    const { data: categories } = await axios.get(`${productsUrl}`);  
-    // console.log(categories);
-    // console.log(categoriesMap);
-    
-    const categoriesWithProducts = Object.entries(categories).map(item => {
-        return {
-            title: categoriesMap[item[0]] ? categoriesMap[item[0]] : item[0],
-            products: item[1]
-        }
-    });
-    return categoriesWithProducts;
-};
+let pageNamber = 1;
 
 async function renderCategoriesWithProduct() {
-    const data = await getRusCategoriesWithProduct();
+    const data = await getRusCategoriesWithProduct(pageNamber);
     
-
     const markap = productTpl(data);
     refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
+    pageNamber += 1;
         
     initSlider(settingSlader());
 
-    const seeAll = document.querySelectorAll('.title_categories_conteiner');
-    seeAll.forEach(element => element.addEventListener('click', openAllProduct));
+    // const seeAll = document.querySelectorAll('.title_categories_conteiner');
+    // seeAll.forEach(element => element.addEventListener('click', openAllProduct));
 
+    loadMoreHeandler();    
+};
+
+function loadMoreHeandler() {
     const loadMoreBtn = document.querySelector('[data-action="load-more"]');
     loadMoreBtn.addEventListener('click', loadMoreCategories);
-};
+}
     
 function settingSlader() {
     const windowWidth = Math.max(document.documentElement.clientWidth);
@@ -75,15 +52,37 @@ function settingSlader() {
 
 renderCategoriesWithProduct();
 
-async function openAllProduct(event) {
-    event.preventDefault();
-    const category = event.target.dataset.action;
+// async function openAllProduct(event) {
+//     event.preventDefault();
+//     const category = event.target.dataset.action;
   
-    const { data: allProduct } = await axios.get(`https://callboard-backend.goit.global/call/specific/${category}`);
+//     const { data: allProduct } = await axios.get(`https://callboard-backend.goit.global/call/specific/${category}`);
     
-    console.log(allProduct);
-};
+//     console.log(allProduct);
+// };
  
 async function loadMoreCategories() {
+    const secBtn = document.querySelector('.section-btn');
+    secBtn.remove();
+    const refsSpiner = document.querySelector('.loader');
+    refsSpiner.classList.remove('is-hidden');
+    const data = await getRusCategoriesWithProduct(pageNamber);
     
+    const markap = productTpl(data);
+    refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
+    refsSpiner.remove();
+
+    loadMoreHeandler();
+    
+    window.scrollTo({
+        top: document.documentElement.offsetHeight,
+            });
+    pageNamber += 1;
+
+    if (pageNamber === 4) { 
+        const secBtn = document.querySelector('.section-btn');
+        secBtn.remove();
+    }    
+    
+    initSlider(settingSlader());
 };
