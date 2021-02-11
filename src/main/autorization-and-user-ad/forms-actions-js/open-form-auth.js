@@ -44,7 +44,6 @@ function handlerPreloadFile(event) {
     
     const imagesPreloadRef = document.querySelectorAll('img[name="file-preload"]');
 
-
     for (let i = 0; i < event.target.files.length; i++) {
         imagesPreloadRef[i].src = URL.createObjectURL(event.target.files[i]);
         imagesPreloadRef[i].classList.add('preload-img');
@@ -53,12 +52,13 @@ function handlerPreloadFile(event) {
 
 function handlerFormCategoryMenu(event) {
     event.preventDefault();
+    initRefs();
 
     const { target: { dataset } } = event;
     
     const input = document.querySelector('input[name="category"]');
     input.value = dataset.category;
-    refs.categoryFormMenu.style.display = "none"
+    refs.categoryFormMenu.style.display = "none";
 };
 
-export default handlerOpenFormAuth;
+export { handlerOpenFormAuth, handlerPreloadFile, handlerFormCategoryMenu };

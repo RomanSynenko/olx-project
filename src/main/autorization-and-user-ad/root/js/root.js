@@ -1,6 +1,6 @@
 import buttonOpen from '../templates/button-open.hbs';
 import checkUserLoginIn from '../../authorization/js/check-user-login';
-import handlerOpenFormAuth from '../../forms-actions-js/open-form-auth';
+import { handlerOpenFormAuth } from '../../forms-actions-js/open-form-auth';
 import { handlerPatchUserAd } from '../../user-ad/js/patch-user-ad';
 
 const rootRef = document.querySelector('#root');
