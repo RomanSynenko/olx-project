@@ -14,7 +14,7 @@
                 </label>
                 <label for="file" class="label-add" placeholder=" ">
                     <span class="fields photo">Фото</span>
-                    <div class="file" name="file">
+                    {{!-- <div class="file" name="file">
                         <span class="download">+</span>
                         <img src="{{imageUrls}}" alt="" name="file-preload">
                     </div>
@@ -29,10 +29,39 @@
                     </div>
                     <div class="file">
                         <img src="" alt="" name="file-preload">
+                    </div> --}}
+                    {{#if edit}}
+                    {{#each imageUrls}}
+                    <div class="file" name="file">
+                        <span class="download">+</span>
+                        <img src="{{this}}" alt="" name="file-preload">
                     </div>
-                    <input type="file" id="file" class="inputfile" size="5" name="file" value="{{imageUrls}}">
+                    {{/each}}
+                    {{else}}
+                    <div class="file" name="file">
+                        <span class="download">+</span>
+                        <img src="{{imageUrls}}" alt="" name="file-preload">
+                    </div>
+                    <div class="file">
+                        <span class="download">+</span>
+                        <img src="" alt="" name="file-preload">
+                    </div>
+                    <div class="file">
+                        <span class="download">+</span>
+                        <img src="" alt="" name="file-preload">
+                    </div>
+                    <div class="file">
+                        <span class="download">+</span>
+                        <img src="" alt="" name="file-preload">
+                    </div>
+                    <div class="file">
+                        <span class="download">+</span>
+                        <img src="" alt="" name="file-preload">
+                    </div>
+                    {{/if}}
+                    <input type="file" id="file" class="inputfile" size="5" name="file" value="{{imageUrls}}"
+                        accept=".jpg, .jpeg, .png" multiple>
                 </label>
-
                 <label for="" class="label-add">
                     <span class="fields">Описание товара</span>
                     <input type="text" class="input-form" name="description" placeholder=" " value="{{description}}">

@@ -40,13 +40,14 @@ function renderForms(markup) {
 };
 
 function handlerPreloadFile(event) {
-    document.querySelector('.download').style.display = 'none';
+    document.querySelectorAll('.download');
     
     const imagesPreloadRef = document.querySelectorAll('img[name="file-preload"]');
 
     for (let i = 0; i < event.target.files.length; i++) {
         imagesPreloadRef[i].src = URL.createObjectURL(event.target.files[i]);
         imagesPreloadRef[i].classList.add('preload-img');
+        document.querySelectorAll('.download')[i].style.display = "none";
     };
 };
 

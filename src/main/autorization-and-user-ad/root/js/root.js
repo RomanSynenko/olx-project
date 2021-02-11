@@ -11,7 +11,7 @@ function authorizationRoot() {
 
     rootRef.insertAdjacentHTML('beforeend', buttonOpen())
 
-    const btnOpen = document.querySelector('.btn-open');
+    const btnOpen = document.querySelector('.js__wrap-btn');
     
     btnOpen.addEventListener('click', handlerOpenFormAuth);
 }
@@ -51,20 +51,20 @@ async function out() {
 // ! ---------
 
 
-let inputs = document.querySelectorAll('.inputfile');
+// let inputs = document.querySelectorAll('.inputfile');
 
-Array.prototype.forEach.call(inputs, function (input) {
-    let label = input.nextElementSibling,
-        labelVal = label.querySelector('.download').innerText;
+// Array.prototype.forEach.call(inputs, function (input) {
+//     let label = input.nextElementSibling,
+//         labelVal = label.querySelector('.download').innerText;
   
-    input.addEventListener('change', function (e) {
-        let countFiles = '';
-        if (this.files && this.files.length >= 1)
-            countFiles = this.files.length;
+//     input.addEventListener('change', function (e) {
+//         let countFiles = '';
+//         if (this.files && this.files.length >= 1)
+//             countFiles = this.files.length;
   
-        if (countFiles)
-            label.querySelector('.download').innerText = 'Загружен' + countFiles;
-        else
-            label.querySelector('.download').innerText = labelVal;
-    });
-});
+//         if (countFiles)
+//             label.querySelector('.download').innerText = 'Загружен' + countFiles;
+//         else
+//             label.querySelector('.download').innerText = labelVal;
+//     });
+// });

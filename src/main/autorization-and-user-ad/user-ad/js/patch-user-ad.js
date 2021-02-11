@@ -13,9 +13,8 @@ function initRefs() {
     refs.inputFile = document.querySelector('.inputfile');
     refs.editBtn = document.querySelector('.btn-form-add');
     
-    refs.plus = document.querySelector('.download');
-    refs.imgFile = document.querySelector('img[name="file-preload"]');
-    // refs.imagesPreload = document.querySelectorAll('img[name="file-preload"]');
+    refs.plus = document.querySelectorAll('.download');
+    refs.imgFile = document.querySelectorAll('img[name="file-preload"]');
     refs.deleteBtn = document.querySelector('.delete');
     refs.categoryFormMenu = document.querySelector('.wrap-category');
 };
@@ -26,8 +25,8 @@ async function handlerPatchUserAd(event) {
     const { data: {favourites} } = await axios.get('/call/own');
     console.log(favourites);
     // ! Временно!!!!
-    // const own = favourites.filter(el => el.title === "Hren");
     const own = favourites.filter(el => el.title === "Hren");
+    // const own = favourites.filter(el => el.title === "Victory");
 
     // ?? Финальный вариант
     // const own = favourites.filter(el => el._id === id);
@@ -39,18 +38,21 @@ async function handlerPatchUserAd(event) {
     rootRef.insertAdjacentHTML('beforeend', markup);
 
     initRefs();
-    editForm(newOwn._id);
+    editForm(newOwn._id, newOwn.imageUrls.length);
 
     submitForm();
     refs.deleteBtn.addEventListener('click', fetchDeleteUserAd);
 };
 
-function editForm(id) {
+function editForm(id, imgUrl) {
     initRefs();   
     const { editBtn, deleteBtn, inputFile, categoryFormMenu, plus, imgFile } = refs; 
 
-    plus.style.display = 'none';
-    imgFile.classList.add('preload-img');
+    for (let i = 0; i < imgUrl; i += 1) {
+        imgFile[i].classList.add('preload-img');
+        plus[i].style.display = 'none';
+    };
+    
     editBtn.classList.add('edit');
     editBtn.setAttribute('data-id', id);
     deleteBtn.setAttribute('data-id', id);
