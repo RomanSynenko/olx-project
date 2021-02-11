@@ -1,10 +1,10 @@
 import { resetList} from './utils';
 
-const rootRef= document.querySelector('#root');
+const headerRef= document.querySelector('#header');
 
 function addMarkup(header, tpl) {
     resetList();
-    rootRef.insertAdjacentHTML('beforeend', tpl(header));    
+    headerRef.insertAdjacentHTML('beforeend', tpl(header));    
 };
 
 export default addMarkup;

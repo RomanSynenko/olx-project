@@ -10,7 +10,7 @@ const getData = async () => {
             ...acc,
             [item]: enCategoriesData[index]
         }       
-    }, {}); 
+    }, {});
   return categoriesMap; 
 };
 

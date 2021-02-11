@@ -1,28 +1,49 @@
-#root {
-  background-color: #fff;
-}
 .page-header {
-  padding: 35px 38px;
+  padding: 35px 0;
   background-color: #122438;
 
+  @media screen and (max-width: 767px) {
+    padding: 15px 0;
+  }
+
   .authorization {
-    @media screen and (min-width: 1280px) {
-      display: flex;
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+      position: relative;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
       align-items: center;
+      position: relative;
+    }
+    @media screen and (min-width: 1280px) {
       margin-bottom: 24px;
+    }
+  }
+  .container-header {
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      max-width: 1024px;
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 480px;
+      padding: 0 20px;
     }
   }
 }
 
 .logo-circle {
-  position: relative;
   width: 44px;
   height: 44px;
   background-color: #ff6b09;
   border-radius: 50px;
 
-  @media screen and (min-width: 768px) {
-    margin-right: 242px;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-bottom: 20px;
   }
 
@@ -32,10 +53,9 @@
   }
 
   .text-logo {
-    position: absolute;
-    left: 14px;
-    top: -7px;
-
+    margin: 0;
+    padding-top: 12px;
+    padding-left: 17px;
     font-family: Montserrat;
     font-weight: 700;
     font-size: 18px;

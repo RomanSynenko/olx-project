@@ -4,23 +4,38 @@ import addMarkup from './addMarkup';
 import searchTpl from '../templates/search.hbs';
 
 
-async function receiveHeader(){
-    const {data: header} = await axios(ruCategoryUrl);    
-    return header 
+async function receiveHeader() {
+    try {
+        const {data: header} = await axios.get(ruCategoryUrl);    
+        return header  
+    } catch (err) {
+        console.log(err);        
+    };
+      
 };
 
 async function receiveSearchValue(inputValue) {
-    const searchUrl = `https://callboard-backend.goit.global/call/find?search=${inputValue}`;
-    const {data: value} = await axios(searchUrl);
+    try {
+        const searchUrl = `https://callboard-backend.goit.global/call/find?search=${inputValue}`;
+    const {data: value} = await axios.get(searchUrl);
     addMarkup(value, searchTpl)
+    } catch (err) {
+        console.log(err);
+    };
+    
 };
 
 async function receiveCategories(valueFilter) {
-    const specificCategoriesUrl = `https://callboard-backend.goit.global/call/specific/${valueFilter}`
-    const {data:GoodsСategory } = await axios(specificCategoriesUrl);
+    try {
+        const specificCategoriesUrl = `https://callboard-backend.goit.global/call/specific/${valueFilter}`
+    const {data:GoodsСategory } = await axios.get(specificCategoriesUrl);
     addMarkup(GoodsСategory, searchTpl)    
     const searchRef = document.querySelector('#search');
-    searchRef.elements.query.value = '';//очистка інпута коли клацаєш на фільтр
+    searchRef.elements.query.value = '';
+    } catch (err) {
+        console.log(err);
+    }
+    
 };
 
 export {receiveHeader, receiveSearchValue, receiveCategories} ;
