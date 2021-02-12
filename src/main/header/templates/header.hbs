@@ -15,20 +15,19 @@
             </div>
 
             <div class="auth-wrap">
-                <div class="wrap-registration is-hidden-btn-auth" id="auth">
-                    <button class="btn-office">
+                <div class="wrap-registration js__wrap-btn" id="auth">
+                    <button class="btn-office display-none">
                         <i class="far fa-user"></i>
                         <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора стосовно по якому
                         атрибуту він робить клік --}}
                     </button>
                     <button class=" registration" type="button" name="auth">Регистрация</button>
                     <span class="line">|</span>
-                    <button class="btn-logout"><i class="fas fa-sign-out-alt" name="outlogin"></i></button>
+                    <button class="btn-logout display-none"><i class="fas fa-sign-out-alt" name="outlogin"></i></button>
                     <button class="login" type="button" name="login">Войти</button>
                 </div>
                 <button class="create " type="button">
                     <span class="text-create-btn">Создать объявление</span>
-
                     <p class="plus-btn">+</p>
                 </button>
 
@@ -37,30 +36,45 @@
 
         <div class="container-filter">
             <nav id="filter" class="">
-                <i class="fas fa-times close-menu-filter dilsplay-none" id="close"></i>
-                <ul class="header-list-flex">
-                    {{#each this}}
-                    <li class="item-filter">
-                        <button class="btn-filter" data-filter="filter" type="button">{{this}}</button>
-                    </li>
-                    {{/each}}
-                </ul>
+                <div class="wrap-nav">
+                    <div class="wrap-registration-mobil js__wrap-btn" id="auth">
+                        <button class="btn-office  display-none">
+                            <i class="far fa-user"></i>
+                            <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора стосовно по якому
+                            атрибуту він робить клік --}}
+                        </button>
+                        <button class="registration " type="button" name="auth">Регистрация</button>
+                        <span class="line">|</span>
+                        <button class="btn-logout display-none"><i class="fas fa-sign-out-alt"
+                                name="outlogin"></i></button>
+                        <button class="login" type="button" name="login">Войти</button>
+                    </div>
+                    <i class="fas fa-times close-menu-filter dilsplay-none" id="close"></i>
+                    <ul class="header-list-flex">
+                        {{#each this}}
+                        <li class="item-filter">
+                            <button class="btn-filter" data-filter="filter" type="button">{{this}}</button>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
             </nav>
+            <div class="wrap-clear-and-silter">
+                <button id="filter-menu" class="filter-menu" type="button">
+                    <label for="checkbox-filter" class="label-checkbox">
+                        <i class="fas fa-bars burger-menu js-menu-mobile"></i>
+                        <p class="text-btn">Фильтры</p>
+                    </label>
+                    <input class="checkbox-filter-menu" type="checkbox" id="checkbox-filter">
 
-            <button id="filter-menu" class="filter-menu" type="button">
-                <label for="checkbox-filter" class="label-checkbox">
-                    <i class="fas fa-bars burger-menu js-menu-mobile"></i>
-                    <p class="text-btn">Фильтры</p>
-                </label>
-                <input class="checkbox-filter-menu" type="checkbox" id="checkbox-filter">
+                </button>
+                <button id="reset" class="clear" type="button">
+                    <i class="fas fa-undo-alt reset-icon"></i>
+                    <p class="text-btn">Очистить</p>
+                </button>
+            </div>
 
-            </button>
-            </label>
-
-            <button id="reset" class="clear" type="button">
-                <i class="fas fa-undo-alt reset-icon"></i>
-                <p class="text-btn">Очистить</p>
-            </button>
         </div>
     </div>
 </header>

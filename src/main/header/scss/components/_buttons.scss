@@ -1,3 +1,4 @@
+//  контейнер для кнопок реєстрації та створити об'яву
 .auth-wrap {
   display: flex;
   align-items: center;
@@ -7,26 +8,20 @@
     margin-left: 0;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    position: absolute;
-    top: 22px;
-    left: 72%;
-    transform: translate(-50%, -50%);
-  }
-
+  // контейнер для кнопок входу та регітрації
   .wrap-registration {
-    @media screen and (min-width: 768px) {
-      display: flex;
-      align-items: center;
+    display: flex;
+    @media screen and (max-width: 767px) {
+      display: none;
     }
   }
 }
 
-.is-hidden-btn-auth {
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-}
+// .is-hidden-btn-auth {
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//   }
+// }
 
 .is-show-btn-auth {
   @media screen and (max-width: 767px) {
@@ -149,5 +144,16 @@
     font-size: 50px;
     font-weight: 400;
     margin: 0;
+  }
+}
+// стилі на кнопки реєстрації вхід,
+// вихід і мій кабінет на мобілку
+.wrap-registration-mobil {
+  display: none;
+  @media screen and(max-width: 767px) {
+    display: flex;
+    align-items: center;
+    margin-top: 73px;
+    margin-bottom: 70px;
   }
 }

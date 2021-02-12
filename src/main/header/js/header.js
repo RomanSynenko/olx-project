@@ -5,7 +5,7 @@ import { receiveHeader, receiveCategories } from './api';
 import onGetInputValue from './getInputValue';
 import {
     resetList, addActiveFilter, removeActiveFilter,
-    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon
+    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset
 } from './utils';
 
 
@@ -43,19 +43,6 @@ function onFilterClick(e) {
         receiveCategories(valueFilter);
         
     });
-};  
-
-function onClickReset() {
-    resetList();
-    removeActiveFilter(refs.filter);
-
-    resetFocus( refs.resetBtn)
-    setTimeout(() => {
-        refs.resetBtn.blur();
-    },200)
-}; 
-
-
-
+};
 
 export default refs;

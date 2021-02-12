@@ -1,3 +1,4 @@
+// основний контейнер
 .page-header {
   padding: 35px 0;
   background-color: #122438;
@@ -5,7 +6,7 @@
   @media screen and (max-width: 767px) {
     padding: 15px 0;
   }
-
+  // контейнер для секції кнопок реєстрації та вход і для логотипу з інпутом
   .authorization {
     display: flex;
 
@@ -22,6 +23,7 @@
       margin-bottom: 24px;
     }
   }
+
   .container-header {
     max-width: 1200px;
     padding: 0 40px;
@@ -36,7 +38,7 @@
     }
   }
 }
-
+// логотип коло
 .logo-circle {
   width: 44px;
   height: 44px;

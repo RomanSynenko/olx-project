@@ -32,7 +32,11 @@ function onClickMenuFilter() {
 
     if (!refs.filterMenu.checked) {
         refs.filter.classList.remove('is-open');
-    }  
+        
+    }
+
+    refs.filterMenu
+    
 }
 
 function onClickCloseBurgerMenu() {
@@ -50,13 +54,23 @@ function onClickSearchIcon() {
     
 }
 
-function resetFocus({element}) {
+// function resetFocus({element}) {
+//     setTimeout(() => {
+//         element.blur();
+//     },200)    
+// }
+
+
+function onClickReset() {
+    resetList();
+    removeActiveFilter(refs.filter);
+    
     setTimeout(() => {
-        element.blur();
-    },200)    
-}
+        refs.resetBtn.blur();
+    },200)
+};
     
 export {
     resetList, addActiveFilter, removeActiveFilter,
-    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon
+    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset
 };

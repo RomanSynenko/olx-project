@@ -11,7 +11,7 @@ function onGetInputValue(e) {
     removeActiveFilter(filterRef);
     form.reset();
     refs.search.firstElementChild.classList.remove('search-mobile');
-    refs.jsMenuMobile.classList.remove('none-close-menu-filter');
+    refs.jsMenuMobile.classList.remove('display-none');
 };
 
 export default onGetInputValue;

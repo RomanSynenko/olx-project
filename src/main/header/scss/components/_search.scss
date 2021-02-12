@@ -1,9 +1,12 @@
+// контейнер для лого і пошуку
 .search-wrap {
   display: flex;
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     display: inline;
   }
 }
+
+// стилі на форму
 .form-search {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
@@ -13,6 +16,8 @@
     position: relative;
   }
 }
+
+// стилі на інпут
 .search-input {
   padding: 10px 13px;
   width: 380px;
@@ -27,7 +32,7 @@
     outline: 2px solid #ff6b09;
   }
 }
-
+// іконка лупи
 .icon-search {
   position: absolute;
   top: 50%;
@@ -46,7 +51,7 @@
     }
   }
 }
-
+//  інпут на мобільній версії
 .search-mobile {
   @media screen and(max-width:767px) {
     display: block;

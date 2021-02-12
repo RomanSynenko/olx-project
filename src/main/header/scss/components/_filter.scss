@@ -1,9 +1,10 @@
+// контейнер який включає фільтр і кнопку очистити
 .container-filter {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    display: inline-flex;
-    align-items: center;
     margin-left: 69%;
     padding-top: 12px;
+    display: flex;
+    justify-content: flex-end;
   }
   @media screen and (min-width: 1280px) {
     display: flex;
@@ -15,10 +16,7 @@
 
   @media screen and (max-width: 1279px) {
     flex-wrap: wrap;
-  }
-
-  @media screen and (max-width: 767px) {
-    padding-top: 100px;
+    // max-width: 1279px;
   }
 
   .item-filter {
@@ -26,67 +24,65 @@
       margin-right: 10px;
     }
 
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
+    @media screen and (min-width: 768px) and (max-width: 1083px) {
       &:nth-child(-n + 4) {
         margin-bottom: 20px;
-      }
-      &:nth-child(5) {
-        margin-right: 0;
       }
     }
 
     @media screen and (max-width: 767px) {
-      &:nth-child(2),
-      &:nth-child(4),
-      &:nth-child(5),
-      &:nth-child(6) {
-        margin-right: 0;
-      }
-
       &:nth-child(-n + 6) {
         margin-bottom: 20px;
       }
     }
   }
 }
+// контейнер навігація, тільки фільтри
 #filter {
   @media screen and (max-width: 1279px) {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 250ms ease-in-out;
+    background-color: #02182d;
+    top: 170px;
+    left: 0;
+  }
+  @media screen and (max-width: 767px) {
+    top: 0;
   }
 
   &.is-open {
-    display: none;
-    background-color: #02182d;
-    position: absolute;
-
     @media screen and(max-width:767px) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
-      width: 81%;
-      height: 100vw;
+      justify-content: center;
+      width: 83%;
+      height: 100vh;
       padding: 24px 14px 146px 20px;
-
-      margin-left: 0;
       top: 0;
       left: 0;
       z-index: 10;
+      opacity: 1;
+      transform: translateX(0);
     }
-
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       display: block;
+      width: 100%;
       left: 0;
-      top: 166px;
+      top: 170px;
       z-index: 1;
 
-      padding: 31px 0 31px 40px;
+      // padding: 31px 40px;
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 }
-
+//  стилі на кнопки фільтра
 .btn-filter {
   @extend %base-font;
-  padding: 8px 21px;
+  padding: 8px 18px;
 
   color: #5e6671;
   background-color: inherit;
@@ -122,6 +118,10 @@
     display: flex;
     align-items: center;
     margin-left: auto;
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+    }
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -130,27 +130,18 @@
     margin-left: 35px;
   }
 
-  &:hover,
-  &:focus {
-    color: #ff6b09;
-  }
-
   .reset-icon {
     font-size: 21px;
     margin-right: 13px;
   }
 }
-
+//
 .filter-menu {
   @extend %base-font;
   @extend %btn-clear-filter-menu;
 
   display: flex;
   align-items: center;
-  &:hover,
-  &:focus {
-    color: #ff6b09;
-  }
 
   .burger-menu {
     font-size: 24px;
@@ -186,7 +177,7 @@
 .label-checkbox {
   display: contents;
 }
-
+//  чекбокс на кнопку бургер
 .checkbox-filter-menu {
   @media screen and (max-width: 1279px) {
     position: absolute;
@@ -203,6 +194,9 @@
 .close-menu-filter {
   display: none;
   @media screen and (max-width: 767px) {
+    position: absolute;
+    right: 25px;
+    top: 25px;
     display: block;
     font-size: 24px;
     color: #3b4b5a;
@@ -217,4 +211,18 @@
 
 .display-none {
   display: none;
+}
+
+// стилі на фільтер і кнопку очистити на таблетку.
+.wrap-clear-and-silter {
+  display: contents;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: flex;
+  }
+}
+.wrap-nav {
+  padding: 31px 40px;
+  max-width: 1024px;
+  margin: 0 auto;
 }
