@@ -10,7 +10,8 @@
             <div class="wrap-labels">
                 <label class="label-add">
                     <span class="fields">Название товара</span>
-                    <input type="text" name="title" class="input-form" placeholder=" " value="{{title}}">
+                    <input type="text" name="title" class="input-form" placeholder=" " value="{{title}}"
+                        autocomplete="off">
                 </label>
                 <label for="file" class="label-add" placeholder=" ">
                     <span class="fields photo">Фото</span>
@@ -37,14 +38,17 @@
                     <input type="file" id="file" class="inputfile" size="5" name="file" accept=".jpg, .jpeg, .png"
                         multiple value="{{imageUrls}}">
                 </label>
+
                 <label for="" class="label-add">
                     <span class="fields">Описание товара</span>
-                    <input type="text" class="input-form" name="description" placeholder=" " value="{{description}}">
+                    <input type="text" class="input-form" name="description" placeholder=" " value="{{description}}"
+                        autocomplete="off">
                 </label>
 
                 <label for="" class="label-add label-category">
                     <span class="fields">Категория товара</span>
-                    <input type="text" class="input-form" name="category" placeholder=" " value="{{category}}">
+                    <input type="text" class="input-form" name="category" placeholder=" " value="{{category}}"
+                        autocomplete="off">
                     <div id="triangle-down"></div>
                     <ul class="wrap-category is-hidden">
                         {{#each this}}
@@ -54,9 +58,11 @@
                         {{/each}}
                     </ul>
                 </label>
+
                 <label for="" class="label-add">
                     <span class="fields">Цена</span>
-                    <input type="text" placeholder="0.00 €" class="input-form" name="price" value="{{price}}">
+                    <input type="text" placeholder="0.00 €" class="input-form" name="price" value="{{price}}"
+                        autocomplete="off">
                 </label>
 
                 <label for="" class="label-add">

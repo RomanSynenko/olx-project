@@ -5,6 +5,7 @@ import fetchUserAuth from '../authorization/js/authorization';
 import fetchUserAd from '../user-ad/js/fetch-user-ad';
 import { spinnerClassAdd } from './spinner';
 import { fetchPatchUserAd } from '../user-ad/js/patch-user-ad';
+import { fetchLoginOut } from '../authorization/js/login-out';
 
 const refs = {};
 
@@ -41,6 +42,11 @@ function handlerSubmitFormAuth(event) {
     };
 
     spinnerClassAdd();
+
+    if (elements.loginOut) {
+        fetchLoginOut(); 
+        return;
+    };
     
     if (elements.userAd && elements.userAd.className === 'btn-form-add edit') {
         const form = submitUserAdForms(event.target);

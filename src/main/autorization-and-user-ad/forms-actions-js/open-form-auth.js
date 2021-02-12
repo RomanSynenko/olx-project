@@ -1,7 +1,6 @@
 import submitForm from './submit-form';
 import formRegister from '../authorization/templates/form-registration.hbs';
 import modalFormCall from '../user-ad/template/modal-form-call.hbs';
-import pnotify from '../pnotify/pnotify';
 import axios from 'axios';
 
 const rootRef = document.querySelector('#root');
@@ -18,8 +17,7 @@ function initRefs() {
 function handlerOpenFormAuth(event) {
     const value = event.target.name;
 
-    if (!localStorage.getItem('accessToken') && value === "user-ad") return pnotify.noAuthMessage();
-    // if (value === 'outlogin')
+    if (!localStorage.getItem('accessToken') && value === "user-ad") return;
     
     if (value === "auth" || value === "login") {
         const markup = formRegister({ isAuth: value === "auth" });
@@ -29,7 +27,12 @@ function handlerOpenFormAuth(event) {
     if (value === 'user-ad') {
         fetchRussinCategory();  
     };
-}
+};
+
+function renderForms(markup) {
+    rootRef.insertAdjacentHTML('beforeend', markup);
+    submitForm();
+};
 
 async function fetchRussinCategory() {
     const { data: rusCategory } = await axios.get('/call/russian-categories');
@@ -37,17 +40,12 @@ async function fetchRussinCategory() {
     const markup = modalFormCall(categoryList);
 
     renderForms(markup);
-    // refs.containerImg = document.querySelector('.file[name="file"]');
     initRefs();
     
     refs.inputFile.addEventListener('change', handlerPreloadFile);
     refs.categoryFormMenu.addEventListener('click', handlerFormCategoryMenu);
     refs.inputCategory.addEventListener('focus', handlerFocusCategory);
-}
-
-function renderForms(markup) {
-    rootRef.insertAdjacentHTML('beforeend', markup);
-    submitForm();
+    refs.inputCategory.addEventListener('blur', handlerBlurCategory);
 };
 
 function handlerPreloadFile(event) {
@@ -67,17 +65,24 @@ function handlerFocusCategory() {
     refs.categoryFormMenu.classList.remove('is-hidden');
 };
 
+function handlerBlurCategory() {
+    setTimeout(() => {
+        initRefs();
+        refs.categoryFormMenu.classList.add('is-hidden');
+    }, 100);
+};
+
 async function handlerFormCategoryMenu(event) {
     event.preventDefault();
-    const index = categoryList.indexOf(event.target.textContent);
     
     const { data: engCategory } = await axios.get('/call/categories');
-    initRefs();
     
+    const index = categoryList.indexOf(event.target.textContent);
+
+    initRefs();
     const input = document.querySelector('input[name="category"]');
     input.value = engCategory[index];
     refs.categoryFormMenu.style.display = "none";
 };
-
     
 export { handlerOpenFormAuth, handlerPreloadFile, handlerFormCategoryMenu };

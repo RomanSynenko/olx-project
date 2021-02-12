@@ -2,6 +2,7 @@ import buttonOpen from '../templates/button-open.hbs';
 import checkUserLoginIn from '../../authorization/js/check-user-login';
 import { handlerOpenFormAuth } from '../../forms-actions-js/open-form-auth';
 import { handlerPatchUserAd } from '../../user-ad/js/patch-user-ad';
+import { handlerUserLoginOut } from '../../authorization/js/login-out';
 
 const rootRef = document.querySelector('#root');
 
@@ -43,13 +44,7 @@ async function ac() {
 
 // ! out login
 const outLoginRef = document.querySelector('.outlogin');
-outLoginRef.addEventListener('click', out)
-
-async function out() {
-    await axios.post('/auth/logout');
-    localStorage.clear();
-    // document.querySelector('button[name="user-ad"]').disabled = true;
-}
+outLoginRef.addEventListener('click', handlerUserLoginOut);
 // ! ---------
 
 
