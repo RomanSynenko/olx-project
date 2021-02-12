@@ -1,0 +1,159 @@
+//  контейнер для кнопок реєстрації та створити об'яву
+.auth-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+  }
+
+  // контейнер для кнопок входу та регітрації
+  .wrap-registration {
+    display: flex;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+// .is-hidden-btn-auth {
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//   }
+// }
+
+.is-show-btn-auth {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    z-index: 11;
+    position: absolute;
+    right: 24%;
+    top: 100%;
+  }
+}
+
+// кнопка реєстрації
+.registration {
+  @extend %base-font;
+  @extend %btn-auth;
+  margin-right: 12px;
+  max-width: 84px;
+}
+// роздільна лінія
+.line {
+  margin-right: 12px;
+  background-color: #465363;
+  height: 20px;
+  width: 1px;
+}
+
+// кнопка входу
+.login {
+  @extend %base-font;
+  @extend %btn-auth;
+  margin-right: 24px;
+  max-width: 40px;
+}
+
+// кнопка виходу
+
+.btn-logout {
+  @extend %btn-out-and-office;
+  margin-right: 40px;
+
+  @media screen and (max-width: 767px) {
+    margin-right: 4px;
+  }
+}
+//  кнопка мій кабінет
+.btn-office {
+  @extend %btn-out-and-office;
+  align-items: center;
+
+  .text-my-office {
+    @extend %base-font;
+    width: 95px;
+    margin-left: 10px;
+  }
+}
+
+// кнопка створення оголошення
+.create {
+  @extend %font-create;
+  padding: 13px 0;
+
+  color: #fff;
+  background-color: #ff6b09;
+  border: none;
+  outline: none;
+
+  letter-spacing: 0.02em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 5;
+
+    border-radius: 50%;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
+      border: 1px solid #ff6b09;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 216px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 238px;
+  }
+
+  &:focus,
+  &:hover {
+    color: #ff6b09;
+    background-color: #fff;
+  }
+}
+
+.text-create-btn {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+// текст кнопки створити оголоження на мобілку
+
+.plus-btn {
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+// стилі на кнопки реєстрації вхід,
+// вихід і мій кабінет на мобілку
+.wrap-registration-mobil {
+  display: none;
+  @media screen and(max-width: 767px) {
+    display: flex;
+    align-items: center;
+    margin-top: 73px;
+    margin-bottom: 70px;
+  }
+}
