@@ -1,0 +1,51 @@
+<section class="section">
+    <div class="container">
+        {{#each this}}
+        <div class="categories">
+            <div class="title_categories_conteiner">
+                <h2 class="title_categories">{{title}}</h2>
+            </div>
+
+            <ul class="items_product swiper-container">
+                <div class="swiper-wrapper">
+                    {{#each products}}
+                    <div class="swiper-slide">
+                        <li class="item_product">
+                            <a class="item_product_linc" data-serch={{title}} href="">
+                                <div class="thumb">
+                                    <img class="img_product" src="{{imageUrls}}" alt="{{description}}" />
+                                </div>
+                                <h3 class="title_product">{{title}}</h3>
+                                <div class="price">
+                                    {{#if oldPrice}}
+                                    <P class="old_price">{{oldPrice}} €</P>
+                                    {{/if}}
+                                    <P class="valid_price">{{price}} €</P>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+                <div data-action="btn-swiper-prev" class="swiper-button-prev"></div>
+                <div data-action="btn-swiper-next" class="swiper-button-next"></div>
+            </ul>
+        </div>
+        {{/each}}
+    </div>
+    <div class="loader is-hidden">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
+    </div>
+</section>
+
+<section class="section-btn">
+    <div class="container-btn">
+        <button type="button" class="btn" data-action="load-more"> Загрузить
+            еще </button>
+    </div>
+</section>
