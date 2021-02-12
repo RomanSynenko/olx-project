@@ -5,6 +5,7 @@ function slider({
 }) {
     return new Swiper(selector,
         {
+            slidesPerView: 1,
             loopPreventsSlide: true,
             speed: 1000,
             autoplay: {
