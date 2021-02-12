@@ -10,8 +10,7 @@ async function receiveHeader() {
         return header  
     } catch (err) {
         console.log(err);        
-    };
-      
+    };      
 };
 
 async function receiveSearchValue(inputValue) {

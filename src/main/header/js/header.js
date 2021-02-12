@@ -4,7 +4,7 @@ import addMarkup from './addMarkup';
 import { receiveHeader, receiveCategories } from './api';
 import onGetInputValue from './getInputValue';
 import {
-    resetList, addActiveFilter, removeActiveFilter,
+     addActiveFilter, removeActiveFilter,
     onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset
 } from './utils';
 
@@ -45,4 +45,4 @@ function onFilterClick(e) {
     });
 };
 
-export default refs;
+export default refs ;

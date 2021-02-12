@@ -1,4 +1,5 @@
 import './main/header/scss/main.scss';
 
-import './main/header/js/header';
+import {receiveHeader} from './main/header/js/api';
 
+receiveHeader();
