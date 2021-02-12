@@ -17,11 +17,14 @@ function authorizationRoot() {
     btnOpen.addEventListener('click', handlerOpenFormAuth);
 }
 
+
+
+console.dir(window.outerWidth);
+
 authorizationRoot();
 export default authorizationRoot;
 
 // ! -------------------------
-
 
 // * -----FetchPatch-------
 const patchRef = document.querySelector('.patch');

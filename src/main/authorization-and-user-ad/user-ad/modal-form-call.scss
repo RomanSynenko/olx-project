@@ -8,11 +8,18 @@
 
   .modal-add {
     @extend %centered-form;
-
-    width: 950px;
     padding: 50px 60px 50px;
+    width: 950px;
 
     background: #ffffff;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: 724px;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 80%;
+    }
 
     .wrap-labels {
       margin-bottom: 40px;
@@ -52,6 +59,9 @@
     line-height: 1.2px;
     letter-spacing: 0.02em;
 
+    // @media screen {
+    // }
+
     & #triangle-down {
       position: absolute;
       top: 25px;
@@ -79,6 +89,10 @@
 
       &.photo {
         margin-right: 188px;
+
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          margin-right: 110px;
+        }
       }
     }
 
@@ -91,6 +105,10 @@
       background: #ffffff;
       border: 1px solid #bbbbbb;
       outline: none;
+
+      @media screen and(min-width: 768px) and (max-width: 1279px) {
+        width: 458px;
+      }
 
       &:hover,
       &:focus {
@@ -135,6 +153,10 @@
     background: #ff6b09;
     color: #ffffff;
     outline: none;
+
+    @media screen and(min-width: 768px) and (max-width: 1279px) {
+      margin-left: 146px;
+    }
 
     &:focus,
     &:hover {
@@ -199,6 +221,10 @@
 
     text-align: center;
 
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      max-width: 458px;
+    }
+
     .category-link {
       display: block;
       padding: 20px;
@@ -227,6 +253,10 @@
 
     background: transparent;
     cursor: pointer;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      margin-left: 147px;
+    }
 
     .delete-text {
       padding-left: 10px;

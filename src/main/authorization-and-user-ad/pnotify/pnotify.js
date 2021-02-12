@@ -1,10 +1,14 @@
 import { alert, success, error, info} from '@pnotify/core/dist/PNotify.js';
-import { defaults } from '@pnotify/core'
-// import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
+import { defaults } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 
 defaults.delay = 2000;
+defaults.width = "430px";
+
+if (window.outerWidth < 768) {
+    defaults.width = "280px";
+}
 
 export default {
     successMessage() {
@@ -39,7 +43,7 @@ export default {
     noAuthMessage() {
         error({
             title: "OШИБКА",
-            text: "ВЫ НЕ ЗАРЕГИСТРИРОВАЛИСЬ!"
+            text: "ВЫ НЕ ЗАРЕГИСТРИРОВАНЫ!"
         })
     },
 

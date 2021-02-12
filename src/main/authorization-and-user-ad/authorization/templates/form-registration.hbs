@@ -12,12 +12,15 @@
             <label for="" class="label-auth">
                 <input type="password" name="password" placeholder="Password" class="input-auth">
             </label>
-            {{#if isAuth}}
-            <button type="submit" class="submit-auth login" name="auth">Регистрация</button>
-            {{else}}
-            <button type=" submit" class="submit-auth login" name="login">Войти</button>
-            {{/if}}
-            <button type="button" class="submit-auth auth" id="cancelBtn">Отмена</button>
+            <div class="wrap-btn-submit">
+                {{#if isAuth}}
+                <button type="submit" class="submit-auth login" name="auth">Регистрация</button>
+                {{else}}
+                <button type=" submit" class="submit-auth login" name="login">Войти</button>
+                {{/if}}
+                <button type="button" class="submit-auth auth" id="cancelBtn">Отмена</button>
+            </div>
+
             <div class="wrap-spinner">
                 <div class="loader">
                     <div class="inner one"></div>
