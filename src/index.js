@@ -4,7 +4,7 @@ import {receiveHeader} from './main/header/js/api';
 
 // Mukola body
 import './style/styles.scss';
-import './main/categories/js/Categories';
-import './main/categories/js/slider'
+import renderCategoriesWithProduct from './main/categories/js/Categories';
 
 receiveHeader();
+renderCategoriesWithProduct();

@@ -50,7 +50,7 @@ function settingSlader() {
     return { slidesPerView, el };
 };
 
-renderCategoriesWithProduct();
+// renderCategoriesWithProduct();
 
 // async function openAllProduct(event) {
 //     event.preventDefault();
@@ -86,3 +86,5 @@ async function loadMoreCategories() {
     
     initSlider(settingSlader());
 };
+
+export default renderCategoriesWithProduct;
