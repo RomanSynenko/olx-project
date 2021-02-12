@@ -1,16 +1,7 @@
-html {
-    box-sizing: border-box;
-}
+// Mukola body
+@import "../main/categories/sass/utils/breakpoint";
+@import "../main/categories/sass/base/base";
+@import "../main/categories/sass/base/normalise";
+@import "../main/categories/sass/components/products";
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-@import "normalize.scss";

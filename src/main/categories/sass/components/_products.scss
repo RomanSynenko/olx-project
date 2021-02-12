@@ -1,0 +1,241 @@
+// spiner
+// body {
+//   background-image: radial-gradient(
+//     circle farthest-corner at center,
+//     #3c4b57 0%,
+//     #1c262b 100%
+//   );
+// }
+
+.loader {
+  position: absolute;
+  // top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #ff6b09;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #ff6b09;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #ff6b09;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+// site style
+
+.title_categories_conteiner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title_categories {
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.linc_product {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #ff6b09;
+}
+
+.item_product_linc {
+  text-decoration: none;
+}
+
+.item_product,
+.item_product_linc {
+  max-width: 479px;
+  height: 300px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+
+  @media screen and (min-width: $tablet) {
+    max-width: 1024px;
+    height: 306px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    max-width: 286px;
+    height: 306px;
+  }
+}
+
+.thumb {
+  height: 228px;
+  max-width: 479px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 1024px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    max-width: 265px;
+  }
+}
+
+.img_product {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  // max-width: 90%;
+  // height: 200px;
+  //   padding-top: 20px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+}
+
+.title_product {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000000;
+
+  margin-top: 20px;
+  margin-bottom: 3px;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+}
+
+.old_price {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+
+  color: #bbbbbb;
+  text-decoration: line-through;
+
+  margin-right: 25px;
+}
+
+.valid_price {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+
+  color: #ff6b09;
+}
+
+.btn {
+  display: inline-block;
+  padding: 23px 72px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: white;
+  background-color: black;
+
+  cursor: pointer;
+  // outline: none;
+  border: none;
+
+  @media screen and (min-width: $tablet) {
+    padding: 36px 271px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    padding: 41px 439px;
+  }
+}
+
+.swiper-container .swiper-button-next {
+  right: 0px;
+}
+
+.swiper-container .swiper-button-prev {
+  left: 0px;
+}
+
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
+  background-color: #f4f4f4;
+  width: 32px;
+  height: 60px;
+
+  &::after {
+    color: #000000;
+    font-size: 10px;
+  }
+}
+
+.is-hidden {
+  display: none;
+}
