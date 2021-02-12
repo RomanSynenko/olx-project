@@ -2,7 +2,6 @@ import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 function slider({
     selector = '.banner-siema',
-
 }) {
     return new Swiper(selector,
         {
@@ -20,5 +19,4 @@ function slider({
             },
         });
 }
-
 export default slider;

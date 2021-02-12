@@ -1,2 +1,2 @@
 import './style/styles.scss';
-import './main/banner/bannerFech'
+import './main/banner/js/banner';
