@@ -14,30 +14,6 @@
                 </label>
                 <label for="file" class="label-add" placeholder=" ">
                     <span class="fields photo">Фото</span>
-                    {{!-- <div class="file" name="file">
-                        <span class="download">+</span>
-                        <img src="{{imageUrls}}" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <img src="" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <img src="" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <img src="" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <img src="" alt="" name="file-preload">
-                    </div> --}}
-                    {{#if edit}}
-                    {{#each imageUrls}}
-                    <div class="file" name="file">
-                        <span class="download">+</span>
-                        <img src="{{this}}" alt="" name="file-preload">
-                    </div>
-                    {{/each}}
-                    {{else}}
                     <div class="file" name="file">
                         <span class="download">+</span>
                         <img src="{{imageUrls}}" alt="" name="file-preload">
@@ -58,9 +34,8 @@
                         <span class="download">+</span>
                         <img src="" alt="" name="file-preload">
                     </div>
-                    {{/if}}
-                    <input type="file" id="file" class="inputfile" size="5" name="file" value="{{imageUrls}}"
-                        accept=".jpg, .jpeg, .png" multiple>
+                    <input type="file" id="file" class="inputfile" size="5" name="file" accept=".jpg, .jpeg, .png"
+                        multiple value="{{imageUrls}}">
                 </label>
                 <label for="" class="label-add">
                     <span class="fields">Описание товара</span>
@@ -71,31 +46,12 @@
                     <span class="fields">Категория товара</span>
                     <input type="text" class="input-form" name="category" placeholder=" " value="{{category}}">
                     <div id="triangle-down"></div>
-                    <ul class="wrap-category">
+                    <ul class="wrap-category is-hidden">
+                        {{#each this}}
                         <li class="category-items">
-                            <a href="" class="category-link" data-category="property">Недвижимость</a>
+                            <a href="" class="category-link">{{this}}</a>
                         </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="transport">Транспорт</a>
-                        </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="work">Работа</a>
-                        </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="electronics">Электроника</a>
-                        </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="business and services">Бизнес и услуги</a>
-                        </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="recreation and sport">Отдых и спорт</a>
-                        </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="free">Отдам бесплатно</a>
-                        </li>
-                        <li class="category-items">
-                            <a href="" class="category-link" data-category="trade">Обмен</a>
-                        </li>
+                        {{/each}}
                     </ul>
                 </label>
                 <label for="" class="label-add">
@@ -110,7 +66,7 @@
                 </label>
             </div>
             {{#if edit}}
-            <button class="delete">
+            <button class="delete" name="delete">
                 &#10060;
                 <span class="delete-text">Удалить объявление</span>
             </button>

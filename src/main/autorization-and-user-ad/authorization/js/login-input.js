@@ -13,11 +13,12 @@ async function fetchUserLogin(dataForm) {
 
         const AUTH_TOKEN = `Bearer ${data.accessToken}`
         axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-
+        
+        document.querySelector('button[name="user-ad"]').disabled = false;
         pnotify.infoMessage();
     } catch (error) {
         spinnerClassRemove();
-        
+
         throw pnotify.errorMessage();
     };
     

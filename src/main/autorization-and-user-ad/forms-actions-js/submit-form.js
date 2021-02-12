@@ -1,5 +1,5 @@
 import fetchUserLogin from '../authorization/js/login-input';
-import submitUserForms from './submit-user-forms';
+import { submitUserForms, submitUserAdForms } from './submit-user-forms';
 import { handlerKeydown, handlerModalClose, handlerBackdropClick } from './close-modal-actions';
 import fetchUserAuth from '../authorization/js/authorization';
 import fetchUserAd from '../user-ad/js/fetch-user-ad';
@@ -13,6 +13,8 @@ function initRefs() {
     refs.cancelBtn = document.querySelector('#cancelBtn');
     refs.closeBtn = document.querySelector('.modal-add-close');
     refs.backdropCloseModal = document.querySelector('.backdrop-add');
+    refs.inputFile = document.querySelector('.inputfile');
+    refs.containerImg = document.querySelector('.file[name="file"]');
 };
 
 function submitForm() {
@@ -28,21 +30,27 @@ function submitForm() {
 };
 
 function handlerSubmitFormAuth(event) {
-    event.preventDefault();
+    event.preventDefault(event);
+    
+    const { currentTarget: { elements } } = event;
+
+    if (elements.delete && !elements.file.value) {
+        initRefs()
+        refs.containerImg.style.border = '3px solid red';
+        return;
+    };
 
     spinnerClassAdd();
-
-    const { currentTarget: { elements } } = event;
     
     if (elements.userAd && elements.userAd.className === 'btn-form-add edit') {
-        const form = new FormData(event.target);
+        const form = submitUserAdForms(event.target);
         const id = elements.userAd.dataset.id
         fetchPatchUserAd(form, id);
         return;
     };
 
     if (elements.userAd) {
-        const form = new FormData(event.target);
+        const form = submitUserAdForms(event.target);
         fetchUserAd(form);
         return;
     };
@@ -53,7 +61,5 @@ function handlerSubmitFormAuth(event) {
     
     if (elements.auth) fetchUserAuth(formData); 
 };
-
-
 
 export default submitForm;

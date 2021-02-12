@@ -32,8 +32,8 @@ async function fetchCheckUserLoginIn(refreshToken) {
         
     } catch (error) {
         if (error.message === 'Request failed with status code 404') {
-            const userAdBtnRef = document.querySelector('button[name="user-ad"]');
-            userAdBtnRef.disabled = true;
+            // const userAdBtnRef = document.querySelector('button[name="user-ad"]');
+            // userAdBtnRef.disabled = true;
         };
     };
 

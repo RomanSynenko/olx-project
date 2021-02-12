@@ -124,15 +124,6 @@
         height: 100%;
         object-fit: cover;
       }
-
-      // &:first-child {
-      //   margin-left: 188px;
-      // }
-
-      // &.download::before {
-      //   content: "+";
-      //   display: inline-block;
-      // }
     }
   }
 
@@ -182,12 +173,12 @@
   .label-category {
     position: relative;
 
-    & .wrap-category {
+    & .wrap-category.is-hidden {
       display: none;
     }
   }
 
-  .label-category:hover .wrap-category {
+  .label-category .wrap-category {
     position: absolute;
     top: 100%;
     right: 0;

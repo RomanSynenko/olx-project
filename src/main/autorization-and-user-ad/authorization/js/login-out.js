@@ -1,3 +1,6 @@
 async function fetchLoginOut() {
-    await axios.post('/auth/logout');
+    try {
+        await axios.post('/auth/logout');
+        localStorage.clear();
+    } catch { };
 };

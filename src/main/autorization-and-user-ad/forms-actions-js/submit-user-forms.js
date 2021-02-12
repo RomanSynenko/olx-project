@@ -8,4 +8,8 @@ function submitUserForms(event) {
     return submittedForm;
 };
 
-export default submitUserForms;
+function submitUserAdForms(form) {
+    return new FormData(form);
+};
+
+export { submitUserForms, submitUserAdForms };

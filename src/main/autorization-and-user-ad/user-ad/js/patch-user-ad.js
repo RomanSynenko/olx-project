@@ -12,7 +12,6 @@ const refs = {};
 function initRefs() {
     refs.inputFile = document.querySelector('.inputfile');
     refs.editBtn = document.querySelector('.btn-form-add');
-    
     refs.plus = document.querySelectorAll('.download');
     refs.imgFile = document.querySelectorAll('img[name="file-preload"]');
     refs.deleteBtn = document.querySelector('.delete');
@@ -20,34 +19,37 @@ function initRefs() {
 };
 
 async function handlerPatchUserAd(event) {
-   
     // const id = event.terget.dataset.id;
-    const { data: {favourites} } = await axios.get('/call/own');
-    console.log(favourites);
+    const { data: { favourites } } = await axios.get('/call/own');
+    
     // ! Временно!!!!
-    const own = favourites.filter(el => el.title === "Hren");
-    // const own = favourites.filter(el => el.title === "Victory");
+    // const own = favourites.filter(el => el.title === "Hren");
+    const own = favourites.filter(el => el.title === "car");
 
     // ?? Финальный вариант
     // const own = favourites.filter(el => el._id === id);
 
     const newOwn = { ...own[0], ...{ edit: true } };
-    console.log(newOwn);
     
-    const markup = modalFormCall(newOwn);
-    rootRef.insertAdjacentHTML('beforeend', markup);
+    renderForm(newOwn);
 
-    initRefs();
     editForm(newOwn._id, newOwn.imageUrls.length);
 
     submitForm();
+
+    initRefs();
     refs.deleteBtn.addEventListener('click', fetchDeleteUserAd);
+};
+
+function renderForm(obj) {
+    const markup = modalFormCall(obj);
+    rootRef.insertAdjacentHTML('beforeend', markup);
 };
 
 function editForm(id, imgUrl) {
     initRefs();   
     const { editBtn, deleteBtn, inputFile, categoryFormMenu, plus, imgFile } = refs; 
-
+    
     for (let i = 0; i < imgUrl; i += 1) {
         imgFile[i].classList.add('preload-img');
         plus[i].style.display = 'none';
@@ -75,6 +77,7 @@ async function fetchDeleteUserAd(event) {
         const id = event.target.dataset.id
         await axios.delete(`/call/${id}`);
         removeBackdrop();
+        
     } catch {
         spinnerClassRemove();
     }; 

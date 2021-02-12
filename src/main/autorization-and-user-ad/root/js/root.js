@@ -47,6 +47,8 @@ outLoginRef.addEventListener('click', out)
 
 async function out() {
     await axios.post('/auth/logout');
+    localStorage.clear();
+    // document.querySelector('button[name="user-ad"]').disabled = true;
 }
 // ! ---------
 
