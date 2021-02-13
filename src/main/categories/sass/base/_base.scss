@@ -14,7 +14,6 @@ html {
 body {
   margin: 0;
 }
-
 h2,
 h3,
 p {
@@ -38,8 +37,7 @@ p {
   margin: 0;
 }
 
-.container,
-.container-btn {
+.container {
   margin-left: auto;
   margin-right: auto;
 
@@ -59,9 +57,11 @@ p {
 }
 
 .container-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
-
   @media screen and (min-width: $mobile) {
     width: 290px;
     height: 70px;
@@ -75,15 +75,19 @@ p {
   @media screen and (min-width: $desctop) {
     width: 1280px;
     height: 106px;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 }
-
+.container-btn > button {
+  outline: none;
+  &:hover {
+    color: #ff6b09;
+  }
+  &:focus {
+    color: #ff6b09;
+  }
+}
 .categories {
-  padding-top: 20px;
-
   &:first-child {
-    padding-top: 40px;
+    padding-top: 20px;
   }
 }

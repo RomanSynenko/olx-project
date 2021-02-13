@@ -52,10 +52,10 @@ makeRequest()
             listenerBanner('.banner-items');
         }
 
-        slider(settingSlader());
+        slider(settingSladerBanner());
     })
 
-function settingSlader() {
+function settingSladerBanner() {
     let slidesPerView = 0;
     let el = '.swiper-pagination';
     return { slidesPerView, el };
