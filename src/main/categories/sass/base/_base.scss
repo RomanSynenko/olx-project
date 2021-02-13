@@ -63,12 +63,12 @@ p {
   margin-right: auto;
 
   @media screen and (min-width: $mobile) {
-    width: 290px;
+    max-width: 480px;
     height: 70px;
   }
 
   @media screen and (min-width: $tablet) {
-    width: 688px;
+    max-width: 1280px;
     height: 96px;
   }
 
