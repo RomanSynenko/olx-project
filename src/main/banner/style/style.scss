@@ -115,6 +115,9 @@
     height: 216px;
     display: flex;
     max-width: 100%;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 .banner-items {
     display: flex;
@@ -200,6 +203,9 @@
         .banner-item_price_block {
             color: #ff6b09;
         }
+    }
+    @media screen and (max-width: 1279px) {
+        display: none;
     }
 }
 .item-cotainer_right {
