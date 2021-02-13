@@ -14,7 +14,6 @@ html {
 body {
   margin: 0;
 }
-
 h2,
 h3,
 p {
@@ -78,7 +77,15 @@ p {
     height: 106px;
   }
 }
-
+.container-btn > button {
+  outline: none;
+  &:hover {
+    color: #ff6b09;
+  }
+  &:focus {
+    color: #ff6b09;
+  }
+}
 .categories {
   padding-top: 20px;
 
