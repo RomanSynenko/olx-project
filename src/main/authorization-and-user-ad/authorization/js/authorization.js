@@ -3,6 +3,7 @@ import pnotify from '../../pnotify/pnotify';
 import { spinnerClassRemove } from '../../forms-actions-js/spinner';
 import { removeBackdrop } from '../../forms-actions-js/close-modal-actions';
 
+
 async function fetchUserAuth(formData) {
     try {
         await axios.post('/auth/register', formData);
@@ -23,5 +24,7 @@ async function fetchUserAuth(formData) {
         spinnerClassRemove();
     };
 };
+
+
 
 export default fetchUserAuth;

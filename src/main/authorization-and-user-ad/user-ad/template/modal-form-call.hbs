@@ -13,28 +13,32 @@
                     <input type="text" name="title" class="input-form" placeholder=" " value="{{title}}"
                         autocomplete="off">
                 </label>
-                <label for="file" class="label-add" placeholder=" ">
+                <label for="file" class="label-add" placeholder=" " name="foto-fields">
                     <span class="fields photo">Фото</span>
-                    <div class="file" name="file">
-                        <span class="download">+</span>
-                        <img src="{{imageUrls}}" alt="" name="file-preload">
+                    <div class="wrap-fields">
+                        <div class="file" name="file">
+                            <span class="download">+</span>
+                            <img src="{{imageUrls}}" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+
                     </div>
-                    <div class="file">
-                        <span class="download">+</span>
-                        <img src="" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <span class="download">+</span>
-                        <img src="" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <span class="download">+</span>
-                        <img src="" alt="" name="file-preload">
-                    </div>
-                    <div class="file">
-                        <span class="download">+</span>
-                        <img src="" alt="" name="file-preload">
-                    </div>
+
                     <input type="file" id="file" class="inputfile" size="5" name="file" accept=".jpg, .jpeg, .png"
                         multiple value="{{imageUrls}}">
                 </label>

@@ -18,7 +18,8 @@
     }
 
     @media screen and (max-width: 767px) {
-      width: 80%;
+      max-width: 80%;
+      padding: 40px 20px;
     }
 
     .wrap-labels {
@@ -52,15 +53,25 @@
 
   .label-add {
     display: flex;
-    flex-direction: row;
     align-items: center;
     width: 100%;
     font-size: 14px;
     line-height: 1.2px;
     letter-spacing: 0.02em;
 
-    // @media screen {
-    // }
+    .wrap-fields {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      display: block;
+
+      &[name="foto-fields"] {
+        display: block;
+      }
+    }
 
     & #triangle-down {
       position: absolute;
@@ -72,6 +83,11 @@
       border-right: 8px solid transparent;
       border-top: 10px solid #000000;
       cursor: pointer;
+
+      @media screen and (max-width: 767px) {
+        top: 37px;
+        right: 30px;
+      }
     }
 
     &:hover #triangle-down {
@@ -87,11 +103,20 @@
 
       color: #000000;
 
+      @media screen and (max-width: 767px) {
+        display: inline-block;
+        height: 15px;
+      }
+
       &.photo {
         margin-right: 188px;
 
         @media screen and (min-width: 768px) and (max-width: 1279px) {
           margin-right: 110px;
+        }
+
+        @media screen and (max-width: 767px) {
+          margin-right: 0;
         }
       }
     }
@@ -108,6 +133,11 @@
 
       @media screen and(min-width: 768px) and (max-width: 1279px) {
         width: 458px;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: 50px;
       }
 
       &:hover,
@@ -136,6 +166,15 @@
       background: #f5f6fb;
       cursor: pointer;
 
+      @media screen and (max-width: 767px) {
+        max-width: 77px;
+        max-heigth: 45px;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
       .preload-img {
         display: block;
         width: 100%;
@@ -158,6 +197,10 @@
       margin-left: 146px;
     }
 
+    @media screen and (max-width: 767px) {
+      margin: 0 auto;
+    }
+
     &:focus,
     &:hover {
       color: #000000;
@@ -177,6 +220,10 @@
     color: #000000;
     margin-right: auto;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
   }
 
   .modal-add-close {
@@ -225,12 +272,21 @@
       max-width: 458px;
     }
 
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+      height: 120px;
+    }
+
     .category-link {
       display: block;
       padding: 20px;
       font-size: 18px;
       color: #000000;
       text-decoration: none;
+
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+      }
 
       &:hover {
         color: #ff6b09;
@@ -256,6 +312,10 @@
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
       margin-left: 147px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-left: 0;
     }
 
     .delete-text {
