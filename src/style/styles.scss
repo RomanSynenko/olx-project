@@ -1,6 +1,8 @@
-@import "./utils/placeholders";
-@import "../main/autorization-and-user-ad/user-ad/modal-form-call.scss";
-@import "../main/autorization-and-user-ad/authorization/styles-registration.scss";
+// @import "./utils/placeholders";
+// @import "../main/authorization-and-user-ad/user-ad/modal-form-call.scss";
+// @import "../main/authorization-and-user-ad/authorization/styles-registration.scss";
+
+@import "../main/authorization-and-user-ad/root/styles-auth.scss/styles-auth.scss";
 
 html {
   box-sizing: border-box;
