@@ -16,23 +16,24 @@
 
             <div class="auth-wrap">
                 <div class="wrap-registration js__wrap-btn" id="auth">
-                    <button class="btn-office display-none">
+                    <button class="btn-office display-none" id="officeBtn">
                         <i class="far fa-user"></i>
-                        <span class="text-my-office" id="officeBtn">Мой кабинет</span> {{!-- запитати в єгора стосовно
+                        <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора стосовно
                         по якому
                         атрибуту він робить клік --}}
                     </button>
                     <button class=" registration" type="button" name="auth" id="authBtn">Регистрация</button>
-                    <span class="line">|</span>
+                    <span class="line"></span>
                     <button class="btn-logout display-none" id="logout" name="loginOut"><i class="fas fa-sign-out-alt"
                             name="outlogin"></i></button>
                     <button class="login" type="button" name="login" id="loginBtn">Войти</button>
                 </div>
-                <button class="create " type="button">
-                    <span class="text-create-btn js__wrap-btn">Создать объявление</span>
-                    <p class="plus-btn">+</p>
+                <button class="create js__wrap-btn text-create-btn" id="userAd" type="button" name="user-ad">Создать
+                    объявление
+                    {{!-- <span class="text-create-btn" id="userAd" name="user-ad">Создать объявление</span> --}}
+                    {{!-- <span class="plus-btn" id="userAd" name="user-ad">+</span> --}}
                 </button>
-
+                <button class="plus-btn create text-create-btn" id="userAd" type="button" name="user-ad">+</button>
             </div>
         </div>
 
@@ -40,17 +41,17 @@
             <nav id="filter" class="">
                 <div class="wrap-nav">
                     <div class="wrap-registration-mobil js__wrap-btn" id="auth">
-                        <button class="btn-office  display-none">
+                        <button class="btn-office  display-none" id="officeBtn-mob">
                             <i class="far fa-user"></i>
-                            <span class="text-my-office" id="officeBtn">Мой кабинет</span> {{!-- запитати в єгора
+                            <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора
                             стосовно по якому
                             атрибуту він робить клік --}}
                         </button>
-                        <button class="registration " type="button" name="auth" id="authBtn">Регистрация</button>
-                        <span class="line">|</span>
-                        <button class="btn-logout display-none" id="logout" name="loginOut"><i
+                        <button class="registration" type="button" name="auth" id="authBtn-mob">Регистрация</button>
+                        <span class="line"></span>
+                        <button class="btn-logout display-none" id="logout-mob" name="loginOut"><i
                                 class="fas fa-sign-out-alt" name="outlogin"></i></button>
-                        <button class="login" type="button" name="login" id="loginBtn">Войти</button>
+                        <button class="login" type="button" name="login" id="loginBtn-mob">Войти</button>
                     </div>
                     <i class="fas fa-times close-menu-filter dilsplay-none" id="close"></i>
                     <ul class="header-list-flex">

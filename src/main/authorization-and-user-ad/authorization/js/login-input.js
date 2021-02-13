@@ -18,7 +18,12 @@ async function fetchUserLogin(dataForm) {
         
         // document.querySelector('button[name="user-ad"]').disabled = false; 
         
+        if (window.outerWidth < 768) {
+            changeBtnAuthMobile();
+        };
+        
         changeBtnAuth();
+
         pnotify.infoMessage();
     } catch (error) {
         spinnerClassRemove();
@@ -40,10 +45,24 @@ function changeBtnAuth() {
     officeBtn.classList.remove('display-none');
     const outLoginRef = document.querySelector('#logout[name="loginOut"]');
     outLoginRef.classList.remove('display-none');
-    
+
     outLoginRef.addEventListener('click', handlerUserLoginOut);
 };
 
+function changeBtnAuthMobile() {
+    const login = document.querySelector('#loginBtn-mob[name="login"]');
+    login.classList.add('display-none');
+    const authBtn = document.querySelector('#authBtn-mob[name="auth"]');
+    authBtn.classList.add('display-none');
+
+     
+    const officeBtn = document.querySelector('#officeBtn-mob');
+    officeBtn.classList.remove('display-none');
+    const outLoginRef = document.querySelector('#logout-mob[name="loginOut"]');
+    outLoginRef.classList.remove('display-none');
+
+    outLoginRef.addEventListener('click', handlerUserLoginOut);
+}
 
 
-export default fetchUserLogin;
+export { fetchUserLogin, changeBtnAuth, changeBtnAuthMobile };

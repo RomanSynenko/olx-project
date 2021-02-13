@@ -44,8 +44,8 @@
 .line {
   margin-right: 12px;
   background-color: #465363;
-  height: 20px;
-  width: 1px;
+  height: 23px;
+  width: 2px;
 }
 
 // кнопка входу
@@ -139,7 +139,9 @@
   display: none;
 
   @media screen and (max-width: 767px) {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-size: 50px;
     font-weight: 400;

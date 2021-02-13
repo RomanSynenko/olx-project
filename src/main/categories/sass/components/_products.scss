@@ -6,6 +6,10 @@
 //     #1c262b 100%
 //   );
 // }
+.swiper-button-prev,
+.swiper-button-next {
+  outline: none;
+}
 
 .loader {
   position: absolute;

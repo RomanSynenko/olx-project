@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { changeBtnAuth, changeBtnAuthMobile } from './login-input';
 
 function checkUserLoginIn() {
     const refresh = localStorage.getItem("refreshToken");
@@ -29,6 +30,13 @@ async function fetchCheckUserLoginIn(refreshToken) {
 
         AUTH_TOKEN = `Bearer ${data.newAccessToken}`;
         axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+
+        if (window.outerWidth < 768) {
+            changeBtnAuthMobile();
+        };
+
+        changeBtnAuth();
+
         
     } catch (error) {
         if (error.message === 'Request failed with status code 404') {
@@ -36,7 +44,6 @@ async function fetchCheckUserLoginIn(refreshToken) {
             // userAdBtnRef.disabled = true;
         };
     };
-
-}
+};
 
 export default checkUserLoginIn; 

@@ -1,4 +1,4 @@
-import fetchUserLogin from '../authorization/js/login-input';
+import { fetchUserLogin } from '../authorization/js/login-input';
 import { submitUserForms, submitUserAdForms } from './submit-user-forms';
 import { handlerKeydown, handlerModalClose, handlerBackdropClick } from './close-modal-actions';
 import fetchUserAuth from '../authorization/js/authorization';

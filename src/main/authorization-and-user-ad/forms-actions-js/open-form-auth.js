@@ -15,7 +15,9 @@ function initRefs() {
 };
 
 function handlerOpenFormAuth(event) {
+    event.preventDefault();
     const value = event.target.name;
+    console.log(value);
 
     if (!localStorage.getItem('accessToken') && value === "user-ad") return;
     
