@@ -9,5 +9,7 @@ const makeRequest = async () => {
     } catch (error) {
         throw error;
     }
+
 };
+
 export default makeRequest;

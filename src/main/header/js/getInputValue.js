@@ -1,11 +1,13 @@
 import { receiveSearchValue } from './api';
-import { removeActiveFilter } from './utils';
+import { removeActiveFilter,clearRoot } from './utils';
 import refs from './header';
+
 
 function onGetInputValue(e) {
     e.preventDefault();
     const form = e.currentTarget;
     const inputValue = form.elements.query.value
+    clearRoot();
     receiveSearchValue(inputValue);
     const filterRef = document.querySelector('#filter');
     removeActiveFilter(filterRef);
