@@ -1,4 +1,8 @@
 import refs from './header';
+import renderCategoriesWithProduct from '../../categories/js/Categories';
+import makeRequestBanner from '../../banner/js/banner';
+const root = document.querySelector('#root');
+
 
 function resetList() {
     const listRef = document.querySelector('#list');
@@ -33,10 +37,7 @@ function onClickMenuFilter() {
     if (!refs.filterMenu.checked) {
         refs.filter.classList.remove('is-open');
         
-    }
-
-    refs.filterMenu
-    
+    }    
 }
 
 function onClickCloseBurgerMenu() {
@@ -54,23 +55,26 @@ function onClickSearchIcon() {
     
 }
 
-// function resetFocus({element}) {
-//     setTimeout(() => {
-//         element.blur();
-//     },200)    
-// }
 
 
-function onClickReset() {
+function onClickReset() {   
     resetList();
     removeActiveFilter(refs.filter);
+    if (root.firstElementChild === null) {
+        makeRequestBanner();
+        renderCategoriesWithProduct();
+    }
     
     setTimeout(() => {
         refs.resetBtn.blur();
     },200)
 };
+
+function clearRoot() {
+    refs.root.innerHTML = '';    
+}
     
 export {
     resetList, addActiveFilter, removeActiveFilter,
-    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset
+    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset,clearRoot
 };

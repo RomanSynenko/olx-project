@@ -18,16 +18,18 @@
                 <div class="wrap-registration js__wrap-btn" id="auth">
                     <button class="btn-office display-none">
                         <i class="far fa-user"></i>
-                        <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора стосовно по якому
+                        <span class="text-my-office" id="officeBtn">Мой кабинет</span> {{!-- запитати в єгора стосовно
+                        по якому
                         атрибуту він робить клік --}}
                     </button>
-                    <button class=" registration" type="button" name="auth">Регистрация</button>
+                    <button class=" registration" type="button" name="auth" id="authBtn">Регистрация</button>
                     <span class="line">|</span>
-                    <button class="btn-logout display-none"><i class="fas fa-sign-out-alt" name="outlogin"></i></button>
-                    <button class="login" type="button" name="login">Войти</button>
+                    <button class="btn-logout display-none" id="logout" name="loginOut"><i class="fas fa-sign-out-alt"
+                            name="outlogin"></i></button>
+                    <button class="login" type="button" name="login" id="loginBtn">Войти</button>
                 </div>
                 <button class="create " type="button">
-                    <span class="text-create-btn">Создать объявление</span>
+                    <span class="text-create-btn js__wrap-btn">Создать объявление</span>
                     <p class="plus-btn">+</p>
                 </button>
 
@@ -40,14 +42,15 @@
                     <div class="wrap-registration-mobil js__wrap-btn" id="auth">
                         <button class="btn-office  display-none">
                             <i class="far fa-user"></i>
-                            <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора стосовно по якому
+                            <span class="text-my-office" id="officeBtn">Мой кабинет</span> {{!-- запитати в єгора
+                            стосовно по якому
                             атрибуту він робить клік --}}
                         </button>
-                        <button class="registration " type="button" name="auth">Регистрация</button>
+                        <button class="registration " type="button" name="auth" id="authBtn">Регистрация</button>
                         <span class="line">|</span>
-                        <button class="btn-logout display-none"><i class="fas fa-sign-out-alt"
-                                name="outlogin"></i></button>
-                        <button class="login" type="button" name="login">Войти</button>
+                        <button class="btn-logout display-none" id="logout" name="loginOut"><i
+                                class="fas fa-sign-out-alt" name="outlogin"></i></button>
+                        <button class="login" type="button" name="login" id="loginBtn">Войти</button>
                     </div>
                     <i class="fas fa-times close-menu-filter dilsplay-none" id="close"></i>
                     <ul class="header-list-flex">

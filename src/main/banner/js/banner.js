@@ -37,7 +37,8 @@ const listenerBanner = (el) => {
     )
 };
 
-makeRequest()
+function makeRequestBanner() {
+    makeRequest()
     .then((res) => {
         const windowWidth = document.documentElement.clientWidth;
         renderMobile(res);
@@ -54,9 +55,14 @@ makeRequest()
 
         slider(settingSladerBanner());
     })
+};
+
+
 
 function settingSladerBanner() {
     let slidesPerView = 0;
     let el = '.swiper-pagination';
     return { slidesPerView, el };
 };
+
+export default makeRequestBanner;
