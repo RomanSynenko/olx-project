@@ -1,17 +1,17 @@
 import templateModal from '../cardProduct/templates/templateModal.hbs'
 import axios from 'axios'
 const markupId = document.querySelector('#root')
-const openModalBtn=document.querySelector('button[data-action="open-modal"]')
-console.log(openModalBtn)
+// const openModalBtn=document.querySelector('button[data-action="open-modal"]')
 
-openModalBtn.addEventListener('click', onOpenModal)
 
-async function onOpenModal(event){
-  const testProduct= 'https://callboard-backend.goit.global/call/find?search=dog'
-  // const searchRef = event.target.dataset.search
-  // const testProduct=`https://callboard-backend.goit.global/call/find?search=${searchRef}`
-  const{data}=await axios.get(testProduct)
-  console.log(data)
+async function onOpenModal(event) {
+  console.log(event);
+  // const testProduct= 'https://callboard-backend.goit.global/call/find?search=dog'
+  // console.log(event.target);.target.dataset.title  
+  const testProduct = `https://callboard-backend.goit.global/call/find?search=${event}`
+  console.log(testProduct);
+  const { data } = await axios.get(testProduct)
+ 
   
   markupId.insertAdjacentHTML('beforeend', templateModal(data[0]))
 
@@ -20,7 +20,7 @@ async function onOpenModal(event){
    const userId = event.target.getAttribute('data-userId')
       const userRequest = `https://callboard-backend.goit.global/user/${userId}`
       const{data}= await axios.get(userRequest)
-      console.log(data)
+     
      
      event.target.classList.add('card-infoBtn-open')
       event.target.textContent = `Продавец - на ОЛХ с ${data.registrationDate}\n${data.email}`    
@@ -37,7 +37,7 @@ async function onOpenModal(event){
 }
 
 function windowOnClick(event){
-  console.dir(event.target)
+ 
   if(event.target.className!=='card-backdrop'){
     return 
   } 
@@ -58,8 +58,10 @@ async function handleFavorites(event){
   const{data}=await axios.get(favoritesUrl, {
     headers
   })
-  console.log(data)
+  
   event.target.firstElementChild.classList.add('favorites_red')
 
   // event.target.textContent 
 }
+
+export default onOpenModal; 

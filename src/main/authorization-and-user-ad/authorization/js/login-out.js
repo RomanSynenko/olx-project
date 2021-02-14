@@ -21,7 +21,7 @@ async function fetchLoginOut() {
         
         changeBtnAuthReverse();
     } catch {};
-
+    
     document.querySelector('.backdrop-add').remove();
 };
 

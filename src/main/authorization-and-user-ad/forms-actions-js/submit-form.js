@@ -43,7 +43,7 @@ function handlerSubmitFormAuth(event) {
 
     spinnerClassAdd();
 
-    if (elements.loginOut) {
+    if (elements.loginOut) {       
         fetchLoginOut(); 
         return;
     };

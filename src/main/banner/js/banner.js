@@ -4,6 +4,7 @@ import markupSliderMobile from '../templates/markupSlider.hbs';
 import markupBottomSection from '../templates/markupBottomSection.hbs';
 import markupDesctopRightSection from '../templates/markupDesctopRightSection.hbs';
 import '../style/style.scss';
+import onOpenModal from '../../cardProduct/cardMain';
 
 const rootRef = document.querySelector('#root');
 const renderMobile = (res) => {
@@ -27,7 +28,8 @@ const renderDesctopMarcup = (res) => {
 };
 
 const bannerClick = (event) => {
-    return console.log(event.target.dataset.title);
+    const clickBanner = event.target.dataset.title;
+    onOpenModal(clickBanner);
 };
 
 

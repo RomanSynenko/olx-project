@@ -15,7 +15,6 @@ function authorizationRoot() {
     const btnMobileOpen = document.querySelector('.wrap-registration-mobil.js__wrap-btn');
     const btnOpen = document.querySelector('.wrap-registration.js__wrap-btn');
     const btnUserAd = document.querySelectorAll('#userAd[name="user-ad"]');
-    console.log(btnUserAd);
 
     btnUserAd.forEach(el => el.addEventListener('click', handlerOpenFormAuth));
     
