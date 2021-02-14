@@ -1,28 +1,21 @@
 .card-backdrop {
-  // // display: flex;
-  // justify-content: center;
-  // align-items: center;
   position: fixed;
-
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  // z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .card-modal {
   display: flex;
   position: absolute;
   border-radius: 4px;
   background-color: #fff;
-  padding-top: 55px;
+  padding-top: 117px;
   padding-left: 18px;
   padding-right: 16px;
   max-width: 290px;
-  // height: 674px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // min-height: 780px;
 }
 .card-image-list {
   display: flex;
@@ -36,9 +29,7 @@
   top: 0;
   left: 0;
 }
-// .image-list .imgWrapper:not(:first-child) {
-//   align-items: flex-end;
-// }
+
 .card-imgWrapper {
   display: flex;
   width: 253px;
@@ -49,20 +40,48 @@
   width: 100%;
   object-fit: cover;
 }
-
 .card-add {
   display: flex;
   padding-bottom: 30px;
   color: #878686;
+  padding-top: 20px;
 }
-// .title-box {
-//   position: absolute;
-//   top: 10px;
-//   left: 10px;
-//   display: flex;
-//   justify-content: space-between;
-// }
+.card-favorites {
+  border: none;
+  background-color: inherit;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #878686;
+  margin: 0;
+  padding-right: 13px;
+}
+.card-favorites:focus {
+  outline: none;
+}
 
+.card-share {
+  border: none;
+  background-color: inherit;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #878686;
+  margin: 0;
+}
+.card-share:focus {
+  outline: none;
+}
+.fas {
+  padding-left: 5px;
+}
+.favorites_red {
+  color: red;
+}
 .card-close {
   position: absolute;
   left: 280px;
@@ -71,6 +90,9 @@
   background-color: inherit;
   width: 14px;
   height: 14px;
+}
+.card-close:focus {
+  outline: none;
 }
 .card-title {
   font-family: Montserrat;
@@ -123,37 +145,7 @@
   border: #ff6b09;
   color: #000000;
 }
-.card-add {
-  padding-top: 20px;
-}
-.card-favorites {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
-  color: #878686;
-  margin: 0;
-  padding-right: 13px;
-}
-.card-card_vector-notActiv {
-  // width: 14px;
-  // height: 12px;
 
-  // background: #878686;
-  border: #878686;
-}
-.card-share {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 14px;
-  color: #878686;
-  margin: 0;
-  padding-left: 40px;
-  padding-right: 13px;
-}
 .card-title_text {
   font-family: Montserrat;
   font-style: normal;
@@ -186,37 +178,27 @@
   .card-imgWrapper {
     padding: 10px 0;
   }
-  .card-swiper-container {
-    width: 253px;
-    height: 253px;
-  }
+
   .card-title-box {
     position: absolute;
-    top: 10px;
-    left: 18px;
+    top: 50px;
+    left: 20px;
     display: flex;
     justify-content: space-between;
   }
   .card-close {
     position: absolute;
-    left: 240px;
-    bottom: 15px;
+    left: 230px;
+    bottom: 30px;
   }
   .card-code_product {
     position: absolute;
-    top: 35px;
-    left: 18px;
+    top: 75px;
+    left: 20px;
   }
   .card-price {
     padding-bottom: 30px;
   }
-
-  // .swiper-pagination {
-  //   width: 5px;
-  //   height: 5px;
-  //   border-radius: 5px;
-  //   background-color: #ff6b09;
-  // }
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .card-modal {
@@ -235,7 +217,6 @@
     display: block;
     width: 281px;
     height: 333px;
-    // height: auto;
   }
   .card-imgWrapper {
     width: 55px;
@@ -248,10 +229,7 @@
     width: 100%;
     height: 100%;
   }
-  // .swiper-container {
-  //   width: 281px;
-  //   height: 333px;
-  // }
+
   .card-description_wrapper {
     padding-left: 38px;
   }
@@ -264,11 +242,6 @@
     display: flex;
     justify-content: space-between;
   }
-  // .swiper-container,
-  // .swiper-wrapper,
-  // .swiper-slide {
-  //   display: none;
-  // }
 }
 @media (min-width: 1280px) {
   .card-modal {
@@ -286,7 +259,6 @@
     display: block;
     width: 428px;
     height: 465px;
-    // height: auto;
   }
   .card-image_main {
     object-fit: cover;
@@ -299,10 +271,7 @@
     padding-right: 10px;
     padding-top: 16px;
   }
-  // .swiper-container {
-  //   width: 428px;
-  //   height: 465px;
-  // }
+
   .card-description_wrapper {
     padding-left: 38px;
   }
@@ -316,9 +285,4 @@
     display: flex;
     justify-content: space-between;
   }
-  // .swiper-container,
-  // .swiper-wrapper,
-  // .swiper-slide {
-  //   display: none;
-  // }
 }
