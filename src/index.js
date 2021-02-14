@@ -1,4 +1,7 @@
 import './style/styles.scss';
+//Anna
+//import '../src/main/cardProduct/cardMain.js'
+
 
 // Vlad header
 import './main/header/scss/main.scss';
@@ -18,3 +21,4 @@ receiveHeader();
 makeRequestBanner();
 renderCategoriesWithProduct();
 // authorizationRoot();
+

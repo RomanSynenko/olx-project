@@ -1,12 +1,11 @@
 %button {
   margin: 0;
-  border: 0;
-  padding: 20px 13px;
-
+  border: 0; 
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02cm;
+  padding: 20px 13px;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -23,7 +22,6 @@
   margin: -1px;
   border: 0;
   padding: 0;
-
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -34,3 +32,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
