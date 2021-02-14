@@ -1,0 +1,15 @@
+<li class="card-call" data-id="{{_id}}">
+    <img class="card-call__img" src="{{imageUrls}}" id="{{id}}" alt="{{title}}" />
+    <div class="card-call__title-container">
+        <h6 class="card-call__title">{{title}}</h6>
+        <p class="card-call__price">{{price}} €</p>
+        <div class="btn-container">
+            {{#if itsOwnCall}}
+            <button class="card-btn" data-id="{{_id}}" id="edit-btn">Редактровать</button>
+            <button class="card-btn" data-id="{{_id}}" id="delete-ownCall-btn">Удалить</button>
+            {{else}}
+            <button class="card-btn" data-id="{{_id}}" id="delete-favCall-btn">Удалить</button>
+            {{/if}}
+        </div>
+    </div>
+</li>
