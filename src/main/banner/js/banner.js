@@ -25,39 +25,29 @@ const renderDesctopMarcup = (res) => {
     sliderRef.insertAdjacentHTML('beforeend', marcupRightDesctop);
     sliderRef.insertAdjacentHTML('afterend', marcupBottomDesctop);
 };
+
 const bannerClick = (event) => {
-    return event.target.dataset.title;
+    return console.log(event.target.dataset.title);
 };
-const listenerBanner = (el) => {
-    const refs = document.querySelectorAll(el);
-    refs.forEach(
-        (element) => {
-            element.addEventListener('click', bannerClick);
-        }
-    )
-};
+
 
 function makeRequestBanner() {
     makeRequest()
-    .then((res) => {
-        const windowWidth = document.documentElement.clientWidth;
-        renderMobile(res);
-        listenerBanner('.banner-slide');
-        if (windowWidth > 767 && windowWidth < 1280) {
-            listenerBanner('.banner-items');
-            renderBottomSection(res);
-        }
-        if (windowWidth > 1280) {
-            renderDesctopMarcup(res);
-            listenerBanner('.item-cotainer_right_section');
-            listenerBanner('.banner-items');
-        }
+        .then((res) => {
+            const windowWidth = document.documentElement.clientWidth;
+            renderMobile(res);
 
-        slider(settingSladerBanner());
-    })
+            if (windowWidth > 767 && windowWidth < 1280) {
+                renderBottomSection(res);
+
+            }
+            if (windowWidth > 1280) {
+                renderDesctopMarcup(res);
+            }
+            slider(settingSladerBanner());
+            rootRef.addEventListener('click', bannerClick);
+        })
 };
-
-
 
 function settingSladerBanner() {
     let slidesPerView = 0;
