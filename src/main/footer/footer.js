@@ -3,7 +3,7 @@ import footerOpen from './templates/footer_render.hbs';
 import openStudentsModal from './templates/students-modal.hbs';
 
 
-const markupFooterRef = document.querySelector('#root')
+const markupFooterRef = document.querySelector('#footer')
 markupFooterRef.insertAdjacentHTML('beforeend', footerOpen());
 
 
@@ -17,7 +17,6 @@ function handleOpenStudentsWindow() {
     window.addEventListener('keydown', handleKeypress)
     const studentCloseBtn = document.querySelector('.student-modal__close-btn')
     studentCloseBtn.addEventListener('click', handleCloseStudentsWindow)
-
     function handleCloseStudentsWindow(event) {
         event.preventDefault()
         modalRef.classList.remove('show-modal')
