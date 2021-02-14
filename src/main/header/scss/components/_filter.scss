@@ -47,6 +47,7 @@
     background-color: #02182d;
     top: 170px;
     left: 0;
+    z-index: 2;
   }
   @media screen and (max-width: 767px) {
     top: 0;
@@ -57,7 +58,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      width: 83%;
+      width: 91%;
       height: 100vh;
       padding: 24px 14px 146px 20px;
       top: 0;

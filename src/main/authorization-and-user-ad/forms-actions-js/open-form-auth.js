@@ -14,10 +14,9 @@ function initRefs() {
     refs.inputCategory = document.querySelector('.input-form[name="category"]');
 };
 
-function handlerOpenFormAuth(event) {
-    event.preventDefault();
+function handlerOpenFormAuth(event) {   
     const value = event.target.name;
-    console.log(value);
+   
 
     if (!localStorage.getItem('accessToken') && value === "user-ad") return;
     
@@ -32,7 +31,8 @@ function handlerOpenFormAuth(event) {
 };
 
 function renderForms(markup) {
-    rootRef.insertAdjacentHTML('beforeend', markup);
+    rootRef.insertAdjacentHTML('beforeend', markup); 
+    document.body.classList.add('overflow');
     submitForm();
 };
 

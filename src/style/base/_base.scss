@@ -12,8 +12,15 @@ html {
 
 body {
   font-family: "Montserat", "Arial", sans-serif;
+
+  &.overflow {
+    overflow: hidden;
+  }
 }
 
+// .backdrop-add body {
+//   overflow: hidden;
+// }
 h1,
 h2,
 h3,

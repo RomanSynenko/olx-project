@@ -9,7 +9,7 @@ function initSlider({
   return new Swiper(selector,
     {
       //   direction: 'vertical',
-      // loop: true,
+      loop: true,
 
       // If we need pagination
       slidesPerView,

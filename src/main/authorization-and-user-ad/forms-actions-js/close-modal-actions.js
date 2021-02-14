@@ -18,7 +18,8 @@ function handlerBackdropClick(event) {
     handlerModalClose();
 };
 
-function removeBackdrop() {
+function removeBackdrop() {    
+    document.body.classList.remove('overflow');
     document.querySelector('.backdrop-add').remove();
 };
 

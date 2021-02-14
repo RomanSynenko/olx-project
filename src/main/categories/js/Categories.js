@@ -8,12 +8,15 @@ const refs = {
 
 let pageNamber = 1;
 
-async function renderCategoriesWithProduct() {
+async function renderCategoriesWithProduct() { 
+    pageNamber = 1;
     const data = await getRusCategoriesWithProduct(pageNamber);
     
     const markap = productTpl(data);
-    refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
-    pageNamber += 1;
+    refs.bodyContainer.insertAdjacentHTML('beforeend', markap); 
+
+    // pageNamber += 1; 
+     
         
     initSlider(settingSlader());
 
@@ -22,6 +25,8 @@ async function renderCategoriesWithProduct() {
 
     loadMoreHeandler();    
 };
+
+
 
 function loadMoreHeandler() {
     const loadMoreBtn = document.querySelector('[data-action="load-more"]');
@@ -50,6 +55,7 @@ function settingSlader() {
     return { slidesPerView, el };
 };
 
+
 // renderCategoriesWithProduct();
 
 // async function openAllProduct(event) {
@@ -61,28 +67,30 @@ function settingSlader() {
 //     console.log(allProduct);
 // };
  
-async function loadMoreCategories() {
+async function loadMoreCategories() {    
     const secBtn = document.querySelector('.section-btn');
     secBtn.remove();
-    const refsSpiner = document.querySelector('.loader');
-    refsSpiner.classList.remove('is-hidden');
+    const refsSpiner = document.querySelector('.loader-btn');
+    refsSpiner.classList.remove('is-hidden-spinner');
+    pageNamber += 1;
     const data = await getRusCategoriesWithProduct(pageNamber);
     
     const markap = productTpl(data);
     refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
     refsSpiner.remove();
+    // refsSpiner.classList.add('is-hidden');
 
     loadMoreHeandler();
     
     window.scrollTo({
         top: document.documentElement.offsetHeight,
             });
-    pageNamber += 1;
+    
 
-    if (pageNamber === 4) { 
+    if (pageNamber === 3) { 
         const secBtn = document.querySelector('.section-btn');
         secBtn.remove();
-    }    
+    }   
     
     initSlider(settingSlader());
 };
