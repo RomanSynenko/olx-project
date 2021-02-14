@@ -1,16 +1,19 @@
-{{!-- <ul class="grid-list container" id="list">
-    {{#each this}}
-    <li class="item-grid">
-        <a class="link-goods" href="">
-            <img class="img-goods" src="{{imageUrls}}" alt="{{title}}" />
-            <h3 class="title-goods">{{title}}</h3>
-            <p class="price-goods">{{price}} &#x020AC</p>
-        </a>
-    </li>
-    {{/each}}
-</ul> --}}
+<div class="container-filter-category">
+    <ul class="grid-list" id="list">
+        {{#each this}}
+        <li class="item-grid">
+            <a class="link-goods" href="">
+                <img class="img-goods" src="{{imageUrls}}" alt="{{title}}" />
+                <h3 class="title-goods">{{title}}</h3>
+                <p class="price-goods">{{price}} &#x020AC</p>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
 
-<ul class="grid-list items_product container" id="list">
+
+{{!-- <ul class="grid-list items_product container" id="list">
     {{#each this}}
     <li class="item-grid item_product">
         <a class="link-goods item_product_linc" data-serch={{title}} href="">
@@ -22,4 +25,4 @@
         </a>
     </li>
     {{/each}}
-</ul>
+</ul> --}}
