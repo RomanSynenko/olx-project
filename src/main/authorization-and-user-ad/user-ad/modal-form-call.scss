@@ -1,0 +1,335 @@
+.backdrop-add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+
+  .modal-add {
+    @extend %centered-form;
+    padding: 50px 60px 50px;
+    width: 950px;
+
+    background: #ffffff;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: 724px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 80%;
+      padding: 40px 20px;
+    }
+
+    .wrap-labels {
+      margin-bottom: 40px;
+    }
+
+    .modal-add-close {
+      position: absolute;
+      top: 30px;
+      right: 25px;
+      margin: 0;
+
+      border: 0;
+
+      font-weight: 400;
+      font-size: 18px;
+
+      background: transparent;
+    }
+  }
+}
+
+.form-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  ::placeholder {
+    color: #bbbbbb;
+  }
+
+  .label-add {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.2px;
+    letter-spacing: 0.02em;
+
+    .wrap-fields {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      display: block;
+
+      &[name="foto-fields"] {
+        display: block;
+      }
+    }
+
+    & #triangle-down {
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 10px solid #000000;
+      cursor: pointer;
+
+      @media screen and (max-width: 767px) {
+        top: 37px;
+        right: 30px;
+      }
+    }
+
+    &:hover #triangle-down {
+      border-top-color: #ff6b09;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .fields {
+      font-weight: 500;
+
+      color: #000000;
+
+      @media screen and (max-width: 767px) {
+        display: inline-block;
+        height: 15px;
+      }
+
+      &.photo {
+        margin-right: 188px;
+
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+          margin-right: 110px;
+        }
+
+        @media screen and (max-width: 767px) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .input-form {
+      width: 610px;
+      height: 56px;
+      margin-left: auto;
+      padding: 23px;
+
+      background: #ffffff;
+      border: 1px solid #bbbbbb;
+      outline: none;
+
+      @media screen and(min-width: 768px) and (max-width: 1279px) {
+        width: 458px;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        height: 50px;
+      }
+
+      &:hover,
+      &:focus {
+        border: 1px solid #ff6b09;
+      }
+
+      &:not(:placeholder-shown) {
+        border: 1px solid #ff6b09;
+      }
+    }
+
+    .inputfile {
+      @extend %visually-hidden;
+    }
+
+    .file {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 78px;
+      height: 50px;
+      color: #bbbbbb;
+      margin-right: 10px;
+      background: #f5f6fb;
+      cursor: pointer;
+
+      .download {
+        position: absolute;
+      }
+
+      @media screen and (max-width: 767px) {
+        max-width: 77px;
+        max-heigth: 45px;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      .preload-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .btn-form-add {
+    @extend %button;
+
+    width: 286px;
+    margin-left: 220px;
+    background: #ff6b09;
+    color: #ffffff;
+    outline: none;
+
+    @media screen and(min-width: 768px) and (max-width: 1279px) {
+      margin-left: 146px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin: 0 auto;
+    }
+
+    &:focus,
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+.backdrop-add {
+  .title-form-add {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+
+    color: #000000;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+
+  .modal-add-close {
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      color: #ff6b09;
+    }
+    &:focus {
+      color: #ff6b09;
+      border: 1px solid #ff6b09;
+    }
+  }
+
+  .label-category {
+    position: relative;
+
+    & .wrap-category.is-hidden {
+      display: none;
+    }
+  }
+
+  .label-category .wrap-category {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: block;
+
+    width: 610px;
+    height: 152px;
+    overflow: auto;
+
+    list-style: none;
+    background-color: #ffffff;
+
+    font-size: 16px;
+
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ff6b09;
+
+    text-align: center;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      max-width: 458px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+      height: 120px;
+    }
+
+    .category-link {
+      display: block;
+      padding: 20px;
+      font-size: 18px;
+      color: #000000;
+      text-decoration: none;
+
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: #ff6b09;
+      }
+    }
+  }
+
+  .delete {
+    width: 175px;
+    margin: 0;
+    margin-left: 220px;
+    margin-bottom: 18px;
+    padding: 0;
+    border: 1px solid #ff6b09;
+    padding: 3px;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+
+    background: transparent;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      margin-left: 147px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin-left: 0;
+    }
+
+    .delete-text {
+      padding-left: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+      border: 1px solid #ff6b09;
+    }
+  }
+}
