@@ -2,10 +2,13 @@ import {userFavourites, userOwn} from './fetchUserFavourites';
 import cardCall from '../templates/cardCall.hbs';
 import deleteUserCall from './deleteUserCall';
 import deleteFavouritesCall from './deleteFavCall';
+import { handlerPatchUserAd } from '../../authorization-and-user-ad/user-ad/js/patch-user-ad';
 
 
- const markupUserCategoryCalls = async (event) => {
-    event.preventDefault();
+const markupUserCategoryCalls = async (event) => {
+   
+   event.preventDefault();
+   console.log(event.target);
     
     const { target } = event; 
     const rootEL = document.getElementById('root');
@@ -56,11 +59,17 @@ import deleteFavouritesCall from './deleteFavCall';
         return data
         .map(call => cardCall(call))
         .join(' ')
-    }
+  }
+  // console.log(event.target);
+  // console.log(event.target.id);
+  const btnEditUserAd = document.querySelector('#edit-btn');
+  btnEditUserAd.addEventListener('click', handlerPatchUserAd);
 
-      if(target.id === 'edit-btn'){ // КНОПКА ДЛЯ РЕДАКТИРОВАНИЯ КАРТОЧКИ
-    alert('САШИНА ФУНКЦИЯ')
- }
+//       if(target.id === 'edit-btn'){ // КНОПКА ДЛЯ РЕДАКТИРОВАНИЯ КАРТОЧКИ
+//     //  const btnEditUserAd = document.querySelector('#edit-btn');
+//     //   btnEditUserAd.addEventListener('click', handlerPatchUserAd);
+//         alert('klhkiug');
+//  }
 
  if(target.id === 'delete-ownCall-btn'){
     const cardId = target.getAttribute('data-id');

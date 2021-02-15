@@ -1,6 +1,8 @@
 import {userFavourites, userOwn} from './fetchUserFavourites';
 import cardCall from '../templates/cardCall.hbs';
 import slider from './slider';
+import { handlerPatchUserAd } from '../../authorization-and-user-ad/user-ad/js/patch-user-ad';
+import markupUserCategoryCalls from './markupUserCategoryCalls';
 
 const markupTemplateAccountUser = async (event) => {
     const { target } = event;
@@ -34,6 +36,12 @@ const markupTemplateAccountUser = async (event) => {
         </ul>
     </div>
     `)
+  
+  const btnEditUserAd = document.querySelector('#edit-btn');
+  btnEditUserAd.addEventListener('click', handlerPatchUserAd);
+
+  const rootUserAccount = document.querySelector('.root-user-account');
+  rootUserAccount.addEventListener('click', markupUserCategoryCalls);
 
     function markupCard(data) {
       return data.slice(0,4)

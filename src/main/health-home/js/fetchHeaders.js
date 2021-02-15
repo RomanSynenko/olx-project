@@ -10,5 +10,5 @@
 // export const headers = {
 //     Authorization: `Bearer ${JSON.parse(localStorage.getItem('accessToken'))}`,
 // }
-console.log(JSON.parse(localStorage.getItem('accessToken')));
+// console.log(JSON.parse(localStorage.getItem('accessToken')));
 //

@@ -33,6 +33,9 @@ async function onOpenModal(titleFilter) {
   
   const favoritesRef = document.querySelector('.card-favorites')
   favoritesRef.addEventListener('click', handleFavorites)
+
+  const cardList = document.querySelector('.card-image-list')
+  cardList.addEventListener('click', onGallaryClick )
 }
 
 function windowOnClick(event){
@@ -46,21 +49,34 @@ function windowOnClick(event){
 function closeOnClick(event){
   document.querySelector('.card-backdrop').remove()
 }
-const token =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDI0Zjc0YTc2Zjk5ZDMxNjRhNTczZTQiLCJzaWQiOiI2MDI0ZjgzMTc2Zjk5ZDMxNjRhNTczZTciLCJpYXQiOjE2MTMwMzU1NjksImV4cCI6MTYxNTY2MzU2OX0.d9bAer0nylW7ov9pvniAozEi2lTDhz2_N2FkY89dnEs"
-const headers = {
-  Authorization: `Bearer ${token}`
-}
+// const token =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDI0Zjc0YTc2Zjk5ZDMxNjRhNTczZTQiLCJzaWQiOiI2MDI0ZjgzMTc2Zjk5ZDMxNjRhNTczZTciLCJpYXQiOjE2MTMwMzU1NjksImV4cCI6MTYxNTY2MzU2OX0.d9bAer0nylW7ov9pvniAozEi2lTDhz2_N2FkY89dnEs"
+// const headers = {
+//   Authorization: `Bearer ${token}`
+// }
 
 
-async function handleFavorites(event){
-  const favoritesUrl = 'https://callboard-backend.goit.global/call/favourites'
-  const{data}=await axios.get(favoritesUrl, {
-    headers
-  })
+async function handleFavorites(event) {
+  const idCardProd=document.querySelector('.card-code_product');
+  const id = idCardProd.dataset.idProduct;
+  // const favoritesUrl = 'https://callboard-backend.goit.global/call/favourites'
+  const { data } = await axios.post(`/call/favourite/${id}`);
   
   event.target.firstElementChild.classList.add('favorites_red')
 
   // event.target.textContent 
+}
+
+function onGallaryClick(event){
+  const cardImageMain = document.querySelector('.card-image_main')
+  cardImageMain.addEventListener('click', onGallaryClick )
+  if (event.target.nodeName!=='IMG'){
+    return
+  }
+  const imageRef = event.target
+  console.log(imageRef.dataset)
+  const largeImgUrl = event.target.src
+
+  cardImageMain.src = largeImgUrl
 }
 
 export default onOpenModal; 

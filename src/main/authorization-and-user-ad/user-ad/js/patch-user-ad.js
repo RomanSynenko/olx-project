@@ -19,15 +19,15 @@ function initRefs() {
 };
 
 async function handlerPatchUserAd(event) {
-    // const id = event.terget.dataset.id;
+    const id = event.target.dataset.id;
     const { data: { favourites } } = await axios.get('/call/own');
     
     // ! Временно!!!!
     // const own = favourites.filter(el => el.title === "Hren");
-    const own = favourites.filter(el => el.title === "car");
+    // const own = favourites.filter(el => el.title === "car");
 
     // ?? Финальный вариант
-    // const own = favourites.filter(el => el._id === id);
+    const own = favourites.filter(el => el._id === id);
 
     const newOwn = { ...own[0], ...{ edit: true } };
     
