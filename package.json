@@ -52,12 +52,8 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.34",
         "axios": "^0.21.1",
         "basiclightbox": "^5.0.4",
-
-        "core-js": "^3.8.3",
-
         "core-js": "^3.6.5",
         "font-awesome": "^4.7.0",
-
         "handlebars": "^4.7.6",
         "lightbox2": "^2.11.3",
         "micromodal": "^0.4.6",
