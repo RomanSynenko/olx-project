@@ -7,6 +7,7 @@ import {
      addActiveFilter, removeActiveFilter,
     onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset,clearRoot
 } from './utils';
+import clickOnMyAccountButton from '../../health-home/js/h-home-index';
 
 
 const refs = {
@@ -24,6 +25,7 @@ receiveHeader().then(header => {
     refs.closeBurgerMenu = document.querySelector('#close');
     refs.iconSearch = refs.search.querySelector('.js-icon-search');
     refs.jsMenuMobile = document.querySelector('.js-menu-mobile');
+    refs.myOffice=document.querySelector('#officeBtn');
     
     
         
@@ -33,7 +35,7 @@ receiveHeader().then(header => {
     refs.filterMenu.addEventListener('click', onClickMenuFilter);
     refs.closeBurgerMenu.addEventListener('click', onClickCloseBurgerMenu); 
     refs.iconSearch.addEventListener('click', onClickSearchIcon);
-     
+    refs.myOffice.addEventListener('click', clickOnMyAccountButton);     
 });
 
 

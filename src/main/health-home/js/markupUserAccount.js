@@ -2,14 +2,6 @@ import {userFavourites, userOwn} from './fetchUserFavourites';
 import cardCall from '../templates/cardCall.hbs';
 import slider from './slider';
 
-// slider(settingSlader())
-
-// function settingSlader() {
-//     let slidesPerView = 0;
-//     let el = '.swiper-pagination';
-//     return { slidesPerView, el };
-// };
-
 const markupTemplateAccountUser = async (event) => {
     const { target } = event; 
     const rootEl = document.getElementById('root');
