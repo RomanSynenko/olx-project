@@ -15,16 +15,17 @@
     background: #ffffff;
 
     @media screen and (min-width: 768px) and (max-width: 1279px) {
-      width: 724px;
+      max-width: 700px;
+      padding: 30px 30px;
     }
 
     @media screen and (max-width: 767px) {
       max-width: 80%;
-      padding: 40px 20px;
+      padding: 20px 20px;
     }
 
     .wrap-labels {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .modal-add-close {
@@ -63,6 +64,11 @@
     .wrap-fields {
       display: flex;
       flex-wrap: wrap;
+
+      @media screen and (min-width: 768px) and (max-width: 1040px) {
+        max-width: 450px;
+        // margin-left: auto;
+      }
     }
 
     @media screen and (max-width: 767px) {
@@ -84,6 +90,10 @@
       border-right: 8px solid transparent;
       border-top: 10px solid #000000;
       cursor: pointer;
+
+      @media screen and (min-width: 768px) and (max-width: 1239px) {
+        top: 22px;
+      }
 
       @media screen and (max-width: 767px) {
         top: 37px;
@@ -124,21 +134,21 @@
 
     .input-form {
       width: 610px;
-      height: 56px;
       margin-left: auto;
-      padding: 23px;
+      padding: 20px;
 
       background: #ffffff;
       border: 1px solid #bbbbbb;
       outline: none;
 
       @media screen and(min-width: 768px) and (max-width: 1279px) {
-        width: 458px;
+        max-width: 500px;
+        padding: 17px;
       }
 
       @media screen and (max-width: 767px) {
         width: 100%;
-        height: 50px;
+        padding: 13px;
       }
 
       &:hover,
@@ -198,11 +208,16 @@
     outline: none;
 
     @media screen and(min-width: 768px) and (max-width: 1279px) {
-      margin-left: 146px;
+      margin-left: 140px;
+      // margin: 0 auto;
     }
 
     @media screen and (max-width: 767px) {
       margin: 0 auto;
+      width: 210px;
+      &[name="userAd"] {
+        padding: 15px;
+      }
     }
 
     &:focus,
@@ -227,6 +242,7 @@
 
     @media screen and (max-width: 767px) {
       font-size: 16px;
+      margin-bottom: 30px;
     }
   }
 

@@ -8,6 +8,7 @@ const rootRef = document.querySelector('#root');
 function handlerUserLoginOut() {
     if (!localStorage.getItem('accessToken')) return;
     rootRef.insertAdjacentHTML('beforeend', loginOutForm());
+    document.body.classList.add('overflow');
     submitForm();
 };
 
