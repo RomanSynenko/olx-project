@@ -29,7 +29,7 @@ const renderDesctopMarcup = (res) => {
 
 const bannerClick = (event) => {
     const clickBanner = event.target.dataset.title;
-    onOpenModal(clickBanner);
+    // onOpenModal(clickBanner);
 };
 
 

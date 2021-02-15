@@ -1,11 +1,24 @@
 %button {
   margin: 0;
-  border: 0; 
+  border: 0;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.02cm;
   padding: 20px 13px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+%button-anna {
+  margin: 0;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02cm;
+  padding: 0 10px;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -32,4 +45,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-

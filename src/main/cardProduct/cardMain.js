@@ -1,16 +1,15 @@
 import templateModal from '../cardProduct/templates/templateModal.hbs'
 import axios from 'axios'
-const markupId = document.querySelector('#root')
+const markupId = document.querySelector('#root');
 // const openModalBtn=document.querySelector('button[data-action="open-modal"]')
 
 
-async function onOpenModal(event) {
-  console.log(event);
-  // const testProduct= 'https://callboard-backend.goit.global/call/find?search=dog'
-  // console.log(event.target);.target.dataset.title  
-  const testProduct = `https://callboard-backend.goit.global/call/find?search=${event}`
-  console.log(testProduct);
+async function onOpenModal(titleFilter) {
+  // console.log('ann тайтл', titleFilter);
+  const testProduct = `https://callboard-backend.goit.global/call/find?search=${titleFilter}`
+  
   const { data } = await axios.get(testProduct)
+  
  
   
   markupId.insertAdjacentHTML('beforeend', templateModal(data[0]))

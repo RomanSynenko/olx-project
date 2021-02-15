@@ -25,6 +25,7 @@ receiveHeader().then(header => {
     refs.iconSearch = refs.search.querySelector('.js-icon-search');
     refs.jsMenuMobile = document.querySelector('.js-menu-mobile');
     
+    
         
     refs.filter.addEventListener('click', onFilterClick);
     refs.search.addEventListener('submit', onGetInputValue);
@@ -32,7 +33,11 @@ receiveHeader().then(header => {
     refs.filterMenu.addEventListener('click', onClickMenuFilter);
     refs.closeBurgerMenu.addEventListener('click', onClickCloseBurgerMenu); 
     refs.iconSearch.addEventListener('click', onClickSearchIcon);
+     
 });
+
+
+
 
 function onFilterClick(e) {
     if (e.target.dataset.filter !== 'filter') return;
