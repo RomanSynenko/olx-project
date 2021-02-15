@@ -1,0 +1,34 @@
+<div class="backdrop-add">
+    <div class="modal-auth">
+        <form action="" class="js__form form-auth">
+            {{#if isAuth}}
+            <h2 class="modal-auth-title">Зарегистрироватсься на сайте</h2>
+            {{else}}
+            <h2 class="modal-auth-title">Войти в личный кабинет</h2>
+            {{/if}}
+            <label for="" class="label-auth">
+                <input type="email" name="email" placeholder="E-mail" class="input-auth">
+            </label>
+            <label for="" class="label-auth">
+                <input type="password" name="password" placeholder="Password" class="input-auth">
+            </label>
+            <div class="wrap-btn-submit">
+                {{#if isAuth}}
+                <button type="submit" class="submit-auth login-button-modal" name="auth">Регистрация</button>
+                {{else}}
+                <button type=" submit" class="submit-auth login-button-modal" name="login">Войти</button>
+                {{/if}}
+                <button type="button" class="submit-auth auth-buttom-modal" id="cancelBtn">Отмена</button>
+            </div>
+
+            <div class="wrap-spinner">
+                <div class="loader">
+                    <div class="inner one"></div>
+                    <div class="inner two"></div>
+                    <div class="inner three"></div>
+                </div>
+            </div>
+            <button type="button" class="modal-add-close">X</button>
+        </form>
+    </div>
+</div>

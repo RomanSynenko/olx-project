@@ -1,0 +1,15 @@
+<div class="item-container">
+    {{#each this}}
+    <div class="banner-items" data-title="{{title}}">
+        <div class="banner-item" data-title="{{title}}">
+            <span class="banner-item_text" data-title="{{title}}">{{title}}</span>
+            <div class="banner-item_price_block" data-title="{{title}}">
+                <span class="banner-price_currency_tablet" data-title="{{title}}">€</span>
+                <span class="banner-item_price" data-title="{{title}}">{{price}}</span>
+            </div>
+        </div>
+        <img class="banner-item_img" src="{{imageUrl}}" alt="{{title}}" width="150px" data-title="{{title}}"
+            data-search="{{title}}" />
+    </div>
+    {{/each}}
+</div>

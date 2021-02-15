@@ -1,0 +1,65 @@
+// контейнер для лого і пошуку
+.search-wrap {
+  display: flex;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: inline;
+  }
+}
+
+// стилі на форму
+.form-search {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+  }
+
+  @media screen and (min-width: 1280px) {
+    position: relative;
+  }
+}
+
+// стилі на інпут
+.search-input {
+  padding: 10px 13px;
+  width: 380px;
+
+  outline: none;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  &:focus,
+  &:hover {
+    outline: 2px solid #ff6b09;
+  }
+}
+// іконка лупи
+.icon-search {
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+
+  @media screen and (max-width: 767px) {
+    color: #445361;
+    font-size: 24px;
+    top: 22px;
+
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+    }
+  }
+}
+//  інпут на мобільній версії
+.search-mobile {
+  @media screen and(max-width:767px) {
+    display: block;
+    position: absolute;
+    padding: 12px 20px;
+    width: 768px;
+    max-width: 100%;
+    top: 0px;
+    right: -20px;
+  }
+}

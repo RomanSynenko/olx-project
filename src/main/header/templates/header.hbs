@@ -1,0 +1,84 @@
+<header class="page-header">
+    <div class="container-header">
+        <div class="authorization">
+            <div class="search-wrap">
+                <a class="logo-circle" href="/">
+                    <p class="text-logo">LOGO</p>
+                    {{!-- <svg width="71" height="44" aria-label="Logo">
+                        <use href="" class="icon-menu"></use>
+                    </svg> --}}
+                </a>
+                <form id="search" class="form-search">
+                    <input class="search-input" type="text" name="query">
+                    <i class="fas fa-search icon-search js-icon-search"></i>
+                </form>
+            </div>
+
+            <div class="auth-wrap">
+                <div class="wrap-registration js__wrap-btn" id="auth">
+                    <button class="btn-office display-none" id="officeBtn">
+                        <i class="far fa-user"></i>
+                        <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора стосовно
+                        по якому
+                        атрибуту він робить клік --}}
+                    </button>
+                    <button class=" registration" type="button" name="auth" id="authBtn">Регистрация</button>
+                    <span class="line"></span>
+                    <button class="btn-logout display-none" id="logout" name="loginOut"><i class="fas fa-sign-out-alt"
+                            name="outlogin"></i></button>
+                    <button class="login" type="button" name="login" id="loginBtn">Войти</button>
+                </div>
+                <button class="create js__wrap-btn text-create-btn" id="userAd" type="button" name="user-ad">Создать
+                    объявление
+                    {{!-- <span class="text-create-btn" id="userAd" name="user-ad">Создать объявление</span> --}}
+                    {{!-- <span class="plus-btn" id="userAd" name="user-ad">+</span> --}}
+                </button>
+                <button class="plus-btn create text-create-btn" id="userAd" type="button" name="user-ad">+</button>
+            </div>
+        </div>
+
+        <div class="container-filter">
+            <nav id="filter" class="">
+                <div class="wrap-nav">
+                    <div class="wrap-registration-mobil js__wrap-btn" id="auth">
+                        <button class="btn-office  display-none" id="officeBtn-mob">
+                            <i class="far fa-user"></i>
+                            <span class="text-my-office">Мой кабинет</span> {{!-- запитати в єгора
+                            стосовно по якому
+                            атрибуту він робить клік --}}
+                        </button>
+                        <button class="registration" type="button" name="auth" id="authBtn-mob">Регистрация</button>
+                        <span class="line"></span>
+                        <button class="btn-logout display-none" id="logout-mob" name="loginOut"><i
+                                class="fas fa-sign-out-alt" name="outlogin"></i></button>
+                        <button class="login" type="button" name="login" id="loginBtn-mob">Войти</button>
+                    </div>
+                    <i class="fas fa-times close-menu-filter dilsplay-none" id="close"></i>
+                    <ul class="header-list-flex">
+                        {{#each this}}
+                        <li class="item-filter">
+                            <button class="btn-filter" data-filter="filter" type="button">{{this}}</button>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </nav>
+            <div class="wrap-clear-and-silter">
+                <button id="filter-menu" class="filter-menu" type="button">
+                    <label for="checkbox-filter" class="label-checkbox">
+                        <i class="fas fa-bars burger-menu js-menu-mobile"></i>
+                        <p class="text-btn">Фильтры</p>
+                    </label>
+                    <input class="checkbox-filter-menu" type="checkbox" id="checkbox-filter">
+
+                </button>
+                <button id="reset" class="clear" type="button">
+                    <i class="fas fa-undo-alt reset-icon"></i>
+                    <p class="text-btn">Очистить</p>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>

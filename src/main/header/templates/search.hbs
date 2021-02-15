@@ -1,0 +1,28 @@
+<div class="container-filter-category">
+    <ul class="grid-list" id="list">
+        {{#each this}}
+        <li class="item-grid" data-title-filter="{{title}}">
+            <a class="link-goods" href="" data-title-filter="{{title}}">
+                <img class="img-goods" src="{{imageUrls}}" alt="{{title}}" data-title-filter="{{title}}" />
+                <h3 class="title-goods" data-title-filter="{{title}}">{{title}}</h3>
+                <p class="price-goods" data-title-filter="{{title}}">{{price}} &#x020AC</p>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+
+{{!-- <ul class="grid-list items_product container" id="list">
+    {{#each this}}
+    <li class="item-grid item_product">
+        <a class="link-goods item_product_linc" data-serch={{title}} href="">
+            <div class="thumb">
+                <img class="img-goods img_product" src="{{imageUrls}}" alt="{{title}}" />
+            </div>
+            <h3 class="title-goods title_product">{{title}}</h3>
+            <p class="price-goods valid_price">{{price}} &#x020AC</p>
+        </a>
+    </li>
+    {{/each}}
+</ul> --}}

@@ -1,0 +1,94 @@
+<div class="backdrop-add">
+    <div class="modal-add">
+        <button type="button" class="modal-add-close" id="cancelBtn">X</button>
+        <form class="form-add form__call js__form" enctype="multipart/form-data" method="post">
+            {{#if edit}}
+            <h2 class="title-form-add">Редактировать объявление</h2>
+            {{else}}
+            <h2 class="title-form-add">Coздать объявление</h2>
+            {{/if}}
+            <div class="wrap-labels">
+                <label class="label-add">
+                    <span class="fields">Название товара</span>
+                    <input type="text" name="title" class="input-form" placeholder=" " value="{{title}}"
+                        autocomplete="off">
+                </label>
+                <label for="file" class="label-add" placeholder=" " name="foto-fields">
+                    <span class="fields photo">Фото</span>
+                    <div class="wrap-fields">
+                        <div class="file" name="file">
+                            <span class="download">+</span>
+                            <img src="{{imageUrls}}" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                        <div class="file">
+                            <span class="download">+</span>
+                            <img src="" alt="" name="file-preload">
+                        </div>
+                    </div>
+
+                    <input type="file" id="file" class="inputfile" size="5" name="file" accept=".jpg, .jpeg, .png"
+                        multiple value="{{imageUrls}}">
+                </label>
+
+                <label for="" class="label-add">
+                    <span class="fields">Описание товара</span>
+                    <input type="text" class="input-form" name="description" placeholder=" " value="{{description}}"
+                        autocomplete="off">
+                </label>
+
+                <label for="" class="label-add label-category">
+                    <span class="fields">Категория товара</span>
+                    <input type="text" class="input-form" name="category" placeholder=" " value="{{category}}"
+                        autocomplete="off">
+                    <div id="triangle-down"></div>
+                    <ul class="wrap-category is-hidden">
+                        {{#each this}}
+                        <li class="category-items">
+                            <a href="" class="category-link">{{this}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </label>
+
+                <label for="" class="label-add">
+                    <span class="fields">Цена</span>
+                    <input type="text" placeholder="0.00 €" class="input-form" name="price" value="{{price}}"
+                        autocomplete="off">
+                </label>
+
+                <label for="" class="label-add">
+                    <span class="fields">Телефон</span>
+                    <input type="tel" placeholder="+38 (0--) --- -- --" class="input-form" name="phone"
+                        value="{{phone}}">
+                </label>
+            </div>
+            {{#if edit}}
+            <button class="delete" name="delete">
+                &#10060;
+                <span class="delete-text">Удалить объявление</span>
+            </button>
+            {{/if}}
+            <button class="btn-form-add" type="submit" name="userAd">Добавить</button>
+            <div class="wrap-spinner">
+                <div class="loader">
+                    <div class="inner one"></div>
+                    <div class="inner two"></div>
+                    <div class="inner three"></div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
