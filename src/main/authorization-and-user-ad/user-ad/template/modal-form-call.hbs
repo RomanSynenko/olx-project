@@ -75,9 +75,9 @@
                 </label>
             </div>
             {{#if edit}}
-            <button class="delete" name="delete">
-                &#10060;
-                <span class="delete-text">Удалить объявление</span>
+            <button class="delete delete-text" name="delete" data-id-del="{{_id}}">
+                &#10060; Удалить объявление
+
             </button>
             {{/if}}
             <button class="btn-form-add" type="submit" name="userAd">Добавить</button>

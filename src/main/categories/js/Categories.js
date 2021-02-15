@@ -1,6 +1,7 @@
 import productTpl from '../templates/marcupCategories.hbs';
 import getRusCategoriesWithProduct from '../js/fetchAPI';
-import initSlider from '../js/slider'
+import initSlider from '../js/slider';
+import onOpenModal from '../../cardProduct/cardMain';
 
 const refs = {
     bodyContainer: document.querySelector('#root')
@@ -13,7 +14,17 @@ async function renderCategoriesWithProduct() {
     const data = await getRusCategoriesWithProduct(pageNamber);
     
     const markap = productTpl(data);
-    refs.bodyContainer.insertAdjacentHTML('beforeend', markap); 
+    refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
+    const cardsCategory = document.querySelector('.js-container-category');
+    cardsCategory.addEventListener('click', handlerCardCategory );
+
+    function handlerCardCategory(event) {
+        event.preventDefault();
+        onOpenModal(event.target.dataset.titleFilter);        
+    }
+
+
+    // onOpenModal()    
 
     // pageNamber += 1; 
      

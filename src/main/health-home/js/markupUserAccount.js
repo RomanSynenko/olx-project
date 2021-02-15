@@ -3,6 +3,7 @@ import cardCall from '../templates/cardCall.hbs';
 import slider from './slider';
 import { handlerPatchUserAd } from '../../authorization-and-user-ad/user-ad/js/patch-user-ad';
 import markupUserCategoryCalls from './markupUserCategoryCalls';
+import onOpenModal from '../../cardProduct/cardMain';
 
 const markupTemplateAccountUser = async (event) => {
     const { target } = event;
@@ -31,7 +32,7 @@ const markupTemplateAccountUser = async (event) => {
           <a href="" class="title-root__lookall-btn" data-name="FavCalls">Cмотреть все</a>
         </div>
 
-        <ul class='card-container js-own swiper-container'>
+        <ul class='card-container js-own swiper-container js-favourites'>
            ${markupCard(favourites)}
         </ul>
     </div>
@@ -42,6 +43,9 @@ const markupTemplateAccountUser = async (event) => {
 
   const rootUserAccount = document.querySelector('.root-user-account');
   rootUserAccount.addEventListener('click', markupUserCategoryCalls);
+
+  const favouritesCardsOffice= document.querySelector('.js-favourites'); 
+  favouritesCardsOffice.addEventListener('click', handlerFavouritesCardsOffice);
 
     function markupCard(data) {
       return data.slice(0,4)
@@ -68,6 +72,10 @@ const markupTemplateAccountUser = async (event) => {
          }
    }
 
+}
+
+function handlerFavouritesCardsOffice(event) {
+  onOpenModal(event.target.dataset.titleFilter)
 }
 
 export default markupTemplateAccountUser;

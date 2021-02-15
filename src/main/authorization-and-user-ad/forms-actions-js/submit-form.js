@@ -32,7 +32,6 @@ function submitForm() {
 
 function handlerSubmitFormAuth(event) {
     event.preventDefault(event);
-    // console.log('click llll');
     
     const { currentTarget: { elements } } = event;
 
@@ -41,7 +40,7 @@ function handlerSubmitFormAuth(event) {
         refs.containerImg.style.border = '3px solid red';
         return;
     };
-    console.log(elements.loginOut);
+
     spinnerClassAdd();
 
     if (elements.loginOut) {       

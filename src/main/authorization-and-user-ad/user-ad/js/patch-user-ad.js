@@ -74,7 +74,7 @@ async function fetchPatchUserAd(form, id) {
 
 async function fetchDeleteUserAd(event) {
     try {
-        const id = event.target.dataset.id
+        const id = event.target.dataset.idDel
         await axios.delete(`/call/${id}`);
         removeBackdrop();
         

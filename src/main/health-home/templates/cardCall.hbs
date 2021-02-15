@@ -1,9 +1,9 @@
-<li class="card-call" data-id="{{_id}}">
-    <img class="card-call__img" src="{{imageUrls}}" id="{{id}}" alt="{{title}}" />
-    <div class="card-call__title-container">
-        <h6 class="card-call__title">{{title}}</h6>
-        <p class="card-call__price">{{price}} €</p>
-        <div class="btn-container">
+<li class="card-call" data-id="{{_id}}" data-title-filter="{{title}}">
+    <img class="card-call__img" data-title-filter="{{title}}" src="{{imageUrls}}" id="{{id}}" alt="{{title}}" />
+    <div class="card-call__title-container" data-title-filter="{{title}}">
+        <h6 class="card-call__title" data-title-filter="{{title}}">{{title}}</h6>
+        <p class="card-call__price" data-title-filter="{{title}}">{{price}} €</p>
+        <div class="btn-container" data-title-filter="{{title}}">
             {{#if itsOwnCall}}
             <button class="card-btn" data-id="{{_id}}" id="edit-btn">Редактровать</button>
             <button class="card-btn" data-id="{{_id}}" id="delete-ownCall-btn">Удалить</button>
