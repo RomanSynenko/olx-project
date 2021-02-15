@@ -1,0 +1,47 @@
+%button {
+  margin: 0;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02cm;
+  padding: 20px 13px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+%button-anna {
+  margin: 0;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02cm;
+  padding: 0 10px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+
+%disabled {
+  background-color: #eca474;
+}
+
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+%centered-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

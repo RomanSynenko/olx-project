@@ -1,0 +1,54 @@
+%base-font {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+%font-create {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+}
+
+%btn-auth {
+  padding: 0;
+  color: #5e6671;
+  background-color: inherit;
+  border: none;
+  outline: none;
+
+  letter-spacing: 0.02em;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: #ff6b09;
+  }
+}
+
+%btn-clear-filter-menu {
+  padding: 0;
+  color: #5e6671;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  transition: 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+%btn-out-and-office {
+  display: flex;
+  padding: 0;
+  margin-right: 10px;
+  font-size: 12px;
+  border: none;
+  background-color: inherit;
+  color: #5e6671;
+  outline: none;
+
+  &:focus,
+  &:hover {
+    color: #ff6b09;
+  }
+}

@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+* {
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: "Montserat", "Arial", sans-serif;
+
+  &.overflow {
+    overflow: hidden;
+  }
+}
+
+// .backdrop-add body {
+//   overflow: hidden;
+// }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

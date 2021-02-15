@@ -1,0 +1,69 @@
+// основний контейнер
+.page-header {
+  padding: 35px 0;
+  background-color: #122438;
+
+  @media screen and (max-width: 767px) {
+    padding: 15px 0;
+  }
+  // контейнер для секції кнопок реєстрації та вход і для логотипу з інпутом
+  .authorization {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+      position: relative;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      align-items: center;
+      position: relative;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .container-header {
+    max-width: 1440px;
+    padding: 0 38px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      max-width: 1024px;
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 480px;
+      padding: 0 20px;
+    }
+  }
+}
+// логотип коло
+.logo-circle {
+  width: 44px;
+  height: 44px;
+  background-color: #ff6b09;
+  border-radius: 50px;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 62px;
+    margin-bottom: 0;
+  }
+
+  .text-logo {
+    margin: 0;
+    padding-top: 12px;
+    padding-left: 17px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+
+    color: #fff;
+  }
+}
