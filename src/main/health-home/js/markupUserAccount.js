@@ -3,9 +3,9 @@ import cardCall from '../templates/cardCall.hbs';
 import slider from './slider';
 
 const markupTemplateAccountUser = async (event) => {
-    const { target } = event; 
+    const { target } = event;
     const rootEl = document.getElementById('root');
-   
+
     const { favourites: ownCalls } = await userOwn();
     const { favourites } = await userFavourites();
 
@@ -45,19 +45,19 @@ const markupTemplateAccountUser = async (event) => {
       const cardId = target.getAttribute('data-id');
        await  deleteUserCall(cardId);
         if(status === 200){
-        target.closest('li').remove(); 
-        } 
+        target.closest('li').remove();
+        }
       }
 
-   
+
      if(target.id === 'delete-favCall-btn'){
         const cardId = target.getAttribute('data-id');
         const {status} = await deleteFavouritesCall(cardId);
 
          if(status === 200){
-         target.closest('li').remove(); 
+         target.closest('li').remove();
          markupTemplateAccountUser();
-         }     
+         }
    }
 
 }

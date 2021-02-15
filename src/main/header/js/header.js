@@ -8,15 +8,15 @@ import {
     onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset,clearRoot
 } from './utils';
 import clickOnMyAccountButtonEgor from '../../health-home/js/h-home-index';
-// 
+//
 
 const refs = {
     root: document.querySelector('#root'),
 };
 
-receiveHeader().then(header => {    
+receiveHeader().then(header => {
     addMarkup(header);
-    
+
     refs.filter= document.querySelector('#filter'),
     refs.search= document.querySelector('#search'),
     refs.resetBtn= document.querySelector('#reset'),
@@ -26,16 +26,16 @@ receiveHeader().then(header => {
     refs.iconSearch = refs.search.querySelector('.js-icon-search');
     refs.jsMenuMobile = document.querySelector('.js-menu-mobile');
     refs.myOffice=document.querySelector('#officeBtn');
-    
-    
-        
+
+
+
     refs.filter.addEventListener('click', onFilterClick);
     refs.search.addEventListener('submit', onGetInputValue);
     refs.resetBtn.addEventListener('click', onClickReset);
     refs.filterMenu.addEventListener('click', onClickMenuFilter);
-    refs.closeBurgerMenu.addEventListener('click', onClickCloseBurgerMenu); 
+    refs.closeBurgerMenu.addEventListener('click', onClickCloseBurgerMenu);
     refs.iconSearch.addEventListener('click', onClickSearchIcon);
-    refs.myOffice.addEventListener('click', clickOnMyAccountButtonEgor);     
+    refs.myOffice.addEventListener('click', clickOnMyAccountButtonEgor);
 });
 
 
@@ -49,7 +49,7 @@ function onFilterClick(e) {
     getData().then(el => {
         const valueFilter = el[e.target.textContent];
         receiveCategories(valueFilter);
-        
+
     });
 };
 
