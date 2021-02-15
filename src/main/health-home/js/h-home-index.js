@@ -5,16 +5,15 @@ const rootEl = document.getElementById('root');
 rootEl.addEventListener('click', markupUserCategoryCalls);
 
 // const buttonMyCabinet = document.querySelector('#officeBtn');
-// console.log(buttonMyCabinet);
+
 // buttonMyCabinet.addEventListener('click', clickOnMyAccountButton);
 
-// markupTemplateAccountUser();
 
-function clickOnMyAccountButton(event){
+function clickOnMyAccountButtonEgor(event){
     rootEl.innerHTML = '';
-    console.log(event.target);
+    // console.log(event.target);
     markupTemplateAccountUser(event);
 }
 
-export default clickOnMyAccountButton;
+export default clickOnMyAccountButtonEgor;
 

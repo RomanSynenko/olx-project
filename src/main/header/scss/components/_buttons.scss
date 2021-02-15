@@ -61,6 +61,7 @@
 .btn-logout {
   @extend %btn-out-and-office;
   margin-right: 40px;
+  font-size: 24px;
 
   @media screen and (max-width: 767px) {
     margin-right: 4px;
@@ -69,6 +70,7 @@
 
 .icon-user {
   margin-right: 10px;
+  font-size: 24px;
 }
 //  кнопка мій кабінет
 .btn-office {
@@ -163,4 +165,8 @@
     margin-top: 73px;
     margin-bottom: 70px;
   }
+}
+
+.icon-user-mob {
+  margin-right: 10px;
 }

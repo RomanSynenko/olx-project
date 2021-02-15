@@ -7,8 +7,8 @@ import {
      addActiveFilter, removeActiveFilter,
     onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset,clearRoot
 } from './utils';
-import clickOnMyAccountButton from '../../health-home/js/h-home-index';
-
+import clickOnMyAccountButtonEgor from '../../health-home/js/h-home-index';
+// 
 
 const refs = {
     root: document.querySelector('#root'),
@@ -35,7 +35,7 @@ receiveHeader().then(header => {
     refs.filterMenu.addEventListener('click', onClickMenuFilter);
     refs.closeBurgerMenu.addEventListener('click', onClickCloseBurgerMenu); 
     refs.iconSearch.addEventListener('click', onClickSearchIcon);
-    refs.myOffice.addEventListener('click', clickOnMyAccountButton);     
+    refs.myOffice.addEventListener('click', clickOnMyAccountButtonEgor);     
 });
 
 
