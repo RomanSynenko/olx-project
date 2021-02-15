@@ -1,2 +1,2 @@
 import './style/styles.scss';
-import './main/footer/footer'
+import './main/footer/footer';
