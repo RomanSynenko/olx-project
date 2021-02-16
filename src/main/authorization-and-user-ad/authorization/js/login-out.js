@@ -1,6 +1,10 @@
 import loginOutForm from '../templates/login-out-form.hbs';
 import submitForm from '../../forms-actions-js/submit-form';
 import axios from 'axios';
+import renderCategoriesWithProduct from '../../../categories/js/Categories';
+import makeRequestBanner from '../../../banner/js/banner';
+import { removeBackdrop } from '../../forms-actions-js/close-modal-actions';
+import { removeActiveFilter } from '../../../header/js/utils';
 // import pnotify from '../../pnotify/pnotify';
 
 const rootRef = document.querySelector('#root');
@@ -17,13 +21,20 @@ async function fetchLoginOut() {
         await axios.post('/auth/logout');
         localStorage.clear();
         if (window.outerWidth < 768) {
-            changeBtnAuthReverseMobile();
+            changeBtnAuthReverseMobile();            
         }
         
         changeBtnAuthReverse();
-    } catch {};
+        
+    } catch { };
     
-    document.querySelector('.backdrop-add').remove();
+   
+    const filter= document.querySelector('#filter')
+    removeBackdrop();
+    rootRef.innerHTML = '';
+    removeActiveFilter(filter)
+    makeRequestBanner();
+    renderCategoriesWithProduct();
 };
 
 function changeBtnAuthReverse() {

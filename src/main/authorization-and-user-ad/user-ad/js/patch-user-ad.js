@@ -19,6 +19,7 @@ function initRefs() {
 };
 
 async function handlerPatchUserAd(event) {
+    if (event.target.id !== 'edit-btn') return;
     const id = event.target.dataset.id;
     const { data: { favourites } } = await axios.get('/call/own');
     

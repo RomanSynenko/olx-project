@@ -7,7 +7,7 @@ defaults.delay = 2000;
 defaults.width = "430px";
 
 if (window.outerWidth < 768) {
-    defaults.width = "280px";
+    defaults.width = "250px";
 }
 
 export default {

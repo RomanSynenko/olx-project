@@ -64,7 +64,7 @@ function onClickReset() {
         makeRequestBanner();
         renderCategoriesWithProduct();
     }
-    
+   
     setTimeout(() => {
         refs.resetBtn.blur();
     },200)

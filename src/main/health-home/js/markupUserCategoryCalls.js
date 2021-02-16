@@ -8,7 +8,6 @@ import { handlerPatchUserAd } from '../../authorization-and-user-ad/user-ad/js/p
 const markupUserCategoryCalls = async (event) => {
    
    event.preventDefault();
-   console.log(event.target);
     
     const { target } = event; 
     const rootEL = document.getElementById('root');

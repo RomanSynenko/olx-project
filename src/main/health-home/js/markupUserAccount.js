@@ -23,7 +23,7 @@ const markupTemplateAccountUser = async (event) => {
           <a href="" class="title-root__lookall-btn" data-name="OwnCalls">Cмотреть все</a>
         </div>
 
-        <ul class='card-container  js-fav swiper-container'>
+        <ul class='card-container  js-fav swiper-container' id='own-container'>
           ${markupCard(newOwnCalls)}
         </ul>
   
@@ -38,7 +38,7 @@ const markupTemplateAccountUser = async (event) => {
     </div>
     `)
   
-  const btnEditUserAd = document.querySelector('#edit-btn');
+  const btnEditUserAd = document.querySelector('#own-container');
   btnEditUserAd.addEventListener('click', handlerPatchUserAd);
 
   const rootUserAccount = document.querySelector('.root-user-account');
