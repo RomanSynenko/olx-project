@@ -5,7 +5,7 @@ import renderCategoriesWithProduct from '../../../categories/js/Categories';
 import makeRequestBanner from '../../../banner/js/banner';
 import { removeBackdrop } from '../../forms-actions-js/close-modal-actions';
 import { removeActiveFilter } from '../../../header/js/utils';
-// import pnotify from '../../pnotify/pnotify';
+import {removeMenuFilterTablet } from '../../../header/js/utils';
 
 const rootRef = document.querySelector('#root');
 
@@ -32,6 +32,7 @@ async function fetchLoginOut() {
     const filter= document.querySelector('#filter')
     removeBackdrop();
     rootRef.innerHTML = '';
+    removeMenuFilterTablet();    
     removeActiveFilter(filter)
     makeRequestBanner();
     renderCategoriesWithProduct();

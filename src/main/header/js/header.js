@@ -25,7 +25,8 @@ receiveHeader().then(header => {
     refs.closeBurgerMenu = document.querySelector('#close');
     refs.iconSearch = refs.search.querySelector('.js-icon-search');
     refs.jsMenuMobile = document.querySelector('.js-menu-mobile');
-    refs.myOffice=document.querySelector('#officeBtn');
+    refs.myOffice = document.querySelector('#officeBtn');
+    refs.myOfficeMob=document.querySelector('#officeBtn-mob');
 
 
 
@@ -36,6 +37,7 @@ receiveHeader().then(header => {
     refs.closeBurgerMenu.addEventListener('click', onClickCloseBurgerMenu);
     refs.iconSearch.addEventListener('click', onClickSearchIcon);
     refs.myOffice.addEventListener('click', clickOnMyAccountButtonEgor);
+    refs.myOfficeMob.addEventListener('click', clickOnMyAccountButtonEgor)
 });
 
 

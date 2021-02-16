@@ -76,5 +76,5 @@ function clearRoot() {
     
 export {
     resetList, addActiveFilter, removeActiveFilter,
-    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset,clearRoot
+    onClickMenuFilter, onClickCloseBurgerMenu, onClickSearchIcon, onClickReset,clearRoot, removeMenuFilterTablet
 };

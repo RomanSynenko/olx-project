@@ -16,6 +16,11 @@ async function renderCategoriesWithProduct() {
     const markap = productTpl(data);
     refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
     const cardsCategory = document.querySelector('.js-container-category');
+    // !! ждемо Колю
+    // cardsCategory.forEach(el => {
+        
+    // })
+    // !!
     cardsCategory.addEventListener('click', handlerCardCategory );
 
     function handlerCardCategory(event) {

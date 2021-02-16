@@ -46,7 +46,7 @@ function windowOnClick(event){
   event.target.remove()
 }
 
-function closeOnClick(event){
+function closeOnClick(){
   document.querySelector('.card-backdrop').remove()
 }
 // const token =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDI0Zjc0YTc2Zjk5ZDMxNjRhNTczZTQiLCJzaWQiOiI2MDI0ZjgzMTc2Zjk5ZDMxNjRhNTczZTciLCJpYXQiOjE2MTMwMzU1NjksImV4cCI6MTYxNTY2MzU2OX0.d9bAer0nylW7ov9pvniAozEi2lTDhz2_N2FkY89dnEs"
@@ -73,8 +73,7 @@ function onGallaryClick(event){
     return
   }
   const imageRef = event.target
-  console.log(imageRef.dataset)
-  const largeImgUrl = event.target.src
+  const largeImgUrl = imageRef.src
 
   cardImageMain.src = largeImgUrl
 }

@@ -3,6 +3,7 @@ import pnotify from '../../pnotify/pnotify';
 import { spinnerClassRemove } from '../../forms-actions-js/spinner';
 import { removeBackdrop } from '../../forms-actions-js/close-modal-actions';
 import { handlerUserLoginOut } from '../../authorization/js/login-out';
+import {removeMenuFilterTablet } from '../../../header/js/utils';
 
 axios.defaults.baseURL = 'https://callboard-backend.goit.global';
 
@@ -20,10 +21,9 @@ async function fetchUserLogin(dataForm) {
         
         if (window.outerWidth < 768) {
             changeBtnAuthMobile();
-        };
-        
+        };        
         changeBtnAuth();
-
+        removeMenuFilterTablet(); 
         pnotify.infoMessage();
     } catch (error) {
         spinnerClassRemove();

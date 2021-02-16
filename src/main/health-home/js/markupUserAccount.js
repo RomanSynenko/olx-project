@@ -74,8 +74,10 @@ const markupTemplateAccountUser = async (event) => {
 
 }
 
-function handlerFavouritesCardsOffice(event) {
-  onOpenModal(event.target.dataset.titleFilter)
+async function handlerFavouritesCardsOffice(event) {
+  await onOpenModal(event.target.dataset.titleFilter)
+  document.querySelector('.js-heard').style.color="red";
+  
 }
 
 export default markupTemplateAccountUser;
