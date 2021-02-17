@@ -39,8 +39,5 @@ function exportModalFooter() {
     if (windowWidth > 768) {
         studentOpenBtn.addEventListener('click', handleOpenStudentsWindow);
     }
-    else if (windowWidth < 768) {
-        return
-    }
 }
 export default exportModalFooter;
