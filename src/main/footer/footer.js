@@ -1,17 +1,17 @@
-import './styles.css';
+import './style/style.scss';
 import footerOpen from './templates/footer_render.hbs';
 import openStudentsModal from './templates/students-modal.hbs';
-
-
-const markupFooterRef = document.querySelector('#footer')
+const markupFooterRef = document.querySelector('#footer');
+const rootRef = document.querySelector('#root');
 markupFooterRef.insertAdjacentHTML('beforeend', footerOpen());
 
 
+
 const studentOpenBtn = document.querySelector('.js-students');
-studentOpenBtn.addEventListener('click', handleOpenStudentsWindow);
+
 
 function handleOpenStudentsWindow() {
-    markupFooterRef.insertAdjacentHTML('beforeend', openStudentsModal());
+    rootRef.insertAdjacentHTML('beforeend', openStudentsModal());
     const modalRef = document.querySelector('.student-modal')
     modalRef.classList.add('show-modal');
     window.addEventListener('keydown', handleKeypress)
@@ -34,4 +34,13 @@ function handleOpenStudentsWindow() {
 function handleKeypress({ code }) {
     code === 'click' && handleOpenStudentsWindow()
 }
-
+const windowWidth = document.documentElement.clientWidth;
+function exportModalFooter() {
+    if (windowWidth > 768) {
+        studentOpenBtn.addEventListener('click', handleOpenStudentsWindow);
+    }
+    else if (windowWidth < 768) {
+        return
+    }
+}
+export default exportModalFooter;

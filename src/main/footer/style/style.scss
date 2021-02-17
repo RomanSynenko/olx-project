@@ -1,5 +1,14 @@
-.text-1 {
+ul {
+  padding: 0;
+  margin: 0;
+}
+.text-one {
   margin-bottom: 22px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
 }
 .footer__our-students {
   background-color: transparent;
@@ -16,32 +25,36 @@
   font-weight: 400;
   font-size: 12px;
   padding: 42px 0 42px 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.line-1::after {
+.text-container {
+  @media screen and (max-width: 767px) {
+    width: 230px;
+  }
+}
+.fertical-line_before::after {
   position: absolute;
   content: "";
-  background-image: url(./images/vertical-line.png);
+  background: #8e9198;
   width: 1px;
   height: 12px;
 }
-
+.fertical-line_after::after {
+  position: absolute;
+  content: "";
+  background: #8e9198;
+  width: 1px;
+  height: 12px;
+}
 @media (min-width: 768px) {
-  .line-2::after {
-    position: absolute;
-    content: "";
-    background-image: url(./images/vertical-line.png);
-    width: 1px;
-    height: 12px;
-  }
-
-  .text-1,
-  .text-2 {
+  .text-one,
+  .text-two {
     display: inline-block;
   }
 
-  .text-1 {
+  .text-one {
     margin-bottom: 0;
   }
 
@@ -76,7 +89,7 @@
   background-color: transparent;
   width: 14px;
   height: 14px;
-  background-image: url("../footer/images/close/close-24px.svg");
+  background-image: url("../images/baseline_close_black_24dp.png");
   background-repeat: no-repeat;
   background-position: center;
   border: none;
@@ -91,7 +104,6 @@
   line-height: 1.2;
   text-align: center;
   margin-bottom: 10px;
-  margin-left: 18px;
 }
 
 .student-modal__list {
@@ -144,7 +156,7 @@
 
 @media (min-width: 768px) {
   .student-modal {
-    width: 600px;
+    width: 620px;
     box-shadow: 0px 12px 40px 0px rgba(0, 0, 0, 0.25);
     padding: 48px 0;
   }
@@ -152,7 +164,6 @@
   .student-modal__form--title {
     font-size: 22px;
     margin-bottom: 20px;
-    margin-left: 54px;
   }
 
   .student-modal__list {

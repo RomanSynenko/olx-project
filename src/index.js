@@ -1,2 +1,6 @@
-import './style/styles.scss';
+
 import './main/footer/footer';
+
+import exportModalFooter from './main/footer/footer';
+
+exportModalFooter()
