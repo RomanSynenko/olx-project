@@ -4,6 +4,8 @@ import submitForm from '../../forms-actions-js/submit-form';
 import { spinnerClassRemove, } from '../../forms-actions-js/spinner';
 import { removeBackdrop } from '../../forms-actions-js/close-modal-actions';
 import { handlerPreloadFile, handlerFormCategoryMenu } from '../../forms-actions-js/open-form-auth';
+import deleteFavouritesCall from '../../../health-home/js/deleteFavCall';
+import deleteUserCall from '../../../health-home/js/deleteUserCall';
 
 const rootRef = document.querySelector('#root');
 
@@ -19,8 +21,20 @@ function initRefs() {
 };
 
 async function handlerPatchUserAd(event) {
-    if (event.target.id !== 'edit-btn') return;
     const id = event.target.dataset.id;
+    if (event.target.id === 'delete-favCall-btn') {
+        deleteFavouritesCall(id);         
+        event.target.closest('li').remove();      
+        return;
+    }
+
+    if(event.target.id === 'delete-ownCall-btn'){
+        deleteUserCall(id);         
+        event.target.closest('li').remove();      
+        return;
+    }
+    if (event.target.id !== 'edit-btn') return;
+    
     const { data: { favourites } } = await axios.get('/call/own');
     
     // ! Временно!!!!

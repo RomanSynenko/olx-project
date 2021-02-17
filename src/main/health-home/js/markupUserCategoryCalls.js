@@ -86,7 +86,6 @@ const markupUserCategoryCalls = async (event) => {
     const {status} = await deleteFavouritesCall(cardId);
     
     if(status === 200){
-        console.log('yes');
         target.closest('li').remove(); 
       }   
  }

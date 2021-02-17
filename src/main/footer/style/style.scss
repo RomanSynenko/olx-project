@@ -235,3 +235,16 @@ ul {
     margin-bottom: 5px;
   }
 }
+
+.text-2 {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  flex: end;
+}
