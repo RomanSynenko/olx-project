@@ -3,8 +3,7 @@ import 'swiper/swiper-bundle.css';
 
 function initSlider({
   selector = '.items_product',
-  slidesPerView = 1,
-  el = '.swiper-pagination'
+  slidesPerView = 1  
 }) {
   return new Swiper(selector,
     {
@@ -17,7 +16,7 @@ function initSlider({
       // spaceBetween: 10,
 
       pagination: {
-
+        el: '.swiper-pagination',
         // clickable: true,
         dynamicBullets: true
       },
