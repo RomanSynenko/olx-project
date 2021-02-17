@@ -2,7 +2,8 @@ import axios from "axios";
 import { baseUrl, headers } from './fetchHeaders';
 
 const deleteUserCall = async (cardId) => {
-    const res = await axios.delete(`${baseUrl}/call/${cardId}`, { headers })  
+    const res = await axios.delete(`/call/${cardId}`) 
+    return res
                 
 }
     

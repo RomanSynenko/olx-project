@@ -4,6 +4,7 @@ import slider from './slider';
 import { handlerPatchUserAd } from '../../authorization-and-user-ad/user-ad/js/patch-user-ad';
 import markupUserCategoryCalls from './markupUserCategoryCalls';
 import onOpenModal from '../../cardProduct/cardMain';
+import deleteFavouritesCall from '../../health-home/js/deleteFavCall';
 
 const markupTemplateAccountUser = async (event) => {
     const { target } = event;
@@ -58,7 +59,7 @@ const markupTemplateAccountUser = async (event) => {
        await  deleteUserCall(cardId);
         if(status === 200){
         target.closest('li').remove();
-        }
+       }
       }
 
 
@@ -69,12 +70,14 @@ const markupTemplateAccountUser = async (event) => {
          if(status === 200){
          target.closest('li').remove();
          markupTemplateAccountUser();
-         }
+       }
+      
    }
 
 }
 
-async function handlerFavouritesCardsOffice(event) {
+async function handlerFavouritesCardsOffice(event) {  
+  if (event.target.id === 'delete-favCall-btn') return
   await onOpenModal(event.target.dataset.titleFilter)
   document.querySelector('.js-heard').style.color="red";
   

@@ -7,6 +7,7 @@ function onGetInputValue(e) {
     e.preventDefault();
     const form = e.currentTarget;
     const inputValue = form.elements.query.value
+    if(inputValue===''|| inputValue===' ') return
     clearRoot();
     receiveSearchValue(inputValue);
     const filterRef = document.querySelector('#filter');

@@ -1,16 +1,210 @@
-html {
-  box-sizing: border-box;
-}
-* {
-  &::before,
-  &::after {
-    box-sizing: inherit;
-  }
-}
+// html {
+//   box-sizing: border-box;
+// }
+// * {
+//   &::before,
+//   &::after {
+//     box-sizing: inherit;
+//   }
+// }
 
-body {
-  margin: 0;
-}
+// body {
+//   margin: 0;
+// }
+
+// ul {
+//   padding-inline-start: 0;
+// }
+
+// .root-user-account {
+//   max-width: 1440px;
+//   margin: 0 auto;
+//   padding: 0 38px;
+
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     max-width: 1024px;
+//     margin: 0 auto;
+//   }
+
+//   @media screen and (max-width: 767px) {
+//     max-width: 480px;
+//     margin: 0 auto;
+//   }
+// }
+
+// .btn-my-account {
+//   background-color: #3498db;
+//   color: white;
+//   padding: 16px;
+//   font-size: 16px;
+//   border: none;
+//   cursor: pointer;
+// }
+
+// .title-root__user-calls {
+//   font-family: "Montserrat", sans-serif;
+//   font-size: 20px;
+//   font-style: normal;
+//   font-weight: 700;
+//   line-height: 24px;
+//   letter-spacing: 0.02em;
+//   text-align: left;
+//   margin: 0;
+//   margin-right: 12px;
+
+//   @media screen and (max-width: 767px) {
+//     font-size: 17px;
+//   }
+// }
+
+// .title-root__lookall-btn {
+//   font-family: "Montserrat", sans-serif;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 12px;
+//   line-height: 15px;
+//   letter-spacing: 0.02em;
+//   color: #ff6b09;
+// }
+
+// .title-root {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 24px;
+//   margin-top: 20px;
+//   margin-left: 38px;
+
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     width: 638px;
+//     margin: 0 auto;
+//     margin-bottom: 24px;
+//     margin-top: 20px;
+//     margin-left: 168px;
+//   }
+
+//   @media screen and (max-width: 767px) {
+//     font-size: 17px;
+//     margin-left: 93px;
+//   }
+// }
+
+// .card-call {
+//   width: 286px;
+//   height: 330px;
+//   left: 38px;
+//   top: 256px;
+//   background: #ffffff;
+//   list-style: none;
+//   margin-right: 20px;
+//   margin-bottom: 20px;
+//   box-shadow: 0 0 4px rgba(59, 59, 59, 0.3);
+
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     margin-right: 30px;
+//   }
+
+//   @media screen and (max-width: 767px) {
+//     margin-right: 0px;
+//   }
+// }
+
+// .card-call__img {
+//   width: 286px;
+//   height: 239px;
+//   left: 38px;
+//   top: 256px;
+// }
+
+// .card-call__title-container {
+//   height: 87px;
+//   width: 286px;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .card-call__img {
+//   width: 286px;
+//   height: 239px;
+//   object-fit: cover;
+// }
+
+// .card-call__title {
+//   font-family: "Montserrat", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 12px;
+//   line-height: 15px;
+//   text-align: center;
+//   letter-spacing: 0.02em;
+//   text-transform: uppercase;
+//   color: #000000;
+//   margin: 0;
+//   margin-bottom: 7px;
+// }
+
+// .card-call__price {
+//   font-family: "Montserrat", sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 12px;
+//   line-height: 15px;
+//   text-align: center;
+//   letter-spacing: 0.04em;
+//   color: #ff6b09;
+//   margin: 0;
+// }
+
+// .card-container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 1280px;
+//   margin: 0 auto;
+
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     width: 768px;
+//     margin: 0 auto;
+//     justify-content: space-evenly;
+//   }
+
+//   @media screen and (max-width: 767px) {
+//     width: 320px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-inline-start: 0px;
+//   }
+// }
+
+// .card-call__title-container {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .button-container {
+//   text-align: center;
+// }
+
+// .card-btn {
+//   font-family: "Montserrat", sans-serif;
+//   background-color: #fff;
+//   border: none;
+//   cursor: pointer;
+// }
+
+// .card-btn:hover {
+//   color: #ff6b09;
+// }
+
+// .btn-container {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .swiper-container .swiper-pagination .swiper-pagination-bullet {
+//   background: #ff6b09;
+// }
+
+// повіксив Єгор
 
 ul {
   padding-inline-start: 0;
@@ -20,6 +214,7 @@ ul {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 38px;
+  padding-top: 20px;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     max-width: 1024px;
@@ -42,7 +237,6 @@ ul {
 }
 
 .title-root__user-calls {
-  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -68,39 +262,38 @@ ul {
 }
 
 .title-root {
+  width: 300px;
   display: flex;
   align-items: center;
   margin-bottom: 24px;
-  margin-top: 20px;
-  margin-left: 38px;
+  margin-left: 77px;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 638px;
+    width: 300px;
     margin: 0 auto;
     margin-bottom: 24px;
-    margin-top: 20px;
-    margin-left: 168px;
+    margin-left: 123px;
   }
 
   @media screen and (max-width: 767px) {
     font-size: 17px;
-    margin-left: 93px;
+    margin-left: 59px;
   }
 }
 
 .card-call {
-  width: 286px;
+  width: 268px;
   height: 330px;
-  left: 38px;
-  top: 256px;
+  margin-right: 45px;
   background: #ffffff;
   list-style: none;
-  margin-right: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 4px rgba(59, 59, 59, 0.3);
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     margin-right: 30px;
+    width: 333px;
+    height: 306px;
   }
 
   @media screen and (max-width: 767px) {
@@ -108,22 +301,30 @@ ul {
   }
 }
 
-.card-call__img {
-  width: 286px;
-  height: 239px;
-  left: 38px;
-  top: 256px;
+.card-call:nth-last-child(2n + 1) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    margin-right: 0px;
+  }
+}
+
+.card-call:last-child {
+  margin-right: 0px;
 }
 
 .card-call__title-container {
   height: 87px;
-  width: 286px;
+  // width: 268px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    height: 64px;
+  }
 }
 
 .card-call__img {
-  width: 286px;
+  width: 100%;
   height: 239px;
   object-fit: cover;
 }
@@ -156,14 +357,13 @@ ul {
 
 .card-container {
   display: flex;
-  flex-wrap: wrap;
-  width: 1280px;
+  max-width: 1208px;
   margin: 0 auto;
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 768px;
+    width: 698px;
     margin: 0 auto;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   @media screen and (max-width: 767px) {
@@ -173,11 +373,6 @@ ul {
     align-items: center;
     padding-inline-start: 0px;
   }
-}
-
-.card-call__title-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .button-container {

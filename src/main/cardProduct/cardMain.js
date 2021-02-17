@@ -4,7 +4,7 @@ const markupId = document.querySelector('#root');
 // const openModalBtn=document.querySelector('button[data-action="open-modal"]')
 
 
-async function onOpenModal(titleFilter) {
+async function onOpenModal(titleFilter) {  
   // console.log('ann тайтл', titleFilter);
   const testProduct = `https://callboard-backend.goit.global/call/find?search=${titleFilter}`
   
