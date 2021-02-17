@@ -2,6 +2,7 @@ import productTpl from '../templates/marcupCategories.hbs';
 import getRusCategoriesWithProduct from '../js/fetchAPI';
 import initSlider from '../js/slider';
 import onOpenModal from '../../cardProduct/cardMain';
+import renderFooter from '../../footer/footer';
 
 const refs = {
     bodyContainer: document.querySelector('#root')
@@ -12,16 +13,19 @@ let pageNamber = 1;
 async function renderCategoriesWithProduct() { 
     pageNamber = 1;
     const data = await getRusCategoriesWithProduct(pageNamber);
-    
+
     const markap = productTpl(data);
     refs.bodyContainer.insertAdjacentHTML('beforeend', markap);
+   
+    renderFooter();
+
     const cardsCategory = document.querySelector('.js-container-category');
     // !! ждемо Колю
     // cardsCategory.forEach(el => {
         
     // })
     // !!
-    cardsCategory.addEventListener('click', handlerCardCategory );
+    cardsCategory.addEventListener('click', handlerCardCategory);
 
     function handlerCardCategory(event) {
         event.preventDefault();

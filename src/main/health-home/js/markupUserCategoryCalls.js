@@ -61,18 +61,23 @@ const markupUserCategoryCalls = async (event) => {
   }
   // console.log(event.target);
   // console.log(event.target.id);
-  const btnEditUserAd = document.querySelector('#edit-btn');
-  btnEditUserAd.addEventListener('click', handlerPatchUserAd);
+  // const btnEditUserAd = document.querySelector('#edit-btn');
+  // btnEditUserAd.addEventListener('click', handlerPatchUserAd);
+
+  // if (event.taregt.id === "edit-btn") {
+  //   handlerPatchUserAd()
+  //   return;
+  // }
 
 //       if(target.id === 'edit-btn'){ // КНОПКА ДЛЯ РЕДАКТИРОВАНИЯ КАРТОЧКИ
-//     //  const btnEditUserAd = document.querySelector('#edit-btn');
-//     //   btnEditUserAd.addEventListener('click', handlerPatchUserAd);
+     const btnEditUserAd = document.querySelector('.card-container');
+      btnEditUserAd.addEventListener('click', handlerPatchUserAd);
 //         alert('klhkiug');
 //  }
 
  if(target.id === 'delete-ownCall-btn'){
     const cardId = target.getAttribute('data-id');
-     await  deleteUserCall(cardId);
+     await deleteUserCall(cardId);
      target.closest('li').remove();   
  }
 

@@ -10,9 +10,8 @@ async function onOpenModal(titleFilter) {
   
   const { data } = await axios.get(testProduct)
   
- 
-  
-  markupId.insertAdjacentHTML('beforeend', templateModal(data[0]))
+  markupId.insertAdjacentHTML('beforeend', templateModal(data[0]));
+  document.body.classList.add('overflow');
 
   const infoBtn = document.querySelector('.card-infoBtn')
   infoBtn.addEventListener('click', async (event)=>{
@@ -44,10 +43,12 @@ function windowOnClick(event){
     return 
   } 
   event.target.remove()
+  document.body.classList.remove('overflow');
 }
 
 function closeOnClick(){
   document.querySelector('.card-backdrop').remove()
+  document.body.classList.remove('overflow');
 }
 // const token =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDI0Zjc0YTc2Zjk5ZDMxNjRhNTczZTQiLCJzaWQiOiI2MDI0ZjgzMTc2Zjk5ZDMxNjRhNTczZTciLCJpYXQiOjE2MTMwMzU1NjksImV4cCI6MTYxNTY2MzU2OX0.d9bAer0nylW7ov9pvniAozEi2lTDhz2_N2FkY89dnEs"
 // const headers = {

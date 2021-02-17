@@ -6,6 +6,9 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   z-index: 10;
+  animation-name: box;
+  animation-duration: 250ms;
+  // animation
 
   .modal-add {
     @extend %centered-form;
@@ -41,6 +44,28 @@
 
       background: transparent;
     }
+  }
+}
+
+@keyframes box {
+  0% {
+    transform: scale(0.1);
+  }
+
+  25% {
+    transform: scale(0.3);
+  }
+
+  50% {
+    transform: scale(0.6);
+  }
+
+  75% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 

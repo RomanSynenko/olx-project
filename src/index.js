@@ -22,9 +22,11 @@ import makeRequestBanner from './main/banner/js/banner';
 // Mukola body
 import renderCategoriesWithProduct from './main/categories/js/Categories';
 
-
 receiveHeader();
 makeRequestBanner();
 renderCategoriesWithProduct();
+
+
+
 
 

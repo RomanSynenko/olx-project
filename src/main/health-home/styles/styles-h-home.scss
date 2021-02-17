@@ -124,7 +124,7 @@ ul {
 }
 
 .card-call__title {
-  font-family: "Montserrat", sans-serif;
+  // font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -138,7 +138,7 @@ ul {
 }
 
 .card-call__price {
-  font-family: "Montserrat", sans-serif;
+  // font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -176,13 +176,14 @@ ul {
 }
 
 .card-btn {
-  font-family: "Montserrat", sans-serif;
+  // font-family: "Montserrat", sans-serif;
   background-color: #fff;
   border: none;
   cursor: pointer;
 }
 
-.card-btn:hover {
+.card-btn:hover,
+.card-btn:focus {
   color: #ff6b09;
 }
 
