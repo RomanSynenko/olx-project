@@ -2,16 +2,16 @@
     <div class="banner-siema  swiper-container">
         <div class="swiper-wrapper">
             {{#each this}}
-            <div class="banner-slide swiper-slide" data-title="{{title}}">
-                <div class="slide-width" data-title="{{title}}">
-                    <div class="banner-content" data-title="{{title}}">
-                        <span class="banner-title_text" data-title="{{title}}">{{title}}</span>
-                        <div class="banner-price-block" data-title="{{title}}">
-                            <span class="banner-price_currency" data-title="{{title}}">€</span>
-                            <span class="banner-price" data-title="{{title}}">{{price}}</span>
+            <div class="banner-slide swiper-slide">
+                <div class="slide-width" >
+                    <div class="banner-content">
+                        <span class="banner-title_text">{{title}}</span>
+                        <div class="banner-price-block" >
+                            <span class="banner-price_currency" >€</span>
+                            <span class="banner-price" >{{price}}</span>
                         </div>
                     </div>
-                    <img class="banner-image" src="{{imageUrl}}" alt="{{title}}" data-title="{{title}}" />
+                    <img class="banner-image" src="{{imageUrl}}" alt="{{title}}" />
                 </div>
             </div>
             {{/each}}

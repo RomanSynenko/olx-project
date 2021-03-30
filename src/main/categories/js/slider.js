@@ -3,7 +3,7 @@ import 'swiper/swiper-bundle.css';
 
 function initSlider({
   selector = '.items_product',
-  slidesPerView = 1  
+  slidesPerView = 1,  
 }) {
   return new Swiper(selector,
     {

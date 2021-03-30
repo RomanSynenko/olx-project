@@ -29,7 +29,11 @@ async function renderCategoriesWithProduct() {
 
     function handlerCardCategory(event) {
         event.preventDefault();
-        onOpenModal(event.target.dataset.titleFilter);        
+        if(!event.target.closest('li')){
+        return
+    }  
+    const titleFilter = event.target.closest('li').dataset.titleFilter;
+    onOpenModal(titleFilter);        
     }
 
 

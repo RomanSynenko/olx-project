@@ -1,27 +1,27 @@
 <section class="section">
-    <div class="container js-container-category" data-title-filter="{{title}}">
+    <div class="container js-container-category">
         {{#each this}}
-        <div class="categories" data-title-filter="{{title}}">
-            <div class="title_categories_conteiner" data-title-filter="{{title}}">
+        <div class="categories">
+            <div class="title_categories_conteiner" >
                 <h2 class="title_categories">{{title}}</h2>
             </div>
 
-            <ul class="items_product swiper-container" data-title-filter="{{title}}">
-                <div class="swiper-wrapper" data-title-filter="{{title}}">
+            <ul class="items_product swiper-container">
+                <div class="swiper-wrapper">
                     {{#each products}}
-                    <div class="swiper-slide" data-title-filter="{{title}}">
+                    <div class="swiper-slide">
                         <li class="item_product" data-title-filter="{{title}}">
-                            <a class="item_product_linc" data-title-filter="{{title}}" data-serch={{title}} href="">
-                                <div class="thumb" data-title-filter="{{title}}">
-                                    <img class="img_product" data-title-filter="{{title}}" src="{{imageUrls}}"
+                            <a class="item_product_linc" data-serch={{title}} href="">
+                                <div class="thumb">
+                                    <img class="img_product"  src="{{imageUrls}}"
                                         alt="{{description}}" />
                                 </div>
-                                <h3 class="title_product" data-title-filter="{{title}}">{{title}}</h3>
-                                <div class="price" data-title-filter="{{title}}">
+                                <h3 class="title_product" >{{title}}</h3>
+                                <div class="price" >
                                     {{#if oldPrice}}
-                                    <p class="old_price" data-title-filter="{{title}}">{{oldPrice}} &#x020AC</p>
+                                    <p class="old_price" >{{oldPrice}} &#x020AC</p>
                                     {{/if}}
-                                    <p class="valid_price" data-title-filter="{{title}}">{{price}} &#x020AC</p>
+                                    <p class="valid_price">{{price}} &#x020AC</p>
                                 </div>
                             </a>
                         </li>

@@ -22,9 +22,11 @@ function addMarkupRoot(value) {
 
 function onClickCardFilter(event) {
     event.preventDefault();
-    const titleFilter = event.target.dataset.titleFilter;
+    if(!event.target.closest('li')){
+        return
+    }  
+    const titleFilter = event.target.closest('li').dataset.titleFilter;
     onOpenModal(titleFilter);
-//    e.target.dataset.tiltlefilter;    
 }
 
 export {addMarkup, addMarkupRoot};

@@ -1,14 +1,14 @@
 <div class="item-cotainer_right">
     {{#each this}}
-    <div class="item-cotainer_right_section" data-title="{{title}}">
-        <div class="banner-item_right" data-title="{{title}}">
-            <span class="banner-item_text" data-title="{{title}}">{{title}}</span>
-            <div class="banner-item_price_block" data-title="{{title}}">
-                <span class="banner-item-price_currency" data-title="{{title}}">€</span>
-                <span class="banner-item_price" data-title="{{title}}">{{price}}</span>
+    <div class="item-cotainer_right_section">
+        <div class="banner-item_right" >
+            <span class="banner-item_text" >{{title}}</span>
+            <div class="banner-item_price_block">
+                <span class="banner-item-price_currency">€</span>
+                <span class="banner-item_price" >{{price}}</span>
             </div>
         </div>
-        <img class="banner-item_img" src="{{imageUrl}}" alt="{{title}}" data-title="{{title}}" />
+        <img class="banner-item_img" src="{{imageUrl}}" alt="{{title}}"/>
     </div>
     {{/each}}
 </div>
